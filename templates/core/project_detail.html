@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static i18n core_extras %}
+
+{% block title %}{{ project.title }} — {{ COMPANY_NAME }}{% endblock %}
+{% block meta_description %}{{ project.summary }}{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{% url 'core:home' %}">{% trans "Home" %}</a> /
+      <a href="{% url 'core:portfolio' %}">{% trans "Work" %}</a> / {{ project.title }}
+    </div>
+    <h1>{{ project.title }}</h1>
+    <p style="max-width:640px;">{{ project.summary }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        {% if project.description %}<p style="white-space:pre-line;">{{ project.description }}</p>{% endif %}
+        {% if project.external_url %}
+        <a href="{{ project.external_url }}" target="_blank" rel="noopener" class="btn btn-outline-dark">{% trans "Visit project" %} {% icon 'arrow' size=18 %}</a>
+        {% endif %}
+      </div>
+      {% if project.image %}
+      <div class="reveal">
+        <img src="{{ project.image.url }}" alt="{{ project.title }}" style="border-radius:var(--radius);box-shadow:var(--shadow-lg);">
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2>{% trans "Want a similar result?" %}</h2>
+        <p>{% trans "Let's discuss how we can help your business." %}</p>
+      </div>
+      <div class="actions">
+        <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Contact us" %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,113 @@
+{% load static i18n core_extras %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ COMPANY_NAME }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% blocktrans %}Banan Information Technology — a Qatar-based software, IT services and digital solutions company.{% endblocktrans %}{% endblock %}">
+  <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static_v 'css/style.css' %}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a class="brand" href="{% url 'core:home' %}">
+        <img src="{% static 'images/logo-full-white.png' %}" alt="{{ COMPANY_NAME }}">
+      </a>
+
+      <nav class="nav-links" aria-label="{% trans 'Primary navigation' %}">
+        <a href="{% url 'core:home' %}" class="{% if request.resolver_match.url_name == 'home' %}is-active{% endif %}">{% trans "Home" %}</a>
+        <a href="{% url 'core:about' %}" class="{% if request.resolver_match.url_name == 'about' %}is-active{% endif %}">{% trans "About" %}</a>
+        <a href="{% url 'core:services' %}" class="{% if 'service' in request.resolver_match.url_name %}is-active{% endif %}">{% trans "Services" %}</a>
+        {% if SHOW_WORK_NAV %}
+        <a href="{% url 'core:portfolio' %}" class="{% if 'project' in request.resolver_match.url_name or request.resolver_match.url_name == 'portfolio' %}is-active{% endif %}">{% trans "Work" %}</a>
+        {% endif %}
+        <a href="{% url 'core:contact' %}" class="{% if request.resolver_match.url_name == 'contact' %}is-active{% endif %}">{% trans "Contact" %}</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switch">
+          {% get_current_language as CURRENT_LANG %}
+          {% get_available_languages as AVAILABLE_LANGS %}
+          {% for code, label in AVAILABLE_LANGS %}
+            <a href="{% url 'set_language_redirect' code %}" class="{% if code == CURRENT_LANG %}is-active{% endif %}">{{ code|upper }}</a>
+          {% endfor %}
+        </div>
+        <a href="{% url 'core:contact' %}" class="btn btn-primary" style="padding:10px 22px;font-size:14px;">{% trans "Get in touch" %}</a>
+        <button class="nav-toggle" aria-label="{% trans 'Menu' %}"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  {% if messages %}
+  <div class="django-messages">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="{% static 'images/logo-full-white.png' %}" alt="{{ COMPANY_NAME }}">
+          <p>{% blocktrans %}A Qatar-based information technology company building modern software, IT services and digital solutions for ambitious businesses.{% endblocktrans %}</p>
+          <div class="social-row">
+            <a href="{{ SOCIAL_FACEBOOK_URL }}" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">{% icon 'facebook' size=18 %}</a>
+            <a href="{{ SOCIAL_INSTAGRAM_URL }}" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">{% icon 'instagram' size=18 %}</a>
+          </div>
+        </div>
+        <div>
+          <h4>{% trans "Company" %}</h4>
+          <ul>
+            <li><a href="{% url 'core:about' %}">{% trans "About us" %}</a></li>
+            <li><a href="{% url 'core:services' %}">{% trans "Services" %}</a></li>
+            {% if SHOW_WORK_NAV %}<li><a href="{% url 'core:portfolio' %}">{% trans "Our work" %}</a></li>{% endif %}
+            <li><a href="{% url 'core:contact' %}">{% trans "Contact" %}</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>{% trans "Services" %}</h4>
+          <ul>
+            {% for s in footer_services %}
+              <li><a href="{% url 'core:service_detail' s.slug %}">{{ s.name }}</a></li>
+            {% empty %}
+              <li><a href="{% url 'core:services' %}">{% trans "Software Development" %}</a></li>
+              <li><a href="{% url 'core:services' %}">{% trans "IT Consulting" %}</a></li>
+              <li><a href="{% url 'core:services' %}">{% trans "E-commerce Solutions" %}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <h4>{% trans "Contact" %}</h4>
+          <ul>
+            <li>{% icon 'pin' size=16 %}&nbsp; {{ COMPANY_ADDRESS }}</li>
+            <li><a href="tel:{{ COMPANY_PHONE_TEL }}">{% icon 'phone' size=16 %}&nbsp; <span dir="ltr">{{ COMPANY_PHONE }}</span></a></li>
+            <li><a href="mailto:{{ COMPANY_EMAIL }}">{% icon 'mail' size=16 %}&nbsp; {{ COMPANY_EMAIL }}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; {% now "Y" %} {{ COMPANY_NAME }}. {% trans "All rights reserved." %}</span>
+        <span>{% trans "C.R. No." %} {{ COMPANY_CR_NUMBER }} &middot; {% trans "State of Qatar" %}</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static_v 'js/main.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

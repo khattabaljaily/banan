@@ -1,0 +1,542 @@
+# Arabic translation for the Banan Information Technology website.
+msgid ""
+msgstr ""
+"Project-Id-Version: banan-website\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-29 09:18+0300\n"
+"PO-Revision-Date: 2026-08-29 09:18+0300\n"
+"Last-Translator: Banan Information Technology\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: core/forms.py:13
+msgid "Your name"
+msgstr "اسمك"
+
+#: core/forms.py:16
+msgid "you@example.com"
+msgstr "you@example.com"
+
+#: core/forms.py:19
+msgid "+974 ..."
+msgstr "+974 ..."
+
+#: core/forms.py:22
+msgid "What can we help with?"
+msgstr "كيف يمكننا المساعدة؟"
+
+#: core/forms.py:25
+msgid "Tell us about your project..."
+msgstr "أخبرنا عن مشروعك..."
+
+#: core/forms.py:29
+msgid "Name"
+msgstr "الاسم"
+
+#: core/forms.py:30 templates/core/contact.html:32
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: core/forms.py:31
+msgid "Phone (optional)"
+msgstr "رقم الهاتف (اختياري)"
+
+#: core/forms.py:32
+msgid "Subject"
+msgstr "الموضوع"
+
+#: core/forms.py:33
+msgid "Message"
+msgstr "الرسالة"
+
+#: core/views.py:90
+msgid ""
+"Thank you! Your message has been received — our team will get back to you "
+"shortly."
+msgstr "شكرًا لك! تم استلام رسالتك، وسيتواصل معك فريقنا في أقرب وقت."
+
+#: templates/base.html:8
+msgid ""
+"Banan Information Technology — a Qatar-based software, IT services and "
+"digital solutions company."
+msgstr "بنان لتقنية المعلومات — شركة قطرية متخصصة في البرمجيات وخدمات تقنية المعلومات والحلول الرقمية."
+
+#: templates/base.html:26
+msgid "Primary navigation"
+msgstr "التنقل الرئيسي"
+
+#: templates/base.html:27 templates/core/about.html:10
+#: templates/core/contact.html:10 templates/core/portfolio.html:10
+#: templates/core/project_detail.html:12 templates/core/service_detail.html:12
+#: templates/core/services.html:10
+msgid "Home"
+msgstr "الرئيسية"
+
+#: templates/base.html:28 templates/core/about.html:10
+msgid "About"
+msgstr "من نحن"
+
+#: templates/base.html:29 templates/base.html:71 templates/base.html:77
+#: templates/core/service_detail.html:13 templates/core/services.html:4
+#: templates/core/services.html:10 templates/core/services.html:11
+msgid "Services"
+msgstr "خدماتنا"
+
+#: templates/base.html:30 templates/core/portfolio.html:10
+#: templates/core/project_detail.html:13
+msgid "Work"
+msgstr "أعمالنا"
+
+#: templates/base.html:31 templates/base.html:73 templates/base.html:89
+#: templates/core/contact.html:4 templates/core/contact.html:10
+msgid "Contact"
+msgstr "تواصل معنا"
+
+#: templates/base.html:42
+msgid "Get in touch"
+msgstr "تواصل معنا"
+
+#: templates/base.html:43
+msgid "Menu"
+msgstr "القائمة"
+
+#: templates/base.html:65
+msgid ""
+"A Qatar-based information technology company building modern software, IT "
+"services and digital solutions for ambitious businesses."
+msgstr "شركة قطرية لتقنية المعلومات تبني برمجيات حديثة وخدمات تقنية وحلولًا رقمية للشركات الطموحة."
+
+#: templates/base.html:68
+msgid "Company"
+msgstr "الشركة"
+
+#: templates/base.html:70 templates/core/about.html:4
+msgid "About us"
+msgstr "من نحن"
+
+#: templates/base.html:72
+msgid "Our work"
+msgstr "أعمالنا"
+
+#: templates/base.html:82
+msgid "Software Development"
+msgstr "تطوير البرمجيات"
+
+#: templates/base.html:83
+msgid "IT Consulting"
+msgstr "استشارات تقنية المعلومات"
+
+#: templates/base.html:84
+msgid "E-commerce Solutions"
+msgstr "حلول التجارة الإلكترونية"
+
+#: templates/base.html:98
+msgid "All rights reserved."
+msgstr "جميع الحقوق محفوظة."
+
+#: templates/base.html:99 templates/core/about.html:67
+msgid "C.R. No."
+msgstr "سجل تجاري رقم"
+
+#: templates/base.html:99
+msgid "State of Qatar"
+msgstr "دولة قطر"
+
+#: templates/core/about.html:11
+msgid "About Banan Information Technology"
+msgstr "عن بنان لتقنية المعلومات"
+
+#: templates/core/about.html:12
+msgid ""
+"A Qatari technology company on a mission to make world-class software and IT "
+"services accessible to local businesses."
+msgstr "شركة تقنية قطرية تسعى لإتاحة برمجيات وخدمات تقنية عالمية المستوى للشركات المحلية."
+
+#: templates/core/about.html:20
+msgid "Our story"
+msgstr "قصتنا"
+
+#: templates/core/about.html:21
+msgid "Built in Doha, for businesses across Qatar"
+msgstr "انطلقنا من الدوحة، لخدمة الشركات في جميع أنحاء قطر"
+
+#: templates/core/about.html:22
+msgid ""
+"Banan for Information Technology W.L.L. (بنان لتقنية المعلومات) is "
+"registered with the Ministry of Commerce and Industry, State of Qatar, and "
+"is a member of the Qatar Chamber of Commerce and Industry. Our name — banan, "
+"Arabic for \"fingertips\" — reflects the craftsmanship we bring to every "
+"line of code and every client relationship: precise, deliberate, and built "
+"by hand."
+msgstr "شركة بنان لتقنية المعلومات ذ.م.م مسجّلة لدى وزارة التجارة والصناعة في دولة قطر، وهي عضو في غرفة تجارة وصناعة قطر. اسمنا «بنان» يعكس الحرفية التي نضعها في كل سطر برمجي وكل علاقة مع عملائنا: دقة وعناية وعملًا متقنًا بأيدٍ خبيرة."
+
+#: templates/core/about.html:23
+msgid ""
+"We started Banan to close a gap we kept seeing: small and growing businesses "
+"in Qatar need modern software and dependable IT support, but often can't "
+"access it without going through large, slow-moving agencies. Banan is our "
+"answer — a lean, senior team that works directly with clients, in Arabic and "
+"English, from first conversation to long-term support."
+msgstr "أسسنا بنان لسد فجوة كنا نلاحظها باستمرار: الشركات الصغيرة والناشئة في قطر بحاجة إلى برمجيات حديثة ودعم تقني موثوق، لكنها غالبًا لا تستطيع الوصول إليه إلا عبر وكالات كبيرة وبطيئة. بنان هي إجابتنا على ذلك — فريق مختصر من الخبراء يعمل مباشرة مع العملاء، بالعربية والإنجليزية، من أول حديث وحتى الدعم طويل الأمد."
+
+#: templates/core/about.html:35
+msgid "What drives us"
+msgstr "ما يحرّكنا"
+
+#: templates/core/about.html:36
+msgid "Mission, vision & values"
+msgstr "الرسالة والرؤية والقيم"
+
+#: templates/core/about.html:41
+msgid "Our mission"
+msgstr "رسالتنا"
+
+#: templates/core/about.html:42
+msgid ""
+"To help businesses in Qatar grow through thoughtfully engineered software, "
+"reliable IT services, and honest partnership."
+msgstr "مساعدة الشركات في قطر على النمو من خلال برمجيات مدروسة بعناية، وخدمات تقنية موثوقة، وشراكة صادقة."
+
+#: templates/core/about.html:46
+msgid "Our vision"
+msgstr "رؤيتنا"
+
+#: templates/core/about.html:47
+msgid ""
+"To be Qatar's most trusted technology partner for ambitious small and medium-"
+"sized businesses."
+msgstr "أن نكون الشريك التقني الأكثر ثقة للشركات الصغيرة والمتوسطة الطموحة في قطر."
+
+#: templates/core/about.html:51
+msgid "Our values"
+msgstr "قيمنا"
+
+#: templates/core/about.html:52
+msgid ""
+"Craftsmanship, transparency and accountability in everything we design, "
+"build and support."
+msgstr "الحرفية والشفافية والمسؤولية في كل ما نصممه ونبنيه وندعمه."
+
+#: templates/core/about.html:61
+msgid "Company facts"
+msgstr "حقائق عن الشركة"
+
+#: templates/core/about.html:62
+msgid "At a glance"
+msgstr "نظرة سريعة"
+
+#: templates/core/about.html:66
+msgid "Commercial Registration"
+msgstr "السجل التجاري"
+
+#: templates/core/about.html:67
+msgid "Ministry of Commerce and Industry, State of Qatar"
+msgstr "وزارة التجارة والصناعة، دولة قطر"
+
+#: templates/core/about.html:70
+msgid "Legal form"
+msgstr "الشكل القانوني"
+
+#: templates/core/about.html:71
+msgid "Limited Liability Company (W.L.L.)"
+msgstr "شركة ذات مسؤولية محدودة (ذ.م.م)"
+
+#: templates/core/about.html:74
+msgid "Membership"
+msgstr "العضوية"
+
+#: templates/core/about.html:75
+msgid "Qatar Chamber of Commerce and Industry"
+msgstr "غرفة تجارة وصناعة قطر"
+
+#: templates/core/about.html:78
+msgid "Core activities"
+msgstr "الأنشطة الرئيسية"
+
+#: templates/core/about.html:79
+msgid ""
+"Custom software design & programming, IT and computer services, e-commerce & "
+"online retail solutions"
+msgstr "تصميم وبرمجة البرمجيات المخصصة، خدمات تقنية المعلومات والحاسوب، حلول التجارة الإلكترونية والبيع بالتجزئة عبر الإنترنت"
+
+#: templates/core/about.html:89
+msgid "Let's build something together"
+msgstr "لنبنِ شيئًا معًا"
+
+#: templates/core/about.html:90
+msgid "Reach out and tell us where you'd like to take your business."
+msgstr "تواصل معنا وأخبرنا إلى أين تريد أن تأخذ عملك."
+
+#: templates/core/about.html:93 templates/core/project_detail.html:46
+#: templates/core/service_detail.html:66
+msgid "Contact us"
+msgstr "تواصل معنا"
+
+#: templates/core/contact.html:11
+msgid "Let's talk"
+msgstr "لنتحدث"
+
+#: templates/core/contact.html:12
+msgid ""
+"Tell us about your project or question — our team will get back to you "
+"shortly."
+msgstr "أخبرنا عن مشروعك أو استفسارك، وسيتواصل معك فريقنا في أقرب وقت."
+
+#: templates/core/contact.html:21
+msgid "Contact details"
+msgstr "بيانات التواصل"
+
+#: templates/core/contact.html:24
+msgid "Address"
+msgstr "العنوان"
+
+#: templates/core/contact.html:28
+msgid "Phone"
+msgstr "الهاتف"
+
+#: templates/core/contact.html:36
+msgid "C.R. Number"
+msgstr "رقم السجل التجاري"
+
+#: templates/core/contact.html:72
+msgid "Send message"
+msgstr "إرسال الرسالة"
+
+#: templates/core/home.html:4
+msgid "Software, IT & Digital Solutions in Qatar"
+msgstr "حلول البرمجيات وتقنية المعلومات والحلول الرقمية في قطر"
+
+#: templates/core/home.html:11
+msgid "Information Technology · State of Qatar"
+msgstr "تقنية المعلومات · دولة قطر"
+
+#: templates/core/home.html:12
+msgid "We build <em>digital products</em> that move your business forward"
+msgstr "نبني <em>منتجات رقمية</em> تدفع عملك إلى الأمام"
+
+#: templates/core/home.html:13
+msgid ""
+"Banan Information Technology partners with businesses in Qatar to design, "
+"build and support modern software, e-commerce and IT infrastructure — end to "
+"end."
+msgstr "تتشارك بنان لتقنية المعلومات مع الشركات في قطر لتصميم وبناء ودعم البرمجيات الحديثة والتجارة الإلكترونية والبنية التقنية، من البداية إلى النهاية."
+
+#: templates/core/home.html:15
+msgid "Start a project"
+msgstr "ابدأ مشروعًا"
+
+#: templates/core/home.html:16
+msgid "Explore services"
+msgstr "استكشف خدماتنا"
+
+#: templates/core/home.html:19
+msgid "Doha, Qatar"
+msgstr "الدوحة، قطر"
+
+#: templates/core/home.html:20
+msgid "C.R."
+msgstr "سجل تجاري"
+
+#: templates/core/home.html:21
+msgid "Bilingual Arabic / English delivery"
+msgstr "خدمة ثنائية اللغة: عربي وإنجليزي"
+
+#: templates/core/home.html:33
+msgid "Founded in Qatar"
+msgstr "تأسست في قطر"
+
+#: templates/core/home.html:34
+msgid "Bilingual delivery"
+msgstr "خدمة ثنائية اللغة"
+
+#: templates/core/home.html:35
+msgid "Licensed entity"
+msgstr "كيان مرخّص"
+
+#: templates/core/home.html:36
+msgid "Client-focused"
+msgstr "التركيز على العميل"
+
+#: templates/core/home.html:43
+msgid "What we do"
+msgstr "ماذا نقدّم"
+
+#: templates/core/home.html:44
+msgid "Services built around your goals"
+msgstr "خدمات مصممة حول أهدافك"
+
+#: templates/core/home.html:45
+msgid ""
+"From custom software to day-to-day IT support, we cover the full technology "
+"stack your business needs to grow."
+msgstr "من البرمجيات المخصصة إلى الدعم التقني اليومي، نغطي كامل الاحتياجات التقنية التي يحتاجها عملك للنمو."
+
+#: templates/core/home.html:54 templates/core/services.html:24
+msgid "Learn more"
+msgstr "اعرف المزيد"
+
+#: templates/core/home.html:57 templates/core/services.html:27
+msgid "Services will appear here shortly."
+msgstr "ستظهر الخدمات هنا قريبًا."
+
+#: templates/core/home.html:70
+msgid "Why Banan"
+msgstr "لماذا بنان"
+
+#: templates/core/home.html:71
+msgid "A dedicated technology partner, not just a vendor"
+msgstr "شريك تقني حقيقي، لا مجرد مورّد"
+
+#: templates/core/home.html:72
+msgid ""
+"We're a Qatari-registered IT company built to give local businesses direct "
+"access to senior engineering talent — without the overhead of a large "
+"agency. Every engagement is bilingual, transparent, and shaped around "
+"measurable outcomes."
+msgstr "نحن شركة تقنية معلومات مسجّلة في قطر، أُسست لتمنح الشركات المحلية وصولًا مباشرًا إلى خبرات هندسية متقدمة دون أعباء الوكالات الكبيرة. كل مشروع نعمل عليه ثنائي اللغة، شفاف، ومبني حول نتائج قابلة للقياس."
+
+#: templates/core/home.html:76
+msgid "Modern engineering"
+msgstr "هندسة برمجية حديثة"
+
+#: templates/core/home.html:76
+msgid "Clean, maintainable builds on proven technology."
+msgstr "بناء نظيف وقابل للصيانة باستخدام تقنيات موثوقة."
+
+#: templates/core/home.html:80
+msgid "Reliable & secure"
+msgstr "موثوقية وأمان"
+
+#: templates/core/home.html:80
+msgid "Security and data protection considered from day one."
+msgstr "نراعي الأمان وحماية البيانات منذ اليوم الأول."
+
+#: templates/core/home.html:84
+msgid "Outcome driven"
+msgstr "نتائج ملموسة"
+
+#: templates/core/home.html:84
+msgid "We measure success by the impact on your business."
+msgstr "نقيس نجاحنا بمدى تأثيرنا الإيجابي على عملك."
+
+#: templates/core/home.html:88
+msgid "Local & responsive"
+msgstr "قريبون وسريعو الاستجابة"
+
+#: templates/core/home.html:88
+msgid "Based in Doha, working in your timezone and language."
+msgstr "مقرّنا في الدوحة، نعمل بتوقيتك ولغتك."
+
+#: templates/core/home.html:100
+msgid "Selected work"
+msgstr "أعمال مختارة"
+
+#: templates/core/home.html:101
+msgid "Recent projects"
+msgstr "مشاريع حديثة"
+
+#: templates/core/home.html:122
+msgid "Have a project in mind?"
+msgstr "لديك مشروع في ذهنك؟"
+
+#: templates/core/home.html:123
+msgid "Tell us about it — we usually reply within one business day."
+msgstr "أخبرنا عنه — عادة ما نرد خلال يوم عمل واحد."
+
+#: templates/core/home.html:126
+msgid "Contact our team"
+msgstr "تواصل مع فريقنا"
+
+#: templates/core/home.html:127
+msgid "View services"
+msgstr "عرض الخدمات"
+
+#: templates/core/portfolio.html:4 templates/core/portfolio.html:11
+msgid "Our Work"
+msgstr "أعمالنا"
+
+#: templates/core/portfolio.html:12
+msgid "A showcase of projects we design, build and support for our clients."
+msgstr "معرض للمشاريع التي نصممها ونبنيها وندعمها لعملائنا."
+
+#: templates/core/portfolio.html:33
+msgid "We're just getting started"
+msgstr "لا زلنا في البداية"
+
+#: templates/core/portfolio.html:34
+msgid ""
+"Banan is a newly founded company and our first client projects are underway. "
+"This page will showcase our case studies as they launch — check back soon, "
+"or get in touch to be among our first partners."
+msgstr "بنان شركة حديثة التأسيس، ومشاريع عملائنا الأولى قيد التنفيذ حاليًا. ستعرض هذه الصفحة دراسات حالة مشاريعنا فور إطلاقها — تابعونا قريبًا، أو تواصلوا معنا لتكونوا من أوائل شركائنا."
+
+#: templates/core/portfolio.html:36
+msgid "Work with us"
+msgstr "اعمل معنا"
+
+#: templates/core/project_detail.html:26
+msgid "Visit project"
+msgstr "زيارة المشروع"
+
+#: templates/core/project_detail.html:42
+msgid "Want a similar result?"
+msgstr "تريد نتيجة مشابهة؟"
+
+#: templates/core/project_detail.html:43
+msgid "Let's discuss how we can help your business."
+msgstr "لنتحدث عن كيفية مساعدة عملك."
+
+#: templates/core/service_detail.html:24
+msgid "Overview"
+msgstr "نظرة عامة"
+
+#: templates/core/service_detail.html:25
+msgid "How we help"
+msgstr "كيف نساعدك"
+
+#: templates/core/service_detail.html:27
+msgid "Start a conversation"
+msgstr "ابدأ حديثًا معنا"
+
+#: templates/core/service_detail.html:40
+msgid "Related work"
+msgstr "أعمال ذات صلة"
+
+#: templates/core/service_detail.html:41
+msgid "Projects in this service"
+msgstr "مشاريع ضمن هذه الخدمة"
+
+#: templates/core/service_detail.html:62
+msgid "Ready to get started?"
+msgstr "جاهز للبدء؟"
+
+#: templates/core/service_detail.html:63
+msgid "Share a few details about your project and we'll follow up quickly."
+msgstr "شاركنا بعض التفاصيل عن مشروعك وسنتواصل معك سريعًا."
+
+#: templates/core/service_detail.html:67
+msgid "All services"
+msgstr "جميع الخدمات"
+
+#: templates/core/services.html:12
+msgid ""
+"Full-stack technology support — from a first prototype to long-term "
+"operations."
+msgstr "دعم تقني متكامل — من أول نموذج أولي إلى التشغيل طويل الأمد."
+
+#: templates/core/services.html:37
+msgid "Not sure which service fits?"
+msgstr "لست متأكدًا من الخدمة الأنسب؟"
+
+#: templates/core/services.html:38
+msgid "Tell us about your business and we'll recommend the right approach."
+msgstr "أخبرنا عن عملك وسنقترح عليك النهج الأنسب."
+
+#: templates/core/services.html:41
+msgid "Talk to us"
+msgstr "تحدث معنا"

@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static i18n core_extras %}
+
+{% block title %}{% trans "About us" %} — {{ COMPANY_NAME }}{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="{% url 'core:home' %}">{% trans "Home" %}</a> / {% trans "About" %}</div>
+    <h1>{% trans "About Banan Information Technology" %}</h1>
+    <p style="max-width:640px;">{% blocktrans %}A Qatari technology company on a mission to make world-class software and IT services accessible to local businesses.{% endblocktrans %}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <div class="eyebrow">{% trans "Our story" %}</div>
+        <h2>{% trans "Built in Doha, for businesses across Qatar" %}</h2>
+        <p>{% blocktrans %}Banan for Information Technology W.L.L. (بنان لتقنية المعلومات) is registered with the Ministry of Commerce and Industry, State of Qatar, and is a member of the Qatar Chamber of Commerce and Industry. Our name — banan, Arabic for "fingertips" — reflects the craftsmanship we bring to every line of code and every client relationship: precise, deliberate, and built by hand.{% endblocktrans %}</p>
+        <p>{% blocktrans %}We started Banan to close a gap we kept seeing: small and growing businesses in Qatar need modern software and dependable IT support, but often can't access it without going through large, slow-moving agencies. Banan is our answer — a lean, senior team that works directly with clients, in Arabic and English, from first conversation to long-term support.{% endblocktrans %}</p>
+      </div>
+      <div class="split-art reveal">
+        <img src="{% static 'images/logo-icon.png' %}" alt="{{ COMPANY_NAME }}">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <div class="eyebrow" style="justify-content:center;">{% trans "What drives us" %}</div>
+      <h2>{% trans "Mission, vision & values" %}</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="card-icon">{% icon 'chart' size=26 %}</div>
+        <h3>{% trans "Our mission" %}</h3>
+        <p>{% trans "To help businesses in Qatar grow through thoughtfully engineered software, reliable IT services, and honest partnership." %}</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">{% icon 'cloud' size=26 %}</div>
+        <h3>{% trans "Our vision" %}</h3>
+        <p>{% trans "To be Qatar's most trusted technology partner for ambitious small and medium-sized businesses." %}</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">{% icon 'shield' size=26 %}</div>
+        <h3>{% trans "Our values" %}</h3>
+        <p>{% trans "Craftsmanship, transparency and accountability in everything we design, build and support." %}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">{% trans "Company facts" %}</div>
+      <h2>{% trans "At a glance" %}</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <strong>{% trans "Commercial Registration" %}</strong>
+        <span>{% trans "C.R. No." %} {{ COMPANY_CR_NUMBER }} &middot; {% trans "Ministry of Commerce and Industry, State of Qatar" %}</span>
+      </div>
+      <div class="timeline-item">
+        <strong>{% trans "Legal form" %}</strong>
+        <span>{% trans "Limited Liability Company (W.L.L.)" %}</span>
+      </div>
+      <div class="timeline-item">
+        <strong>{% trans "Membership" %}</strong>
+        <span>{% trans "Qatar Chamber of Commerce and Industry" %}</span>
+      </div>
+      <div class="timeline-item">
+        <strong>{% trans "Core activities" %}</strong>
+        <span>{% trans "Custom software design & programming, IT and computer services, e-commerce & online retail solutions" %}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2>{% trans "Let's build something together" %}</h2>
+        <p>{% trans "Reach out and tell us where you'd like to take your business." %}</p>
+      </div>
+      <div class="actions">
+        <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Contact us" %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

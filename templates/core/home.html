@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load static i18n core_extras %}
+
+{% block title %}{{ COMPANY_NAME }} — {% trans "Software, IT & Digital Solutions in Qatar" %}{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">{% trans "Information Technology · State of Qatar" %}</div>
+      <h1>{% blocktrans %}We build <em>digital products</em> that move your business forward{% endblocktrans %}</h1>
+      <p class="hero-lead">{% blocktrans %}Banan Information Technology partners with businesses in Qatar to design, build and support modern software, e-commerce and IT infrastructure — end to end.{% endblocktrans %}</p>
+      <div class="hero-actions">
+        <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Start a project" %} {% icon 'arrow' size=18 %}</a>
+        <a href="{% url 'core:services' %}" class="btn btn-outline">{% trans "Explore services" %}</a>
+      </div>
+      <div class="hero-meta">
+        <div>{% icon 'pin' size=18 %} {% trans "Doha, Qatar" %}</div>
+        <div>{% icon 'shield' size=18 %} {% trans "C.R." %} {{ COMPANY_CR_NUMBER }}</div>
+        <div>{% icon 'chart' size=18 %} {% trans "Bilingual Arabic / English delivery" %}</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="glow-ring"></div>
+      <img src="{% static 'images/logo-icon.png' %}" alt="{{ COMPANY_NAME }}">
+    </div>
+  </div>
+</section>
+
+<section class="stat-strip">
+  <div class="container">
+    <div class="stat"><strong>2026</strong><span>{% trans "Founded in Qatar" %}</span></div>
+    <div class="stat"><strong>EN / AR</strong><span>{% trans "Bilingual delivery" %}</span></div>
+    <div class="stat"><strong>W.L.L.</strong><span>{% trans "Licensed entity" %}</span></div>
+    <div class="stat"><strong>100%</strong><span>{% trans "Client-focused" %}</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <div class="eyebrow" style="justify-content:center;">{% trans "What we do" %}</div>
+      <h2>{% trans "Services built around your goals" %}</h2>
+      <p>{% trans "From custom software to day-to-day IT support, we cover the full technology stack your business needs to grow." %}</p>
+    </div>
+
+    <div class="card-grid">
+      {% for service in services %}
+      <div class="card reveal">
+        <div class="card-icon">{% icon service.icon size=26 %}</div>
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.summary }}</p>
+        <a class="card-link" href="{% url 'core:service_detail' service.slug %}">{% trans "Learn more" %} {% icon 'arrow' size=16 %}</a>
+      </div>
+      {% empty %}
+      <p>{% trans "Services will appear here shortly." %}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="split">
+      <div class="split-art reveal">
+        <img src="{% static 'images/logo-icon.png' %}" alt="{{ COMPANY_NAME }}">
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">{% trans "Why Banan" %}</div>
+        <h2>{% trans "A dedicated technology partner, not just a vendor" %}</h2>
+        <p>{% blocktrans %}We're a Qatari-registered IT company built to give local businesses direct access to senior engineering talent — without the overhead of a large agency. Every engagement is bilingual, transparent, and shaped around measurable outcomes.{% endblocktrans %}</p>
+        <div class="value-grid">
+          <div class="value-item">
+            <div class="card-icon">{% icon 'code' size=20 %}</div>
+            <div><h4>{% trans "Modern engineering" %}</h4><p>{% trans "Clean, maintainable builds on proven technology." %}</p></div>
+          </div>
+          <div class="value-item">
+            <div class="card-icon">{% icon 'shield' size=20 %}</div>
+            <div><h4>{% trans "Reliable & secure" %}</h4><p>{% trans "Security and data protection considered from day one." %}</p></div>
+          </div>
+          <div class="value-item">
+            <div class="card-icon">{% icon 'chart' size=20 %}</div>
+            <div><h4>{% trans "Outcome driven" %}</h4><p>{% trans "We measure success by the impact on your business." %}</p></div>
+          </div>
+          <div class="value-item">
+            <div class="card-icon">{% icon 'devices' size=20 %}</div>
+            <div><h4>{% trans "Local & responsive" %}</h4><p>{% trans "Based in Doha, working in your timezone and language." %}</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if featured_projects %}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">{% trans "Selected work" %}</div>
+      <h2>{% trans "Recent projects" %}</h2>
+    </div>
+    <div class="work-grid">
+      {% for project in featured_projects %}
+      <a class="work-card reveal" href="{% url 'core:project_detail' project.slug %}">
+        {% if project.image %}<img src="{{ project.image.url }}" alt="{{ project.title }}">{% endif %}
+        <div class="work-overlay">
+          {% if project.service %}<div class="tag">{{ project.service.name }}</div>{% endif %}
+          <h3>{{ project.title }}</h3>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2>{% trans "Have a project in mind?" %}</h2>
+        <p>{% trans "Tell us about it — we usually reply within one business day." %}</p>
+      </div>
+      <div class="actions">
+        <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Contact our team" %}</a>
+        <a href="{% url 'core:services' %}" class="btn btn-outline">{% trans "View services" %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

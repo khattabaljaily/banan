@@ -1,0 +1,11 @@
+New inquiry received from the Banan website contact form.
+
+Name: {{ msg.name }}
+Email: {{ msg.email }}
+Phone: {{ msg.phone|default:"-" }}
+Subject: {{ msg.subject|default:"-" }}
+
+Message:
+{{ msg.message }}
+
+Received: {{ msg.created_at }}

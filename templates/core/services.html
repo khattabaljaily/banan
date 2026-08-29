@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static i18n core_extras %}
+
+{% block title %}{% trans "Services" %} — {{ COMPANY_NAME }}{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="{% url 'core:home' %}">{% trans "Home" %}</a> / {% trans "Services" %}</div>
+    <h1>{% trans "Services" %}</h1>
+    <p style="max-width:640px;">{% trans "Full-stack technology support — from a first prototype to long-term operations." %}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="card-grid">
+      {% for service in services %}
+      <div class="card reveal">
+        <div class="card-icon">{% icon service.icon size=26 %}</div>
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.summary }}</p>
+        <a class="card-link" href="{% url 'core:service_detail' service.slug %}">{% trans "Learn more" %} {% icon 'arrow' size=16 %}</a>
+      </div>
+      {% empty %}
+      <p>{% trans "Services will appear here shortly." %}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2>{% trans "Not sure which service fits?" %}</h2>
+        <p>{% trans "Tell us about your business and we'll recommend the right approach." %}</p>
+      </div>
+      <div class="actions">
+        <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Talk to us" %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

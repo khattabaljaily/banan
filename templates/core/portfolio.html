@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static i18n core_extras %}
+
+{% block title %}{% trans "Our Work" %} — {{ COMPANY_NAME }}{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="{% url 'core:home' %}">{% trans "Home" %}</a> / {% trans "Work" %}</div>
+    <h1>{% trans "Our Work" %}</h1>
+    <p style="max-width:640px;">{% trans "A showcase of projects we design, build and support for our clients." %}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% if projects %}
+    <div class="work-grid">
+      {% for project in projects %}
+      <a class="work-card reveal" href="{% url 'core:project_detail' project.slug %}">
+        {% if project.image %}<img src="{{ project.image.url }}" alt="{{ project.title }}">{% endif %}
+        <div class="work-overlay">
+          {% if project.service %}<div class="tag">{{ project.service.name }}</div>{% endif %}
+          <h3>{{ project.title }}</h3>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state reveal">
+      <div class="card-icon">{% icon 'code' size=28 %}</div>
+      <h3>{% trans "We're just getting started" %}</h3>
+      <p>{% blocktrans %}Banan is a newly founded company and our first client projects are underway. This page will showcase our case studies as they launch — check back soon, or get in touch to be among our first partners.{% endblocktrans %}</p>
+      <div style="margin-top:24px;">
+        <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Work with us" %}</a>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% endblock %}

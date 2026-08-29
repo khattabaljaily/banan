@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static i18n core_extras %}
+
+{% block title %}{{ service.name }} — {{ COMPANY_NAME }}{% endblock %}
+{% block meta_description %}{{ service.summary }}{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{% url 'core:home' %}">{% trans "Home" %}</a> /
+      <a href="{% url 'core:services' %}">{% trans "Services" %}</a> / {{ service.name }}
+    </div>
+    <h1>{{ service.name }}</h1>
+    <p style="max-width:640px;">{{ service.summary }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <div class="eyebrow">{% trans "Overview" %}</div>
+        <h2>{% trans "How we help" %}</h2>
+        <p style="white-space:pre-line;">{{ service.description }}</p>
+        <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Start a conversation" %} {% icon 'arrow' size=18 %}</a>
+      </div>
+      <div class="split-art reveal">
+        <div class="card-icon" style="width:100px;height:100px;border-radius:24px;">{% icon service.icon size=44 %}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if related_projects %}
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">{% trans "Related work" %}</div>
+      <h2>{% trans "Projects in this service" %}</h2>
+    </div>
+    <div class="work-grid">
+      {% for project in related_projects %}
+      <a class="work-card reveal" href="{% url 'core:project_detail' project.slug %}">
+        {% if project.image %}<img src="{{ project.image.url }}" alt="{{ project.title }}">{% endif %}
+        <div class="work-overlay">
+          <div class="tag">{{ service.name }}</div>
+          <h3>{{ project.title }}</h3>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2>{% trans "Ready to get started?" %}</h2>
+        <p>{% trans "Share a few details about your project and we'll follow up quickly." %}</p>
+      </div>
+      <div class="actions">
+        <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Contact us" %}</a>
+        <a href="{% url 'core:services' %}" class="btn btn-outline">{% trans "All services" %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

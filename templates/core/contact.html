@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static i18n core_extras %}
+
+{% block title %}{% trans "Contact" %} — {{ COMPANY_NAME }}{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="{% url 'core:home' %}">{% trans "Home" %}</a> / {% trans "Contact" %}</div>
+    <h1>{% trans "Let's talk" %}</h1>
+    <p style="max-width:640px;">{% trans "Tell us about your project or question — our team will get back to you shortly." %}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info-card reveal">
+        <h3>{% trans "Contact details" %}</h3>
+        <div class="contact-row">
+          {% icon 'pin' %}
+          <div><strong>{% trans "Address" %}</strong><span>{{ COMPANY_ADDRESS }}</span></div>
+        </div>
+        <div class="contact-row">
+          {% icon 'phone' %}
+          <div><strong>{% trans "Phone" %}</strong><a href="tel:{{ COMPANY_PHONE_TEL }}" dir="ltr">{{ COMPANY_PHONE }}</a></div>
+        </div>
+        <div class="contact-row">
+          {% icon 'mail' %}
+          <div><strong>{% trans "Email" %}</strong><a href="mailto:{{ COMPANY_EMAIL }}">{{ COMPANY_EMAIL }}</a></div>
+        </div>
+        <div class="contact-row">
+          {% icon 'shield' %}
+          <div><strong>{% trans "C.R. Number" %}</strong><span>{{ COMPANY_CR_NUMBER }}</span></div>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <form method="post" novalidate>
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="field">
+              {{ form.name.label_tag }}
+              {{ form.name }}
+              {{ form.name.errors }}
+            </div>
+            <div class="field">
+              {{ form.email.label_tag }}
+              {{ form.email }}
+              {{ form.email.errors }}
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              {{ form.phone.label_tag }}
+              {{ form.phone }}
+              {{ form.phone.errors }}
+            </div>
+            <div class="field">
+              {{ form.subject.label_tag }}
+              {{ form.subject }}
+              {{ form.subject.errors }}
+            </div>
+          </div>
+          <div class="field">
+            {{ form.message.label_tag }}
+            {{ form.message }}
+            {{ form.message.errors }}
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">{% trans "Send message" %}</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
