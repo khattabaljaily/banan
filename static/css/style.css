@@ -457,7 +457,7 @@ p { margin: 0 0 1em; color: var(--text-muted); }
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-.footer-brand img { height: 34px; margin-bottom: 16px; }
+.footer-brand img { height: 56px; margin-bottom: 16px; }
 .footer-brand p { max-width: 300px; font-size: 14.5px; }
 .social-row { display: flex; gap: 10px; margin-top: 20px; }
 .social-link {
