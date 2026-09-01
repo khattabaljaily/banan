@@ -128,6 +128,9 @@ COMPANY_ADDRESS = 'Doha, Qatar'
 # The /portfolio/ page and URLs stay live either way — this only hides the nav entry.
 SHOW_WORK_NAV = False
 
+# Toggle to show/hide the "Products" nav link (Banan IMS and future in-house products).
+SHOW_PRODUCTS_NAV = True
+
 # Social profiles
 SOCIAL_FACEBOOK_URL = 'https://facebook.com/banantechnology'
 SOCIAL_INSTAGRAM_URL = 'https://instagram.com/banantechnology'

@@ -27,6 +27,9 @@
         <a href="{% url 'core:home' %}" class="{% if request.resolver_match.url_name == 'home' %}is-active{% endif %}">{% trans "Home" %}</a>
         <a href="{% url 'core:about' %}" class="{% if request.resolver_match.url_name == 'about' %}is-active{% endif %}">{% trans "About" %}</a>
         <a href="{% url 'core:services' %}" class="{% if 'service' in request.resolver_match.url_name %}is-active{% endif %}">{% trans "Services" %}</a>
+        {% if SHOW_PRODUCTS_NAV %}
+        <a href="{% url 'core:product_banan_ims' %}" class="{% if 'product' in request.resolver_match.url_name %}is-active{% endif %}">{% trans "Products" %}</a>
+        {% endif %}
         {% if SHOW_WORK_NAV %}
         <a href="{% url 'core:portfolio' %}" class="{% if 'project' in request.resolver_match.url_name or request.resolver_match.url_name == 'portfolio' %}is-active{% endif %}">{% trans "Work" %}</a>
         {% endif %}
@@ -75,6 +78,7 @@
           <ul>
             <li><a href="{% url 'core:about' %}">{% trans "About us" %}</a></li>
             <li><a href="{% url 'core:services' %}">{% trans "Services" %}</a></li>
+            {% if SHOW_PRODUCTS_NAV %}<li><a href="{% url 'core:product_banan_ims' %}">{% trans "Products" %}</a></li>{% endif %}
             {% if SHOW_WORK_NAV %}<li><a href="{% url 'core:portfolio' %}">{% trans "Our work" %}</a></li>{% endif %}
             <li><a href="{% url 'core:contact' %}">{% trans "Contact" %}</a></li>
           </ul>

@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+{% load static i18n core_extras %}
+
+{% block title %}{% trans "Banan IMS" %} — {% trans "Inventory & Sales Management Platform" %} — {{ COMPANY_NAME }}{% endblock %}
+{% block meta_description %}{% blocktrans %}Banan IMS is our in-house SaaS platform for inventory, sales, purchasing and finance — with a built-in online store, 36+ live reports and an AI assistant.{% endblocktrans %}{% endblock %}
+
+{% block content %}
+
+<section class="product-hero">
+  <div class="container product-hero-grid">
+    <div>
+      <div class="product-badge-row">
+        <span class="product-badge">{% icon 'sparkle' size=14 %} {% trans "Built in-house by Banan" %}</span>
+        <span class="live-pill"><span class="live-dot"></span>{% trans "Live system · running right now" %}</span>
+      </div>
+      <h1>{% blocktrans %}Run your whole business from <em>Banan IMS</em>{% endblocktrans %}</h1>
+      <p class="product-hero-lead">{% blocktrans %}Inventory, point of sale, purchasing, treasury and reporting — in one bilingual platform built for retail, wholesale, food, pharmacy, electronics and service businesses across the Gulf.{% endblocktrans %}</p>
+      <div class="product-hero-actions">
+        <a href="https://ims.banantechnology.com" target="_blank" rel="noopener" class="btn btn-primary">{% trans "Open live demo" %} {% icon 'arrow' size=18 %}</a>
+        <a href="{% url 'core:contact' %}" class="btn btn-outline">{% trans "Talk to our team" %}</a>
+      </div>
+      <div class="hero-ticker">
+        <div class="card-icon">{% icon 'chart' size=18 %}</div>
+        <div class="ticker-text-wrap">
+          <span class="ticker-text is-active">{% trans "New invoice — SAL-000034 · 1,712.00 QAR" %}</span>
+          <span class="ticker-text">{% trans "Payment received — 3,670.00 QAR" %}</span>
+          <span class="ticker-text">{% trans "Low-stock alert — Ray-Ban sunglasses, 13 left" %}</span>
+          <span class="ticker-text">{% trans "New order placed on the online store" %}</span>
+          <span class="ticker-text">{% trans "AI insight: headphones and sunglasses led sales this week" %}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual-wrap reveal">
+      <div class="browser-mock">
+        <div class="browser-chrome">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <div class="browser-url">ims.banantechnology.com/dashboard</div>
+        </div>
+        <img src="{% static 'images/products/banan-ims/dashboard.png' %}" alt="{% trans 'Banan IMS dashboard' %}">
+      </div>
+      <div class="floating-chip floating-chip--top">
+        <div class="card-icon">{% icon 'wallet' size=16 %}</div>
+        <div><strong>6,142.00 QAR</strong><span>{% trans "Today's sales" %}</span></div>
+      </div>
+      <div class="floating-chip floating-chip--bottom">
+        <div class="card-icon">{% icon 'shield' size=16 %}</div>
+        <div><strong>145</strong><span>{% trans "Granular permissions" %}</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stat-strip">
+  <div class="container">
+    <div class="stat"><strong data-count="36" data-suffix="+">0</strong><span>{% trans "Live analytical reports" %}</span></div>
+    <div class="stat"><strong data-count="145">0</strong><span>{% trans "Granular permissions" %}</span></div>
+    <div class="stat"><strong data-count="10" data-suffix="+">0</strong><span>{% trans "Industries served" %}</span></div>
+    <div class="stat"><strong>{% trans "EN / AR" %}</strong><span>{% trans "Fully bilingual interface" %}</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <div class="eyebrow" style="justify-content:center;">{% trans "See it in action" %}</div>
+      <h2>{% trans "A real interface, not a slideshow" %}</h2>
+      <p>{% trans "Click through the modules below — every tab is an actual Banan IMS screen, the same one your team would use." %}</p>
+    </div>
+
+    <div class="demo-tabs" role="tablist">
+      <button class="demo-tab is-active" type="button">{% icon 'devices' size=16 %} {% trans "Dashboard" %}</button>
+      <button class="demo-tab" type="button">{% icon 'chart' size=16 %} {% trans "Analytics" %}</button>
+      <button class="demo-tab" type="button">{% icon 'box' size=16 %} {% trans "Products" %}</button>
+      <button class="demo-tab" type="button">{% icon 'wallet' size=16 %} {% trans "Treasury" %}</button>
+      <button class="demo-tab" type="button">{% icon 'register' size=16 %} {% trans "Point of Sale" %}</button>
+      <button class="demo-tab" type="button">{% icon 'store' size=16 %} {% trans "Online Store" %}</button>
+      <button class="demo-tab" type="button">{% icon 'lock' size=16 %} {% trans "Permissions" %}</button>
+    </div>
+
+    <div class="demo-stage reveal">
+      <div class="browser-chrome">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <div class="browser-url">ims.banantechnology.com — {% trans "secure workspace" %}</div>
+      </div>
+      <div class="demo-progress"><div class="demo-progress-bar"></div></div>
+      <div class="demo-panels">
+        <div class="demo-panel is-active">
+          <img src="{% static 'images/products/banan-ims/dashboard.png' %}" alt="{% trans 'Dashboard overview' %}">
+          <div class="demo-caption">
+            <h4>{% trans "Dashboard" %}</h4>
+            <p>{% trans "Today's sales, open invoices, weekly trends and smart tips the moment you log in." %}</p>
+          </div>
+        </div>
+        <div class="demo-panel">
+          <img src="{% static 'images/products/banan-ims/analytics.png' %}" alt="{% trans 'Advanced analytics' %}">
+          <div class="demo-caption">
+            <h4>{% trans "Advanced analytics" %}</h4>
+            <p>{% trans "A 12-month view of sales, purchases and profit, plus your top customers and cash position." %}</p>
+          </div>
+        </div>
+        <div class="demo-panel">
+          <img src="{% static 'images/products/banan-ims/products.png' %}" alt="{% trans 'Products catalogue' %}">
+          <div class="demo-caption">
+            <h4>{% trans "Products & inventory" %}</h4>
+            <p>{% trans "Every SKU, category, cost and price in one searchable table — in stock or out." %}</p>
+          </div>
+        </div>
+        <div class="demo-panel">
+          <img src="{% static 'images/products/banan-ims/treasury.png' %}" alt="{% trans 'Treasury ledger' %}">
+          <div class="demo-caption">
+            <h4>{% trans "Treasury" %}</h4>
+            <p>{% trans "Every riyal in and out, tied to its invoice or expense, with a running balance." %}</p>
+          </div>
+        </div>
+        <div class="demo-panel">
+          <img src="{% static 'images/products/banan-ims/pos.png' %}" alt="{% trans 'Point of sale' %}">
+          <div class="demo-caption">
+            <h4>{% trans "Point of sale" %}</h4>
+            <p>{% trans "A fast, touch-friendly checkout with live stock counts and multiple payment methods." %}</p>
+          </div>
+        </div>
+        <div class="demo-panel">
+          <img src="{% static 'images/products/banan-ims/storefront.png' %}" alt="{% trans 'Online storefront' %}">
+          <div class="demo-caption">
+            <h4>{% trans "Online store" %}</h4>
+            <p>{% trans "Every subscriber gets an instant, brandable storefront with a QR code — no extra setup." %}</p>
+          </div>
+        </div>
+        <div class="demo-panel">
+          <img src="{% static 'images/products/banan-ims/permissions.png' %}" alt="{% trans 'Permissions management' %}">
+          <div class="demo-caption">
+            <h4>{% trans "Permissions" %}</h4>
+            <p>{% trans "145 granular permissions per role, so every teammate sees exactly what they should." %}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-test-cta reveal">
+      <p>{% trans "Want to try it yourself instead of watching?" %}</p>
+      <a href="https://ims.banantechnology.com" target="_blank" rel="noopener" class="btn btn-outline-dark">{% trans "Test the live app" %} {% icon 'arrow' size=18 %}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <div class="eyebrow" style="justify-content:center;">{% trans "What's inside" %}</div>
+      <h2>{% trans "Every part of the operating cycle, covered" %}</h2>
+      <p>{% trans "From the first purchase order to the final report, Banan IMS follows the full flow of a growing business." %}</p>
+    </div>
+
+    <div class="feature-columns">
+      <div class="feature-col reveal">
+        <div class="card-icon">{% icon 'box' size=24 %}</div>
+        <h3>{% trans "Inventory" %}</h3>
+        <ul>
+          <li>{% trans "Multi-warehouse stock & transfers" %}</li>
+          <li>{% trans "Batch tracking & stock counts" %}</li>
+          <li>{% trans "Manufacturing orders & BOMs" %}</li>
+          <li>{% trans "Low-stock alerts" %}</li>
+          <li>{% trans "Excel / CSV import" %}</li>
+        </ul>
+      </div>
+      <div class="feature-col reveal">
+        <div class="card-icon">{% icon 'register' size=24 %}</div>
+        <h3>{% trans "Sales & purchasing" %}</h3>
+        <ul>
+          <li>{% trans "Point of sale & full invoicing" %}</li>
+          <li>{% trans "Quotes & returns" %}</li>
+          <li>{% trans "Supplier RFQs & purchasing" %}</li>
+          <li>{% trans "Built-in online store with QR code" %}</li>
+          <li>{% trans "Sales-delegate portal & commissions" %}</li>
+        </ul>
+      </div>
+      <div class="feature-col reveal">
+        <div class="card-icon">{% icon 'wallet' size=24 %}</div>
+        <h3>{% trans "Finance" %}</h3>
+        <ul>
+          <li>{% trans "Multi-account cash & bank treasury" %}</li>
+          <li>{% trans "Expense tracking" %}</li>
+          <li>{% trans "Payroll & employee advances" %}</li>
+          <li>{% trans "Profit & loss statements" %}</li>
+          <li>{% trans "36+ live analytical reports" %}</li>
+        </ul>
+      </div>
+      <div class="feature-col reveal">
+        <div class="card-icon">{% icon 'lock' size=24 %}</div>
+        <h3>{% trans "Administration" %}</h3>
+        <ul>
+          <li>{% trans "145 granular permissions per role" %}</li>
+          <li>{% trans "Multi-branch operations" %}</li>
+          <li>{% trans "Full activity log" %}</li>
+          <li>{% trans "Automated daily backups" %}</li>
+          <li>{% trans "End-to-end HTTPS encryption" %}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="card-icon">{% icon 'sparkle' size=26 %}</div>
+        <h3>{% trans "Built-in AI assistant" %}</h3>
+        <p>{% trans "Reads each business's real data to answer natural-language questions and generate a daily business-health report — no dashboards to build." %}</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">{% icon 'globe' size=26 %}</div>
+        <h3>{% trans "Fully bilingual, Arabic-first" %}</h3>
+        <p>{% trans "Every screen, report and receipt works natively in Arabic and English, with full right-to-left support." %}</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">{% icon 'shield' size=26 %}</div>
+        <h3>{% trans "Secure by default" %}</h3>
+        <p>{% trans "European-hosted infrastructure, end-to-end HTTPS encryption and automated daily backups for every subscriber." %}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">{% trans "Built for" %}</div>
+      <h2>{% trans "Ready for your industry" %}</h2>
+    </div>
+    <div class="chip-row reveal">
+      <span class="chip">{% trans "Pharmacies" %}</span>
+      <span class="chip">{% trans "Supermarkets & grocery" %}</span>
+      <span class="chip">{% trans "Restaurants & cafés" %}</span>
+      <span class="chip">{% trans "Electronics" %}</span>
+      <span class="chip">{% trans "Auto parts" %}</span>
+      <span class="chip">{% trans "Building materials" %}</span>
+      <span class="chip">{% trans "Food & agriculture" %}</span>
+      <span class="chip">{% trans "Furniture" %}</span>
+      <span class="chip">{% trans "Retail & wholesale" %}</span>
+      <span class="chip">{% trans "Service businesses" %}</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <div class="eyebrow" style="justify-content:center;">{% trans "More of the platform" %}</div>
+      <h2>{% trans "Every screen, built for real operations" %}</h2>
+    </div>
+    <div class="gallery-grid">
+      <button class="gallery-item reveal" type="button" data-lightbox="{% static 'images/products/banan-ims/report-sales-summary.png' %}">
+        <img src="{% static 'images/products/banan-ims/report-sales-summary.png' %}" alt="{% trans 'Sales summary report' %}">
+        <span class="gallery-cap">{% trans "Sales summary report" %}</span>
+      </button>
+      <button class="gallery-item reveal" type="button" data-lightbox="{% static 'images/products/banan-ims/report-by-customer.png' %}">
+        <img src="{% static 'images/products/banan-ims/report-by-customer.png' %}" alt="{% trans 'Sales by customer report' %}">
+        <span class="gallery-cap">{% trans "Sales by customer" %}</span>
+      </button>
+      <button class="gallery-item reveal" type="button" data-lightbox="{% static 'images/products/banan-ims/report-profit-margin.png' %}">
+        <img src="{% static 'images/products/banan-ims/report-profit-margin.png' %}" alt="{% trans 'Profit margin report' %}">
+        <span class="gallery-cap">{% trans "Profit margin by product" %}</span>
+      </button>
+      <button class="gallery-item reveal" type="button" data-lightbox="{% static 'images/products/banan-ims/store-settings.png' %}">
+        <img src="{% static 'images/products/banan-ims/store-settings.png' %}" alt="{% trans 'Online store settings' %}">
+        <span class="gallery-cap">{% trans "Online store settings" %}</span>
+      </button>
+      <button class="gallery-item reveal" type="button" data-lightbox="{% static 'images/products/banan-ims/support.png' %}">
+        <img src="{% static 'images/products/banan-ims/support.png' %}" alt="{% trans 'Support tickets' %}">
+        <span class="gallery-cap">{% trans "Built-in support desk" %}</span>
+      </button>
+      <button class="gallery-item reveal" type="button" data-lightbox="{% static 'images/products/banan-ims/dashboard.png' %}">
+        <img src="{% static 'images/products/banan-ims/dashboard.png' %}" alt="{% trans 'Dashboard overview' %}">
+        <span class="gallery-cap">{% trans "Dashboard overview" %}</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2>{% trans "Ready to run your business on Banan IMS?" %}</h2>
+        <p>{% trans "Try the live demo, or talk to us about onboarding your business." %}</p>
+      </div>
+      <div class="actions">
+        <a href="https://ims.banantechnology.com" target="_blank" rel="noopener" class="btn btn-primary">{% trans "Open live demo" %} {% icon 'arrow' size=18 %}</a>
+        <a href="{% url 'core:contact' %}" class="btn btn-outline">{% trans "Contact us" %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox">
+  <button class="lightbox-close" type="button" aria-label="{% trans 'Close' %}">{% icon 'close' size=18 %}</button>
+  <img src="" alt="">
+</div>
+
+{% endblock %}

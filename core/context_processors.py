@@ -14,6 +14,7 @@ def site_meta(request):
         'COMPANY_ADDRESS': settings.COMPANY_ADDRESS,
         'footer_services': Service.objects.filter(is_active=True)[:3],
         'SHOW_WORK_NAV': settings.SHOW_WORK_NAV,
+        'SHOW_PRODUCTS_NAV': settings.SHOW_PRODUCTS_NAV,
         'SOCIAL_FACEBOOK_URL': settings.SOCIAL_FACEBOOK_URL,
         'SOCIAL_INSTAGRAM_URL': settings.SOCIAL_INSTAGRAM_URL,
     }

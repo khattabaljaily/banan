@@ -48,6 +48,13 @@ _ICONS = {
     'instagram': '<rect x="2" y="2" width="20" height="20" rx="5"/>'
                  '<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>'
                  '<path d="M17.5 6.5h.01"/>',
+    'box': '<path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/>',
+    'wallet': '<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><circle cx="16.5" cy="14.5" r="1.1"/>',
+    'register': '<rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M9 15v3M15 15v3"/><rect x="6.5" y="18" width="11" height="2.5" rx="1"/><path d="M8 8h8"/>',
+    'store': '<path d="M4 9 5 4h14l1 5"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/>',
+    'lock': '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+    'sparkle': '<path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><path d="m6 6 2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/>',
+    'close': '<path d="M6 6l12 12M18 6 6 18"/>',
 }
 
 

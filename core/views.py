@@ -29,12 +29,17 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['services'] = Service.objects.filter(is_active=True)[:6]
-        ctx['featured_projects'] = Project.objects.filter(is_featured=True)[:3]
+        # Banan IMS has its own dedicated product page, not a "Work" case study.
+        ctx['featured_projects'] = Project.objects.filter(is_featured=True).exclude(slug='banan-ims')[:3]
         return ctx
 
 
 class AboutView(TemplateView):
     template_name = 'core/about.html'
+
+
+class BananIMSProductView(TemplateView):
+    template_name = 'core/product_banan_ims.html'
 
 
 class ServiceListView(ListView):
@@ -64,6 +69,10 @@ class PortfolioListView(ListView):
     model = Project
     template_name = 'core/portfolio.html'
     context_object_name = 'projects'
+
+    def get_queryset(self):
+        # Banan IMS has its own dedicated product page, not a "Work" case study.
+        return Project.objects.exclude(slug='banan-ims')
 
 
 class PortfolioDetailView(DetailView):
