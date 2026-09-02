@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}{{ COMPANY_NAME }}{% endblock %}</title>
-  <meta name="description" content="{% block meta_description %}{% blocktrans %}Banan Information Technology — a Qatar-based software, IT services and digital solutions company.{% endblocktrans %}{% endblock %}">
+  <meta name="description" content="{% block meta_description %}{% blocktrans %}Banan Information Technology — software, IT services and digital solutions for ambitious businesses across the Gulf.{% endblocktrans %}{% endblock %}">
   <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="{% static_v 'css/style.css' %}">
   {% block extra_head %}{% endblock %}
@@ -28,7 +28,7 @@
         <a href="{% url 'core:about' %}" class="{% if request.resolver_match.url_name == 'about' %}is-active{% endif %}">{% trans "About" %}</a>
         <a href="{% url 'core:services' %}" class="{% if 'service' in request.resolver_match.url_name %}is-active{% endif %}">{% trans "Services" %}</a>
         {% if SHOW_PRODUCTS_NAV %}
-        <a href="{% url 'core:product_banan_ims' %}" class="{% if 'product' in request.resolver_match.url_name %}is-active{% endif %}">{% trans "Products" %}</a>
+        <a href="{% url 'core:products' %}" class="{% if 'product' in request.resolver_match.url_name %}is-active{% endif %}">{% trans "Products" %}</a>
         {% endif %}
         {% if SHOW_WORK_NAV %}
         <a href="{% url 'core:portfolio' %}" class="{% if 'project' in request.resolver_match.url_name or request.resolver_match.url_name == 'portfolio' %}is-active{% endif %}">{% trans "Work" %}</a>
@@ -67,7 +67,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="{% static 'images/logo-full-white.png' %}" alt="{{ COMPANY_NAME }}">
-          <p>{% blocktrans %}A Qatar-based information technology company building modern software, IT services and digital solutions for ambitious businesses.{% endblocktrans %}</p>
+          <p>{% blocktrans %}An information technology company building modern software, IT services and digital solutions for ambitious businesses across the region.{% endblocktrans %}</p>
           <div class="social-row">
             <a href="{{ SOCIAL_FACEBOOK_URL }}" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">{% icon 'facebook' size=18 %}</a>
             <a href="{{ SOCIAL_INSTAGRAM_URL }}" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">{% icon 'instagram' size=18 %}</a>
@@ -78,7 +78,7 @@
           <ul>
             <li><a href="{% url 'core:about' %}">{% trans "About us" %}</a></li>
             <li><a href="{% url 'core:services' %}">{% trans "Services" %}</a></li>
-            {% if SHOW_PRODUCTS_NAV %}<li><a href="{% url 'core:product_banan_ims' %}">{% trans "Products" %}</a></li>{% endif %}
+            {% if SHOW_PRODUCTS_NAV %}<li><a href="{% url 'core:products' %}">{% trans "Products" %}</a></li>{% endif %}
             {% if SHOW_WORK_NAV %}<li><a href="{% url 'core:portfolio' %}">{% trans "Our work" %}</a></li>{% endif %}
             <li><a href="{% url 'core:contact' %}">{% trans "Contact" %}</a></li>
           </ul>

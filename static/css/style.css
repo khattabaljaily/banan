@@ -41,7 +41,7 @@ body {
 
 :lang(ar) body,
 [dir="rtl"] body {
-  font-family: "Tajawal", "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  font-family: "Cairo", "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
 }
 
 img { max-width: 100%; display: block; }

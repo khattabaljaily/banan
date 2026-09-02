@@ -55,6 +55,12 @@ _ICONS = {
     'lock': '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
     'sparkle': '<path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><path d="m6 6 2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/>',
     'close': '<path d="M6 6l12 12M18 6 6 18"/>',
+    'calendar': '<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M8 3v4M16 3v4M3.5 10h17"/>',
+    'users': '<circle cx="9" cy="8.5" r="3.3"/><path d="M3 20a6 6 0 0 1 12 0"/>'
+             '<circle cx="17.5" cy="9.5" r="2.6"/><path d="M15.5 13.7A5 5 0 0 1 21 20"/>',
+    'print': '<rect x="6" y="2.5" width="12" height="6.5" rx="1"/>'
+             '<rect x="3.5" y="9" width="17" height="8" rx="1.5"/>'
+             '<rect x="8" y="14" width="8" height="7" rx="1"/>',
 }
 
 

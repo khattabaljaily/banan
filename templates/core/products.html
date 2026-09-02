@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% load static i18n core_extras %}
+
+{% block title %}{% trans "Products" %} — {{ COMPANY_NAME }}{% endblock %}
+{% block meta_description %}{% blocktrans %}Our in-house SaaS products — Banan IMS for inventory & sales, and Banan BCMS for beauty and spa center management.{% endblocktrans %}{% endblock %}
+
+{% block extra_head %}
+<style>
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 26px;
+  }
+
+  .product-card {
+    display: flex; flex-direction: column;
+    border-radius: var(--radius); overflow: hidden;
+    border: 1px solid var(--paper-line); background: var(--paper);
+    box-shadow: var(--shadow);
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+  .product-card-media { position: relative; }
+  .product-card-media-crop { height: 190px; overflow: hidden; background: var(--ink-soft); }
+  .product-card-media-crop img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+  .product-card-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+  .product-card-badge {
+    display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
+    padding: 4px 11px; border-radius: 999px; margin-bottom: 10px;
+    background: rgba(242,167,27,0.12); border: 1px solid rgba(242,167,27,0.3);
+    color: var(--gold-dark); font-weight: 700; font-size: 11.5px; letter-spacing: .03em;
+  }
+  .product-card-body h3 { font-size: 19px; margin-bottom: 6px; }
+  .product-card-body p { font-size: 13.5px; margin-bottom: 14px; }
+
+  .product-card-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
+  .product-card-tags li {
+    font-size: 12px; font-weight: 700; color: var(--text);
+    padding: 5px 11px; border-radius: 999px; background: var(--paper-soft); border: 1px solid var(--paper-line);
+  }
+
+  .product-card-actions { margin-top: auto; }
+  .product-card-actions .btn { padding: 10px 20px; font-size: 13.5px; }
+
+  .product-card--bcms { --gold: #d6336c; --gold-dark: #a8265e; --gold-light: #ffd3e6; }
+  .product-card--bcms .product-card-badge { background: rgba(214,51,108,0.1); border-color: rgba(214,51,108,0.28); }
+
+  .products-intro-badges { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 10px; }
+  .products-intro-badges div { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--text-on-dark-muted); font-weight: 600; }
+  .products-intro-badges svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="{% url 'core:home' %}">{% trans "Home" %}</a> / {% trans "Products" %}</div>
+    <h1>{% trans "Built in-house by Banan" %}</h1>
+    <p style="max-width:640px;">{% blocktrans %}Two live SaaS platforms we design, build and run ourselves — pick a product to explore its screens, modules and a live demo.{% endblocktrans %}</p>
+    <div class="products-intro-badges">
+      <div>{% icon 'sparkle' size=16 %} {% trans "Built and run by our own team" %}</div>
+      <div>{% icon 'globe' size=16 %} {% trans "Bilingual, Arabic-first interfaces" %}</div>
+      <div>{% icon 'shield' size=16 %} {% trans "Live systems, not mockups" %}</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:48px; padding-bottom:56px;">
+  <div class="container">
+    <div class="products-grid">
+      <div class="product-card reveal">
+        <div class="product-card-media">
+          <div class="browser-chrome">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <div class="browser-url">ims.banantechnology.com/dashboard</div>
+          </div>
+          <div class="product-card-media-crop">
+            <img src="{% static 'images/products/banan-ims/dashboard.png' %}" alt="{% trans 'Banan IMS dashboard' %}">
+          </div>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-badge">{% icon 'box' size=14 %} {% trans "Inventory & sales management" %}</span>
+          <h3>{% trans "Banan IMS" %}</h3>
+          <p>{% trans "Inventory, point of sale, purchasing, treasury and reporting — one bilingual platform for retail, wholesale and service businesses." %}</p>
+          <ul class="product-card-tags">
+            <li>{% trans "Multi-warehouse inventory" %}</li>
+            <li>{% trans "36+ live reports" %}</li>
+            <li>{% trans "AI assistant" %}</li>
+          </ul>
+          <div class="product-card-actions">
+            <a href="{% url 'core:product_banan_ims' %}" class="btn btn-primary">{% trans "Explore Banan IMS" %} {% icon 'arrow' size=18 %}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card product-card--bcms reveal">
+        <div class="product-card-media">
+          <div class="browser-chrome">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <div class="browser-url">bcms.banantechnology.com</div>
+          </div>
+          <div class="product-card-media-crop">
+            <img src="{% static 'images/products/banan-bcms/dashboard.png' %}" alt="{% trans 'Banan BCMS dashboard' %}">
+          </div>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-badge">{% icon 'calendar' size=14 %} {% trans "Beauty center management" %}</span>
+          <h3>{% trans "Banan BCMS" %}</h3>
+          <p>{% trans "Appointments, clients, billing, finance and reporting for salons and spas — with center-aware multi-tenant support built in." %}</p>
+          <ul class="product-card-tags">
+            <li>{% trans "Appointment calendar" %}</li>
+            <li>{% trans "KPI reports & PDF export" %}</li>
+            <li>{% trans "Center-aware" %}</li>
+          </ul>
+          <div class="product-card-actions">
+            <a href="{% url 'core:product_banan_bcms' %}" class="btn btn-primary">{% trans "Explore Banan BCMS" %} {% icon 'arrow' size=18 %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2>{% trans "Have a similar system in mind?" %}</h2>
+        <p>{% trans "We build platforms like these for other industries too — tell us what you need." %}</p>
+      </div>
+      <div class="actions">
+        <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Talk to us" %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: banan-website\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-01 22:19+0300\n"
+"POT-Creation-Date: 2026-09-02 09:09+0300\n"
 "PO-Revision-Date: 2026-08-29 09:18+0300\n"
 "Last-Translator: Banan Information Technology\n"
 "Language-Team: Arabic\n"
@@ -11,7 +11,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: core/forms.py:15
 msgid "Your name"
@@ -53,7 +54,7 @@ msgstr "الموضوع"
 msgid "Message"
 msgstr "الرسالة"
 
-#: core/views.py:99
+#: core/views.py:107
 msgid ""
 "Thank you! Your message has been received — our team will get back to you "
 "shortly."
@@ -61,11 +62,11 @@ msgstr "شكرًا لك! تم استلام رسالتك، وسيتواصل مع�
 
 #: templates/base.html:8
 msgid ""
-"Banan Information Technology — a Qatar-based software, IT services and "
-"digital solutions company."
+"Banan Information Technology — software, IT services and digital solutions "
+"for ambitious businesses across the Gulf."
 msgstr ""
-"بنان لتقنية المعلومات — شركة قطرية متخصصة في البرمجيات وخدمات تقنية "
-"المعلومات والحلول الرقمية."
+"بنان لتقنية المعلومات — برمجيات وخدمات تقنية وحلول رقمية للشركات الطموحة في "
+"الخليج."
 
 #: templates/base.html:26
 msgid "Primary navigation"
@@ -73,8 +74,8 @@ msgstr "التنقل الرئيسي"
 
 #: templates/base.html:27 templates/core/about.html:10
 #: templates/core/contact.html:10 templates/core/portfolio.html:10
-#: templates/core/project_detail.html:12 templates/core/service_detail.html:12
-#: templates/core/services.html:10
+#: templates/core/products.html:62 templates/core/project_detail.html:12
+#: templates/core/service_detail.html:12 templates/core/services.html:10
 msgid "Home"
 msgstr "الرئيسية"
 
@@ -89,7 +90,8 @@ msgid "Services"
 msgstr "خدماتنا"
 
 #: templates/base.html:31 templates/base.html:81
-#: templates/core/product_banan_ims.html:74
+#: templates/core/product_banan_ims.html:74 templates/core/products.html:4
+#: templates/core/products.html:62
 msgid "Products"
 msgstr "المنتجات"
 
@@ -113,11 +115,11 @@ msgstr "القائمة"
 
 #: templates/base.html:70
 msgid ""
-"A Qatar-based information technology company building modern software, IT "
-"services and digital solutions for ambitious businesses."
+"An information technology company building modern software, IT services and "
+"digital solutions for ambitious businesses across the region."
 msgstr ""
-"شركة قطرية لتقنية المعلومات تبني برمجيات حديثة وخدمات تقنية وحلولًا رقمية "
-"للشركات الطموحة."
+"شركة تقنية معلومات تبني برمجيات حديثة وخدمات تقنية وحلولًا رقمية للشركات "
+"الطموحة في المنطقة."
 
 #: templates/base.html:77
 msgid "Company"
@@ -161,26 +163,25 @@ msgstr "عن بنان لتقنية المعلومات"
 
 #: templates/core/about.html:12
 msgid ""
-"A Qatari technology company on a mission to make world-class software and IT"
-" services accessible to local businesses."
+"A technology company on a mission to make world-class software and IT "
+"services accessible to ambitious businesses."
 msgstr ""
-"شركة تقنية قطرية تسعى لإتاحة برمجيات وخدمات تقنية عالمية المستوى للشركات "
-"المحلية."
+"شركة تقنية تسعى لإتاحة برمجيات وخدمات تقنية عالمية المستوى للشركات الطموحة."
 
 #: templates/core/about.html:20
 msgid "Our story"
 msgstr "قصتنا"
 
 #: templates/core/about.html:21
-msgid "Built in Doha, for businesses across Qatar"
-msgstr "انطلقنا من الدوحة، لخدمة الشركات في جميع أنحاء قطر"
+msgid "Built in Doha, for ambitious businesses across the Gulf"
+msgstr "انطلقنا من الدوحة، لخدمة الشركات الطموحة في الخليج"
 
 #: templates/core/about.html:22
 msgid ""
 "Banan for Information Technology W.L.L. (بنان لتقنية المعلومات) is "
 "registered with the Ministry of Commerce and Industry, State of Qatar, and "
-"is a member of the Qatar Chamber of Commerce and Industry. Our name — banan,"
-" Arabic for \"fingertips\" — reflects the craftsmanship we bring to every "
+"is a member of the Qatar Chamber of Commerce and Industry. Our name — banan, "
+"Arabic for \"fingertips\" — reflects the craftsmanship we bring to every "
 "line of code and every client relationship: precise, deliberate, and built "
 "by hand."
 msgstr ""
@@ -190,17 +191,16 @@ msgstr ""
 
 #: templates/core/about.html:23
 msgid ""
-"We started Banan to close a gap we kept seeing: small and growing businesses"
-" in Qatar need modern software and dependable IT support, but often can't "
-"access it without going through large, slow-moving agencies. Banan is our "
-"answer — a lean, senior team that works directly with clients, in Arabic and"
-" English, from first conversation to long-term support."
+"We started Banan to close a gap we kept seeing: small and growing businesses "
+"need modern software and dependable IT support, but often can't access it "
+"without going through large, slow-moving agencies. Banan is our answer — a "
+"lean, senior team that works directly with clients, in Arabic and English, "
+"from first conversation to long-term support."
 msgstr ""
-"أسسنا بنان لسد فجوة كنا نلاحظها باستمرار: الشركات الصغيرة والناشئة في قطر "
-"بحاجة إلى برمجيات حديثة ودعم تقني موثوق، لكنها غالبًا لا تستطيع الوصول إليه "
-"إلا عبر وكالات كبيرة وبطيئة. بنان هي إجابتنا على ذلك — فريق مختصر من الخبراء"
-" يعمل مباشرة مع العملاء، بالعربية والإنجليزية، من أول حديث وحتى الدعم طويل "
-"الأمد."
+"أسسنا بنان لسد فجوة كنا نلاحظها باستمرار: الشركات الصغيرة والناشئة بحاجة إلى "
+"برمجيات حديثة ودعم تقني موثوق، لكنها غالبًا لا تستطيع الوصول إليه إلا عبر "
+"وكالات كبيرة وبطيئة. بنان هي إجابتنا على ذلك — فريق مختصر من الخبراء يعمل "
+"مباشرة مع العملاء، بالعربية والإنجليزية، من أول حديث وحتى الدعم طويل الأمد."
 
 #: templates/core/about.html:35
 msgid "What drives us"
@@ -216,10 +216,10 @@ msgstr "رسالتنا"
 
 #: templates/core/about.html:42
 msgid ""
-"To help businesses in Qatar grow through thoughtfully engineered software, "
+"To help ambitious businesses grow through thoughtfully engineered software, "
 "reliable IT services, and honest partnership."
 msgstr ""
-"مساعدة الشركات في قطر على النمو من خلال برمجيات مدروسة بعناية، وخدمات تقنية "
+"مساعدة الشركات الطموحة على النمو من خلال برمجيات مدروسة بعناية، وخدمات تقنية "
 "موثوقة، وشراكة صادقة."
 
 #: templates/core/about.html:46
@@ -228,10 +228,10 @@ msgstr "رؤيتنا"
 
 #: templates/core/about.html:47
 msgid ""
-"To be Qatar's most trusted technology partner for ambitious small and "
-"medium-sized businesses."
+"To be the most trusted technology partner for ambitious small and medium-"
+"sized businesses across the Gulf."
 msgstr ""
-"أن نكون الشريك التقني الأكثر ثقة للشركات الصغيرة والمتوسطة الطموحة في قطر."
+"أن نكون الشريك التقني الأكثر ثقة للشركات الصغيرة والمتوسطة الطموحة في الخليج."
 
 #: templates/core/about.html:51
 msgid "Our values"
@@ -281,11 +281,11 @@ msgstr "الأنشطة الرئيسية"
 
 #: templates/core/about.html:79
 msgid ""
-"Custom software design & programming, IT and computer services, e-commerce &"
-" online retail solutions"
+"Custom software design & programming, IT and computer services, e-commerce & "
+"online retail solutions"
 msgstr ""
-"تصميم وبرمجة البرمجيات المخصصة، خدمات تقنية المعلومات والحاسوب، حلول التجارة"
-" الإلكترونية والبيع بالتجزئة عبر الإنترنت"
+"تصميم وبرمجة البرمجيات المخصصة، خدمات تقنية المعلومات والحاسوب، حلول التجارة "
+"الإلكترونية والبيع بالتجزئة عبر الإنترنت"
 
 #: templates/core/about.html:89
 msgid "Let's build something together"
@@ -295,7 +295,8 @@ msgstr "لنبنِ شيئًا معًا"
 msgid "Reach out and tell us where you'd like to take your business."
 msgstr "تواصل معنا وأخبرنا إلى أين تريد أن تأخذ عملك."
 
-#: templates/core/about.html:93 templates/core/product_banan_ims.html:286
+#: templates/core/about.html:93 templates/core/product_banan_bcms.html:413
+#: templates/core/product_banan_ims.html:290
 #: templates/core/project_detail.html:46 templates/core/service_detail.html:66
 msgid "Contact us"
 msgstr "تواصل معنا"
@@ -331,25 +332,25 @@ msgid "Send message"
 msgstr "إرسال الرسالة"
 
 #: templates/core/home.html:4
-msgid "Software, IT & Digital Solutions in Qatar"
-msgstr "حلول البرمجيات وتقنية المعلومات والحلول الرقمية في قطر"
+msgid "Software, IT & Digital Solutions"
+msgstr "حلول البرمجيات وتقنية المعلومات والحلول الرقمية"
 
 #: templates/core/home.html:11
-msgid "Information Technology · State of Qatar"
-msgstr "تقنية المعلومات · دولة قطر"
+msgid "Information Technology · Software & Digital Solutions"
+msgstr "تقنية المعلومات · برمجيات وحلول رقمية"
 
 #: templates/core/home.html:12
 msgid "We build <em>digital products</em> that move your business forward"
-msgstr "نبني <em>منتجات رقمية</em> تدفع عملك إلى الأمام"
+msgstr "نبني <em>منتجات رقمية</em> ترتقي بعملك"
 
 #: templates/core/home.html:13
 msgid ""
-"Banan Information Technology partners with businesses in Qatar to design, "
-"build and support modern software, e-commerce and IT infrastructure — end to"
-" end."
+"Banan Information Technology partners with ambitious businesses to design, "
+"build and support modern software, e-commerce and IT infrastructure — end to "
+"end."
 msgstr ""
-"تتشارك بنان لتقنية المعلومات مع الشركات في قطر لتصميم وبناء ودعم البرمجيات "
-"الحديثة والتجارة الإلكترونية والبنية التقنية، من البداية إلى النهاية."
+"تشارك بنان لتقنية المعلومات الشركات الطموحة في تصميم البرمجيات الحديثة "
+"والمتاجر الإلكترونية والبنية التقنية وبنائها ودعمها، من الفكرة حتى التشغيل."
 
 #: templates/core/home.html:15
 msgid "Start a project"
@@ -372,8 +373,8 @@ msgid "Bilingual Arabic / English delivery"
 msgstr "خدمة ثنائية اللغة: عربي وإنجليزي"
 
 #: templates/core/home.html:33
-msgid "Founded in Qatar"
-msgstr "تأسست في قطر"
+msgid "Founded"
+msgstr "تأسست"
 
 #: templates/core/home.html:34
 msgid "Bilingual delivery"
@@ -421,14 +422,13 @@ msgstr "شريك تقني حقيقي، لا مجرد مورّد"
 
 #: templates/core/home.html:72
 msgid ""
-"We're a Qatari-registered IT company built to give local businesses direct "
-"access to senior engineering talent — without the overhead of a large "
-"agency. Every engagement is bilingual, transparent, and shaped around "
-"measurable outcomes."
+"We're a lean, senior engineering team giving ambitious businesses direct "
+"access to top talent — without the overhead of a large agency. Every "
+"engagement is bilingual, transparent, and shaped around measurable outcomes."
 msgstr ""
-"نحن شركة تقنية معلومات مسجّلة في قطر، أُسست لتمنح الشركات المحلية وصولًا "
-"مباشرًا إلى خبرات هندسية متقدمة دون أعباء الوكالات الكبيرة. كل مشروع نعمل "
-"عليه ثنائي اللغة، شفاف، ومبني حول نتائج قابلة للقياس."
+"نحن فريق مختصر من كبار المهندسين، يمنح الشركات الطموحة وصولًا مباشرًا إلى "
+"خبرات هندسية متقدمة دون أعباء الوكالات الكبيرة. كل مشروع نعمل عليه ثنائي "
+"اللغة، شفاف، ومبني حول نتائج قابلة للقياس."
 
 #: templates/core/home.html:76
 msgid "Modern engineering"
@@ -455,12 +455,12 @@ msgid "We measure success by the impact on your business."
 msgstr "نقيس نجاحنا بمدى تأثيرنا الإيجابي على عملك."
 
 #: templates/core/home.html:88
-msgid "Local & responsive"
+msgid "Responsive & close"
 msgstr "قريبون وسريعو الاستجابة"
 
 #: templates/core/home.html:88
-msgid "Based in Doha, working in your timezone and language."
-msgstr "مقرّنا في الدوحة، نعمل بتوقيتك ولغتك."
+msgid "Working in your timezone, in Arabic and English."
+msgstr "نعمل بتوقيتك، وبلغتك العربية أو الإنجليزية."
 
 #: templates/core/home.html:100
 msgid "Selected work"
@@ -496,23 +496,411 @@ msgstr "معرض للمشاريع التي نصممها ونبنيها وندع�
 
 #: templates/core/portfolio.html:33
 msgid "We're just getting started"
-msgstr "لا زلنا في البداية"
+msgstr "ما زلنا في البداية"
 
 #: templates/core/portfolio.html:34
 msgid ""
-"Banan is a newly founded company and our first client projects are underway."
-" This page will showcase our case studies as they launch — check back soon, "
+"Banan is a newly founded company and our first client projects are underway. "
+"This page will showcase our case studies as they launch — check back soon, "
 "or get in touch to be among our first partners."
 msgstr ""
-"بنان شركة حديثة التأسيس، ومشاريع عملائنا الأولى قيد التنفيذ حاليًا. ستعرض "
-"هذه الصفحة دراسات حالة مشاريعنا فور إطلاقها — تابعونا قريبًا، أو تواصلوا "
-"معنا لتكونوا من أوائل شركائنا."
+"بنان شركة حديثة التأسيس، ومشاريع عملائنا الأولى قيد التنفيذ حاليًا. ستعرض هذه "
+"الصفحة دراسات حالة مشاريعنا فور إطلاقها — تابعونا قريبًا، أو تواصلوا معنا "
+"لتكونوا من أوائل شركائنا."
 
 #: templates/core/portfolio.html:36
 msgid "Work with us"
-msgstr "اعمل معنا"
+msgstr "تعاون معنا"
 
-#: templates/core/product_banan_ims.html:4
+#: templates/core/product_banan_bcms.html:4 templates/core/products.html:115
+msgid "Banan BCMS"
+msgstr "بنان BCMS"
+
+#: templates/core/product_banan_bcms.html:4
+msgid "Beauty Center Management System"
+msgstr "نظام إدارة مراكز التجميل"
+
+#: templates/core/product_banan_bcms.html:5
+msgid ""
+"Banan BCMS is our in-house, center-aware SaaS platform for salons and spas — "
+"appointments, clients, point of sale, finance and KPI reporting with browser-"
+"based PDF export."
+msgstr ""
+"بنان BCMS هو منتجنا الخاص القائم على SaaS لإدارة صالونات التجميل والسبا، "
+"مصمَّم ليخدم عدة مراكز مع إبقاء بيانات كل مركز مستقلة — يشمل المواعيد والعملاء "
+"ونقطة البيع والمالية وتقارير مؤشرات الأداء مع تصدير PDF مباشرة من المتصفح."
+
+#: templates/core/product_banan_bcms.html:197
+#: templates/core/product_banan_ims.html:13 templates/core/products.html:63
+msgid "Built in-house by Banan"
+msgstr "من تطوير بنان الداخلي"
+
+#: templates/core/product_banan_bcms.html:198
+#: templates/core/product_banan_ims.html:14
+msgid "Live system · running right now"
+msgstr "نظام حي · يعمل الآن"
+
+#: templates/core/product_banan_bcms.html:200
+msgid "Every appointment, client and riyal — in <em>Banan BCMS</em>"
+msgstr "كل موعد وعميل وريال — في <em>بنان BCMS</em>"
+
+#: templates/core/product_banan_bcms.html:201
+msgid ""
+"A center-aware, multi-tenant platform built for salons and spas — "
+"appointments, clients, point of sale, finance and KPI reporting, all in one "
+"place."
+msgstr ""
+"منصة تخدم عدة مراكز وتُبقي بيانات كل مركز مستقلة، مصمَّمة لصالونات التجميل "
+"والسبا — المواعيد والعملاء ونقطة البيع والمالية وتقارير الأداء، كلها في مكان "
+"واحد."
+
+#: templates/core/product_banan_bcms.html:203
+#: templates/core/product_banan_bcms.html:412
+#: templates/core/product_banan_ims.html:19
+#: templates/core/product_banan_ims.html:289 templates/core/products.html:98
+#: templates/core/products.html:125
+msgid "Open live demo"
+msgstr "جرّب النسخة الحية"
+
+#: templates/core/product_banan_bcms.html:204
+#: templates/core/product_banan_ims.html:20
+msgid "Talk to our team"
+msgstr "تحدث معنا"
+
+#: templates/core/product_banan_bcms.html:209
+msgid "New appointment — Fatima Al-Atiya · 5:00 PM"
+msgstr "موعد جديد — فاطمة العطية · 5:00 م"
+
+#: templates/core/product_banan_bcms.html:210
+msgid "Invoice INV-00022 paid — 150.00 QAR"
+msgstr "فاتورة INV-00022 مدفوعة — 150.00 ر.ق"
+
+#: templates/core/product_banan_bcms.html:211
+msgid "Low-stock alert — nail gel polish, 5 left"
+msgstr "تنبيه مخزون منخفض — طلاء أظافر جل، تبقّى 5"
+
+#: templates/core/product_banan_bcms.html:212
+msgid "New client added — Ahmed Al-Mahandi"
+msgstr "عميل جديد — أحمد المهندي"
+
+#: templates/core/product_banan_bcms.html:213
+msgid "Today's revenue just crossed 900.00 QAR"
+msgstr "إيرادات اليوم تجاوزت للتو 900.00 ر.ق"
+
+#: templates/core/product_banan_bcms.html:224 templates/core/products.html:110
+msgid "Banan BCMS dashboard"
+msgstr "لوحة تحكم بنان BCMS"
+
+#: templates/core/product_banan_bcms.html:229
+msgid "Banan BCMS on mobile"
+msgstr "بنان BCMS على الجوال"
+
+#: templates/core/product_banan_bcms.html:234
+msgid "Today's revenue"
+msgstr "إيرادات اليوم"
+
+#: templates/core/product_banan_bcms.html:238
+msgid "Clients this month"
+msgstr "عملاء هذا الشهر"
+
+#: templates/core/product_banan_bcms.html:247
+msgid "Core modules covered"
+msgstr "وحدات العمل الأساسية"
+
+#: templates/core/product_banan_bcms.html:248 templates/core/products.html:121
+msgid "Center-aware"
+msgstr "مخصّص لكل مركز"
+
+#: templates/core/product_banan_bcms.html:248
+msgid "Multi-tenant by design"
+msgstr "مبني ليخدم عدة مراكز"
+
+#: templates/core/product_banan_bcms.html:249
+msgid "1-click"
+msgstr "بضغطة واحدة"
+
+#: templates/core/product_banan_bcms.html:249
+msgid "Browser-based PDF export"
+msgstr "تصدير PDF من المتصفح"
+
+#: templates/core/product_banan_bcms.html:250
+msgid "Print-ready"
+msgstr "جاهز للطباعة"
+
+#: templates/core/product_banan_bcms.html:250
+msgid "Clean export view, no nav clutter"
+msgstr "عرض تصدير نظيف بلا عناصر تنقل"
+
+#: templates/core/product_banan_bcms.html:258
+msgid "How it flows"
+msgstr "كيف يسير العمل"
+
+#: templates/core/product_banan_bcms.html:259
+msgid "A day inside your center, end to end"
+msgstr "يوم كامل داخل مركزك، من البداية للنهاية"
+
+#: templates/core/product_banan_bcms.html:260
+msgid ""
+"Banan BCMS follows the same rhythm as a real salon floor — from the first "
+"booking to the last report."
+msgstr "يتبع بنان BCMS نفس إيقاع صالون حقيقي — من أول حجز إلى آخر تقرير."
+
+#: templates/core/product_banan_bcms.html:265
+#: templates/core/product_banan_bcms.html:311
+msgid "Appointments"
+msgstr "المواعيد"
+
+#: templates/core/product_banan_bcms.html:266
+msgid ""
+"A color-coded calendar and daily list, so no chair or stylist is ever double-"
+"booked."
+msgstr "تقويم ملوّن وقائمة يومية، بحيث لا يُحجز أي كرسي أو خبيرة مرتين."
+
+#: templates/core/product_banan_bcms.html:269
+msgid "Clients & team"
+msgstr "العملاء والفريق"
+
+#: templates/core/product_banan_bcms.html:270
+msgid ""
+"Every client's history alongside each team member's specialties and working "
+"hours."
+msgstr "سجل كل عميل الكامل، إلى جانب تخصصات كل فرد من الفريق وساعات عمله."
+
+#: templates/core/product_banan_bcms.html:273
+msgid "Point of sale & billing"
+msgstr "نقطة البيع والفوترة"
+
+#: templates/core/product_banan_bcms.html:274
+msgid ""
+"A fast checkout for services and retail products, with cash, card or pay-"
+"later."
+msgstr "دفع سريع للخدمات والمنتجات، نقداً أو بالبطاقة أو لاحقاً."
+
+#: templates/core/product_banan_bcms.html:277
+#: templates/core/product_banan_ims.html:179
+msgid "Finance"
+msgstr "المالية"
+
+#: templates/core/product_banan_bcms.html:278
+msgid ""
+"Treasury, client account statements and a running balance for every riyal in "
+"and out."
+msgstr "الخزينة وكشوف حسابات العملاء ورصيد جارٍ لكل ريال يدخل ويخرج."
+
+#: templates/core/product_banan_bcms.html:281
+#: templates/core/product_banan_bcms.html:393
+#: templates/core/product_banan_bcms.html:394
+#: templates/core/product_banan_ims.html:105
+msgid "Products & inventory"
+msgstr "المنتجات والمخزون"
+
+#: templates/core/product_banan_bcms.html:282
+msgid ""
+"Retail stock levels with low-stock flags, tied straight into the point of "
+"sale."
+msgstr "مستويات مخزون المنتجات مع تنبيهات النقص، مرتبطة مباشرة بنقطة البيع."
+
+#: templates/core/product_banan_bcms.html:285
+msgid "Reporting"
+msgstr "التقارير"
+
+#: templates/core/product_banan_bcms.html:286
+msgid ""
+"KPI dashboards and charts for any period, exportable to PDF straight from "
+"the browser."
+msgstr ""
+"لوحات مؤشرات أداء ورسوم بيانية لأي فترة، قابلة للتصدير كـ PDF مباشرة من "
+"المتصفح."
+
+#: templates/core/product_banan_bcms.html:295
+#: templates/core/product_banan_ims.html:66
+msgid "See it in action"
+msgstr "شاهده أثناء العمل"
+
+#: templates/core/product_banan_bcms.html:296
+msgid "Every screen, straight from a live center"
+msgstr "كل شاشة، مباشرة من مركز حقيقي"
+
+#: templates/core/product_banan_bcms.html:297
+msgid ""
+"No slideshow — these are real Banan BCMS screens, captured from a "
+"subscriber's own workspace."
+msgstr ""
+"هذه ليست عروضاً تجريبية، بل شاشات حقيقية من بنان BCMS، مأخوذة من مساحة عمل "
+"أحد المشتركين فعليًا."
+
+#: templates/core/product_banan_bcms.html:302
+msgid "Center dashboard"
+msgstr "لوحة التحكم"
+
+#: templates/core/product_banan_bcms.html:303
+msgid "Dashboard — revenue, invoices and today's appointments at a glance"
+msgstr "لوحة التحكم — الإيرادات والفواتير ومواعيد اليوم بنظرة واحدة"
+
+#: templates/core/product_banan_bcms.html:306
+msgid "Calendar view"
+msgstr "عرض التقويم"
+
+#: templates/core/product_banan_bcms.html:307
+msgid "Calendar — a color-coded week across your whole team"
+msgstr "التقويم — أسبوع ملوّن يغطي فريقك بالكامل"
+
+#: templates/core/product_banan_bcms.html:310
+msgid "Appointments list"
+msgstr "قائمة المواعيد"
+
+#: templates/core/product_banan_bcms.html:314
+#: templates/core/product_banan_bcms.html:315
+#: templates/core/product_banan_ims.html:117
+#: templates/core/product_banan_ims.html:119 templates/core/products.html:119
+msgid "Point of sale"
+msgstr "نقطة البيع"
+
+#: templates/core/product_banan_bcms.html:318
+msgid "Client account statement"
+msgstr "كشف حساب العميل"
+
+#: templates/core/product_banan_bcms.html:319
+msgid "Client statements"
+msgstr "كشوف حسابات العملاء"
+
+#: templates/core/product_banan_bcms.html:322
+#: templates/core/product_banan_bcms.html:323
+msgid "Service team"
+msgstr "فريق الخدمة"
+
+#: templates/core/product_banan_bcms.html:326
+msgid "Reports and KPI dashboards"
+msgstr "التقارير ولوحات مؤشرات الأداء"
+
+#: templates/core/product_banan_bcms.html:327
+msgid "Reports — KPIs, charts and one-click PDF export"
+msgstr "التقارير — مؤشرات أداء ورسوم بيانية وتصدير PDF بضغطة واحدة"
+
+#: templates/core/product_banan_bcms.html:330
+msgid "Support desk"
+msgstr "مركز الدعم الفني"
+
+#: templates/core/product_banan_bcms.html:331
+#: templates/core/product_banan_ims.html:271
+msgid "Built-in support desk"
+msgstr "مركز دعم فني مدمج"
+
+#: templates/core/product_banan_bcms.html:336
+#: templates/core/product_banan_ims.html:140
+msgid "Want to try it yourself instead of watching?"
+msgstr "تفضّل تجربته بنفسك بدل مشاهدته فقط؟"
+
+#: templates/core/product_banan_bcms.html:337
+#: templates/core/product_banan_ims.html:141
+msgid "Test the live app"
+msgstr "جرّب التطبيق الحي"
+
+#: templates/core/product_banan_bcms.html:347
+msgid "Secure sessions, by default"
+msgstr "جلسات آمنة، بشكل افتراضي"
+
+#: templates/core/product_banan_bcms.html:348
+msgid ""
+"Authentication, registration and session handling are built in, so every "
+"login is tracked from day one."
+msgstr ""
+"المصادقة والتسجيل وإدارة الجلسات مدمجة بالكامل، بحيث يتم تتبع كل تسجيل دخول "
+"منذ اليوم الأول."
+
+#: templates/core/product_banan_bcms.html:352
+msgid "KPI dashboards & PDF export"
+msgstr "لوحات مؤشرات الأداء وتصدير PDF"
+
+#: templates/core/product_banan_bcms.html:353
+msgid ""
+"The reports page turns raw activity into KPI cards and charts, exportable to "
+"PDF straight from the browser."
+msgstr ""
+"تحوّل صفحة التقارير النشاط الخام إلى بطاقات مؤشرات ورسوم بيانية، قابلة "
+"للتصدير كـ PDF مباشرة من المتصفح."
+
+#: templates/core/product_banan_bcms.html:357
+msgid "Print-friendly exports"
+msgstr "تصدير مناسب للطباعة"
+
+#: templates/core/product_banan_bcms.html:358
+msgid ""
+"A dedicated export view strips away navigation, keeps your center's styling, "
+"and is ready to print or hand to a client."
+msgstr ""
+"عرض تصدير مخصص يزيل عناصر التنقل، ويحافظ على تصميم مركزك، وجاهز للطباعة أو "
+"التسليم للعميل."
+
+#: templates/core/product_banan_bcms.html:367
+#: templates/core/product_banan_ims.html:228
+msgid "Built for"
+msgstr "مصمم لـ"
+
+#: templates/core/product_banan_bcms.html:368
+msgid "Every role in your center, covered"
+msgstr "كل دور في مركزك، مغطى"
+
+#: templates/core/product_banan_bcms.html:371
+msgid "Reception & scheduling"
+msgstr "الاستقبال والحجوزات"
+
+#: templates/core/product_banan_bcms.html:372
+msgid "Hair styling"
+msgstr "تصفيف الشعر"
+
+#: templates/core/product_banan_bcms.html:373
+msgid "Skincare & facials"
+msgstr "العناية بالبشرة"
+
+#: templates/core/product_banan_bcms.html:374
+msgid "Nail care"
+msgstr "العناية بالأظافر"
+
+#: templates/core/product_banan_bcms.html:375
+msgid "Makeup artists"
+msgstr "خبيرات المكياج"
+
+#: templates/core/product_banan_bcms.html:376
+msgid "Center management & finance"
+msgstr "إدارة المركز والمالية"
+
+#: templates/core/product_banan_bcms.html:384
+#: templates/core/product_banan_ims.html:249
+msgid "More of the platform"
+msgstr "المزيد من النظام"
+
+#: templates/core/product_banan_bcms.html:385
+msgid "Every screen, built for the salon floor"
+msgstr "كل شاشة، مصمَّمة لصالة الصالون"
+
+#: templates/core/product_banan_bcms.html:389
+#: templates/core/product_banan_bcms.html:390
+msgid "Services catalogue"
+msgstr "كتالوج الخدمات"
+
+#: templates/core/product_banan_bcms.html:397
+msgid "Roles and permissions"
+msgstr "الأدوار والصلاحيات"
+
+#: templates/core/product_banan_bcms.html:398
+msgid "Roles & permissions"
+msgstr "الأدوار والصلاحيات"
+
+#: templates/core/product_banan_bcms.html:408
+msgid "Ready to run your center on Banan BCMS?"
+msgstr "جاهز لإدارة مركزك عبر بنان BCMS؟"
+
+#: templates/core/product_banan_bcms.html:409
+msgid "Try the live demo, or talk to us about onboarding your salon or spa."
+msgstr "جرّب النسخة الحية، أو تواصل معنا لبدء اشتراك صالونك أو سبا الخاص بك."
+
+#: templates/core/product_banan_bcms.html:420
+#: templates/core/product_banan_ims.html:297
+msgid "Close"
+msgstr "إغلاق"
+
+#: templates/core/product_banan_ims.html:4 templates/core/products.html:88
 msgid "Banan IMS"
 msgstr "بنان IMS"
 
@@ -522,21 +910,12 @@ msgstr "نظام إدارة المخزون والمبيعات"
 
 #: templates/core/product_banan_ims.html:5
 msgid ""
-"Banan IMS is our in-house SaaS platform for inventory, sales, purchasing and"
-" finance — with a built-in online store, 36+ live reports and an AI "
-"assistant."
+"Banan IMS is our in-house SaaS platform for inventory, sales, purchasing and "
+"finance — with a built-in online store, 36+ live reports and an AI assistant."
 msgstr ""
-"بنان IMS هو منتجنا الخاص القائم على SaaS لإدارة المخزون والمبيعات والمشتريات"
-" والمالية — مع متجر إلكتروني مدمج وأكثر من 36 تقريراً لحظياً ومساعد ذكاء "
+"بنان IMS هو منتجنا الخاص القائم على SaaS لإدارة المخزون والمبيعات والمشتريات "
+"والمالية — مع متجر إلكتروني مدمج وأكثر من 36 تقريراً لحظياً ومساعد ذكاء "
 "اصطناعي."
-
-#: templates/core/product_banan_ims.html:13
-msgid "Built in-house by Banan"
-msgstr "من تطوير بنان الداخلي"
-
-#: templates/core/product_banan_ims.html:14
-msgid "Live system · running right now"
-msgstr "نظام حي · يعمل الآن"
 
 #: templates/core/product_banan_ims.html:16
 msgid "Run your whole business from <em>Banan IMS</em>"
@@ -551,15 +930,6 @@ msgstr ""
 "المخزون ونقطة البيع والمشتريات والخزينة والتقارير — في منصة واحدة ثنائية "
 "اللغة، مصمَّمة لقطاعات التجزئة والجملة والأغذية والصيدليات والإلكترونيات "
 "والخدمات في الخليج."
-
-#: templates/core/product_banan_ims.html:19
-#: templates/core/product_banan_ims.html:285
-msgid "Open live demo"
-msgstr "جرّب النسخة الحية"
-
-#: templates/core/product_banan_ims.html:20
-msgid "Talk to our team"
-msgstr "تحدث معنا"
 
 #: templates/core/product_banan_ims.html:25
 msgid "New invoice — SAL-000034 · 1,712.00 QAR"
@@ -581,7 +951,7 @@ msgstr "طلب جديد على المتجر الإلكتروني"
 msgid "AI insight: headphones and sunglasses led sales this week"
 msgstr "ملاحظة ذكية: السماعات والنظارات الشمسية تصدّرت المبيعات هذا الأسبوع"
 
-#: templates/core/product_banan_ims.html:40
+#: templates/core/product_banan_ims.html:40 templates/core/products.html:83
 msgid "Banan IMS dashboard"
 msgstr "لوحة تحكم بنان IMS"
 
@@ -609,10 +979,6 @@ msgstr "عربي / إنجليزي"
 #: templates/core/product_banan_ims.html:59
 msgid "Fully bilingual interface"
 msgstr "واجهة ثنائية اللغة بالكامل"
-
-#: templates/core/product_banan_ims.html:66
-msgid "See it in action"
-msgstr "شاهده أثناء العمل"
 
 #: templates/core/product_banan_ims.html:67
 msgid "A real interface, not a slideshow"
@@ -658,8 +1024,8 @@ msgid "secure workspace"
 msgstr "مساحة عمل آمنة"
 
 #: templates/core/product_banan_ims.html:89
-#: templates/core/product_banan_ims.html:270
-#: templates/core/product_banan_ims.html:271
+#: templates/core/product_banan_ims.html:274
+#: templates/core/product_banan_ims.html:275
 msgid "Dashboard overview"
 msgstr "نظرة عامة على لوحة التحكم"
 
@@ -681,24 +1047,19 @@ msgid ""
 "A 12-month view of sales, purchases and profit, plus your top customers and "
 "cash position."
 msgstr ""
-"نظرة على 12 شهراً من المبيعات والمشتريات والأرباح، إضافة إلى أفضل عملائك "
-"ووضع السيولة لديك."
+"نظرة على 12 شهراً من المبيعات والمشتريات والأرباح، إضافة إلى أفضل عملائك ووضع "
+"السيولة لديك."
 
 #: templates/core/product_banan_ims.html:103
 msgid "Products catalogue"
 msgstr "كتالوج المنتجات"
-
-#: templates/core/product_banan_ims.html:105
-msgid "Products & inventory"
-msgstr "المنتجات والمخزون"
 
 #: templates/core/product_banan_ims.html:106
 msgid ""
 "Every SKU, category, cost and price in one searchable table — in stock or "
 "out."
 msgstr ""
-"كل SKU وتصنيف وتكلفة وسعر في جدول واحد قابل للبحث — سواء كان متوفراً أو "
-"نافداً."
+"كل SKU وتصنيف وتكلفة وسعر في جدول واحد قابل للبحث — سواء كان متوفراً أو نافداً."
 
 #: templates/core/product_banan_ims.html:110
 msgid "Treasury ledger"
@@ -709,11 +1070,6 @@ msgid ""
 "Every riyal in and out, tied to its invoice or expense, with a running "
 "balance."
 msgstr "كل ريال داخل وخارج، مرتبط بفاتورته أو مصروفه، مع رصيد متجدد لحظياً."
-
-#: templates/core/product_banan_ims.html:117
-#: templates/core/product_banan_ims.html:119
-msgid "Point of sale"
-msgstr "نقطة البيع"
 
 #: templates/core/product_banan_ims.html:120
 msgid ""
@@ -747,131 +1103,118 @@ msgid ""
 "should."
 msgstr "145 صلاحية دقيقة لكل دور، بحيث يرى كل موظف بالضبط ما يجب أن يراه."
 
-#: templates/core/product_banan_ims.html:141
-msgid "Want to try it yourself instead of watching?"
-msgstr "تفضّل تجربته بنفسك بدل مشاهدته فقط؟"
-
-#: templates/core/product_banan_ims.html:142
-msgid "Test the live app"
-msgstr "جرّب التطبيق الحي"
-
-#: templates/core/product_banan_ims.html:145
+#: templates/core/product_banan_ims.html:149
 msgid "What's inside"
 msgstr "ماذا يقدّم النظام"
 
-#: templates/core/product_banan_ims.html:146
+#: templates/core/product_banan_ims.html:150
 msgid "Every part of the operating cycle, covered"
 msgstr "كل مرحلة من دورة التشغيل، بلا استثناء"
 
-#: templates/core/product_banan_ims.html:147
+#: templates/core/product_banan_ims.html:151
 msgid ""
 "From the first purchase order to the final report, Banan IMS follows the "
 "full flow of a growing business."
 msgstr ""
-"من أول أمر شراء إلى آخر تقرير، يواكب بنان IMS دورة العمل الكاملة لعمل "
-"متنامٍ."
+"من أول أمر شراء إلى آخر تقرير، يواكب بنان IMS دورة العمل الكاملة لعمل متنامٍ."
 
-#: templates/core/product_banan_ims.html:153
+#: templates/core/product_banan_ims.html:157
 msgid "Inventory"
 msgstr "المخزون"
 
-#: templates/core/product_banan_ims.html:155
+#: templates/core/product_banan_ims.html:159
 msgid "Multi-warehouse stock & transfers"
 msgstr "مخازن متعددة وتحويلات بينها"
 
-#: templates/core/product_banan_ims.html:156
+#: templates/core/product_banan_ims.html:160
 msgid "Batch tracking & stock counts"
 msgstr "تتبع الدفعات والجرد الدوري"
 
-#: templates/core/product_banan_ims.html:157
+#: templates/core/product_banan_ims.html:161
 msgid "Manufacturing orders & BOMs"
 msgstr "أوامر تصنيع وقوائم مكونات (BOM)"
 
-#: templates/core/product_banan_ims.html:158
+#: templates/core/product_banan_ims.html:162
 msgid "Low-stock alerts"
 msgstr "تنبيهات انخفاض المخزون"
 
-#: templates/core/product_banan_ims.html:159
+#: templates/core/product_banan_ims.html:163
 msgid "Excel / CSV import"
 msgstr "استيراد من Excel / CSV"
 
-#: templates/core/product_banan_ims.html:164
+#: templates/core/product_banan_ims.html:168
 msgid "Sales & purchasing"
 msgstr "المبيعات والمشتريات"
 
-#: templates/core/product_banan_ims.html:166
+#: templates/core/product_banan_ims.html:170
 msgid "Point of sale & full invoicing"
 msgstr "نقطة بيع وفواتير مبيعات كاملة"
 
-#: templates/core/product_banan_ims.html:167
+#: templates/core/product_banan_ims.html:171
 msgid "Quotes & returns"
 msgstr "عروض أسعار ومرتجعات"
 
-#: templates/core/product_banan_ims.html:168
+#: templates/core/product_banan_ims.html:172
 msgid "Supplier RFQs & purchasing"
 msgstr "طلبات عروض أسعار من الموردين ومشتريات"
 
-#: templates/core/product_banan_ims.html:169
+#: templates/core/product_banan_ims.html:173
 msgid "Built-in online store with QR code"
 msgstr "متجر إلكتروني مدمج مع رمز QR"
 
-#: templates/core/product_banan_ims.html:170
+#: templates/core/product_banan_ims.html:174
 msgid "Sales-delegate portal & commissions"
 msgstr "بوابة مناديب المبيعات وتتبع العمولات"
 
-#: templates/core/product_banan_ims.html:175
-msgid "Finance"
-msgstr "المالية"
-
-#: templates/core/product_banan_ims.html:177
+#: templates/core/product_banan_ims.html:181
 msgid "Multi-account cash & bank treasury"
 msgstr "خزائن وحسابات بنكية متعددة"
 
-#: templates/core/product_banan_ims.html:178
+#: templates/core/product_banan_ims.html:182
 msgid "Expense tracking"
 msgstr "تتبع المصروفات"
 
-#: templates/core/product_banan_ims.html:179
+#: templates/core/product_banan_ims.html:183
 msgid "Payroll & employee advances"
 msgstr "الرواتب وسلف الموظفين"
 
-#: templates/core/product_banan_ims.html:180
+#: templates/core/product_banan_ims.html:184
 msgid "Profit & loss statements"
 msgstr "قوائم الأرباح والخسائر"
 
-#: templates/core/product_banan_ims.html:181
+#: templates/core/product_banan_ims.html:185
 msgid "36+ live analytical reports"
 msgstr "أكثر من 36 تقريراً تحليلياً لحظياً"
 
-#: templates/core/product_banan_ims.html:186
+#: templates/core/product_banan_ims.html:190
 msgid "Administration"
 msgstr "الإدارة"
 
-#: templates/core/product_banan_ims.html:188
+#: templates/core/product_banan_ims.html:192
 msgid "145 granular permissions per role"
 msgstr "145 صلاحية دقيقة لكل دور"
 
-#: templates/core/product_banan_ims.html:189
+#: templates/core/product_banan_ims.html:193
 msgid "Multi-branch operations"
 msgstr "عمليات متعددة الفروع"
 
-#: templates/core/product_banan_ims.html:190
+#: templates/core/product_banan_ims.html:194
 msgid "Full activity log"
 msgstr "سجل نشاط كامل"
 
-#: templates/core/product_banan_ims.html:191
+#: templates/core/product_banan_ims.html:195
 msgid "Automated daily backups"
 msgstr "نسخ احتياطي يومي تلقائي"
 
-#: templates/core/product_banan_ims.html:192
+#: templates/core/product_banan_ims.html:196
 msgid "End-to-end HTTPS encryption"
 msgstr "تشفير HTTPS شامل"
 
-#: templates/core/product_banan_ims.html:204
+#: templates/core/product_banan_ims.html:208
 msgid "Built-in AI assistant"
 msgstr "مساعد ذكاء اصطناعي مدمج"
 
-#: templates/core/product_banan_ims.html:205
+#: templates/core/product_banan_ims.html:209
 msgid ""
 "Reads each business's real data to answer natural-language questions and "
 "generate a daily business-health report — no dashboards to build."
@@ -879,11 +1222,11 @@ msgstr ""
 "يقرأ بيانات كل عمل الفعلية للإجابة على أسئلة بلغة طبيعية وتوليد تقرير يومي "
 "عن صحة العمل — دون الحاجة لبناء أي لوحات بيانات."
 
-#: templates/core/product_banan_ims.html:209
+#: templates/core/product_banan_ims.html:213
 msgid "Fully bilingual, Arabic-first"
 msgstr "ثنائي اللغة بالكامل، بالعربية أولاً"
 
-#: templates/core/product_banan_ims.html:210
+#: templates/core/product_banan_ims.html:214
 msgid ""
 "Every screen, report and receipt works natively in Arabic and English, with "
 "full right-to-left support."
@@ -891,11 +1234,11 @@ msgstr ""
 "كل شاشة وتقرير وإيصال يعمل بالعربية والإنجليزية بشكل أصلي، مع دعم كامل "
 "للكتابة من اليمين لليسار."
 
-#: templates/core/product_banan_ims.html:214
+#: templates/core/product_banan_ims.html:218
 msgid "Secure by default"
 msgstr "آمن بشكل افتراضي"
 
-#: templates/core/product_banan_ims.html:215
+#: templates/core/product_banan_ims.html:219
 msgid ""
 "European-hosted infrastructure, end-to-end HTTPS encryption and automated "
 "daily backups for every subscriber."
@@ -903,107 +1246,189 @@ msgstr ""
 "بنية تحتية مستضافة في أوروبا، وتشفير HTTPS شامل، ونسخ احتياطي يومي تلقائي "
 "لكل مشترك."
 
-#: templates/core/product_banan_ims.html:224
-msgid "Built for"
-msgstr "مصمم لـ"
-
-#: templates/core/product_banan_ims.html:225
+#: templates/core/product_banan_ims.html:229
 msgid "Ready for your industry"
 msgstr "جاهز لقطاعك"
 
-#: templates/core/product_banan_ims.html:228
+#: templates/core/product_banan_ims.html:232
 msgid "Pharmacies"
 msgstr "الصيدليات"
 
-#: templates/core/product_banan_ims.html:229
+#: templates/core/product_banan_ims.html:233
 msgid "Supermarkets & grocery"
 msgstr "السوبرماركت والبقالة"
 
-#: templates/core/product_banan_ims.html:230
+#: templates/core/product_banan_ims.html:234
 msgid "Restaurants & cafés"
 msgstr "المطاعم والمقاهي"
 
-#: templates/core/product_banan_ims.html:231
+#: templates/core/product_banan_ims.html:235
 msgid "Electronics"
 msgstr "الإلكترونيات"
 
-#: templates/core/product_banan_ims.html:232
+#: templates/core/product_banan_ims.html:236
 msgid "Auto parts"
 msgstr "قطع غيار السيارات"
 
-#: templates/core/product_banan_ims.html:233
+#: templates/core/product_banan_ims.html:237
 msgid "Building materials"
 msgstr "مواد البناء"
 
-#: templates/core/product_banan_ims.html:234
+#: templates/core/product_banan_ims.html:238
 msgid "Food & agriculture"
 msgstr "الأغذية والزراعة"
 
-#: templates/core/product_banan_ims.html:235
+#: templates/core/product_banan_ims.html:239
 msgid "Furniture"
 msgstr "الأثاث"
 
-#: templates/core/product_banan_ims.html:236
+#: templates/core/product_banan_ims.html:240
 msgid "Retail & wholesale"
 msgstr "التجزئة والجملة"
 
-#: templates/core/product_banan_ims.html:237
+#: templates/core/product_banan_ims.html:241
 msgid "Service businesses"
 msgstr "الشركات الخدمية"
 
-#: templates/core/product_banan_ims.html:245
-msgid "More of the platform"
-msgstr "المزيد من النظام"
-
-#: templates/core/product_banan_ims.html:246
+#: templates/core/product_banan_ims.html:250
 msgid "Every screen, built for real operations"
 msgstr "كل شاشة، مصمَّمة لعمليات حقيقية"
 
-#: templates/core/product_banan_ims.html:250
-#: templates/core/product_banan_ims.html:251
+#: templates/core/product_banan_ims.html:254
+#: templates/core/product_banan_ims.html:255
 msgid "Sales summary report"
 msgstr "تقرير ملخص المبيعات"
 
-#: templates/core/product_banan_ims.html:254
+#: templates/core/product_banan_ims.html:258
 msgid "Sales by customer report"
 msgstr "تقرير المبيعات حسب العميل"
 
-#: templates/core/product_banan_ims.html:255
+#: templates/core/product_banan_ims.html:259
 msgid "Sales by customer"
 msgstr "المبيعات حسب العميل"
 
-#: templates/core/product_banan_ims.html:258
+#: templates/core/product_banan_ims.html:262
 msgid "Profit margin report"
 msgstr "تقرير هامش الربح"
 
-#: templates/core/product_banan_ims.html:259
+#: templates/core/product_banan_ims.html:263
 msgid "Profit margin by product"
 msgstr "هامش الربح حسب المنتج"
 
-#: templates/core/product_banan_ims.html:262
-#: templates/core/product_banan_ims.html:263
+#: templates/core/product_banan_ims.html:266
+#: templates/core/product_banan_ims.html:267
 msgid "Online store settings"
 msgstr "إعدادات المتجر الإلكتروني"
 
-#: templates/core/product_banan_ims.html:266
+#: templates/core/product_banan_ims.html:270
 msgid "Support tickets"
 msgstr "تذاكر الدعم الفني"
 
-#: templates/core/product_banan_ims.html:267
-msgid "Built-in support desk"
-msgstr "مركز دعم فني مدمج"
-
-#: templates/core/product_banan_ims.html:281
+#: templates/core/product_banan_ims.html:285
 msgid "Ready to run your business on Banan IMS?"
 msgstr "جاهز لإدارة عملك عبر بنان IMS؟"
 
-#: templates/core/product_banan_ims.html:282
+#: templates/core/product_banan_ims.html:286
 msgid "Try the live demo, or talk to us about onboarding your business."
 msgstr "جرّب النسخة الحية، أو تواصل معنا لبدء اشتراك عملك."
 
-#: templates/core/product_banan_ims.html:293
-msgid "Close"
-msgstr "إغلاق"
+#: templates/core/products.html:5
+msgid ""
+"Our in-house SaaS products — Banan IMS for inventory & sales, and Banan BCMS "
+"for beauty and spa center management."
+msgstr ""
+"منتجاتنا الخاصة القائمة على SaaS — بنان IMS لإدارة المخزون والمبيعات، وبنان "
+"BCMS لإدارة مراكز التجميل والسبا."
+
+#: templates/core/products.html:64
+msgid ""
+"Two live SaaS platforms we design, build and run ourselves — pick a product "
+"to explore its screens, modules and a live demo."
+msgstr ""
+"منصتان حيّتان قمنا بتصميمهما وبنائهما وتشغيلهما بأنفسنا — اختر منتجاً لاستكشاف "
+"شاشاته ووحداته وتجربة نسخته الحية."
+
+#: templates/core/products.html:66
+msgid "Built and run by our own team"
+msgstr "من تصميم وتشغيل فريقنا بالكامل"
+
+#: templates/core/products.html:67
+msgid "Bilingual, Arabic-first interfaces"
+msgstr "واجهات ثنائية اللغة، بالعربية أولاً"
+
+#: templates/core/products.html:68
+msgid "Live systems, not mockups"
+msgstr "أنظمة تعمل فعليًا، لا مجرد نماذج"
+
+#: templates/core/products.html:87
+msgid "Inventory & sales management"
+msgstr "إدارة المخزون والمبيعات"
+
+#: templates/core/products.html:89
+msgid ""
+"Inventory, point of sale, purchasing, treasury and reporting — one bilingual "
+"platform for retail, wholesale and service businesses."
+msgstr ""
+"المخزون ونقطة البيع والمشتريات والخزينة والتقارير — في منصة واحدة ثنائية "
+"اللغة، مصمَّمة لقطاعات التجزئة والجملة والخدمات."
+
+#: templates/core/products.html:91
+msgid "Multi-warehouse inventory"
+msgstr "مخازن متعددة"
+
+#: templates/core/products.html:92
+msgid "Online store & QR code"
+msgstr "متجر إلكتروني ورمز QR"
+
+#: templates/core/products.html:93
+msgid "36+ live reports"
+msgstr "أكثر من 36 تقريراً لحظياً"
+
+#: templates/core/products.html:94
+msgid "AI assistant"
+msgstr "مساعد ذكاء اصطناعي"
+
+#: templates/core/products.html:97
+msgid "Explore Banan IMS"
+msgstr "استكشف بنان IMS"
+
+#: templates/core/products.html:114
+msgid "Beauty center management"
+msgstr "إدارة مراكز التجميل"
+
+#: templates/core/products.html:116
+msgid ""
+"Appointments, clients, billing, finance and reporting for salons and spas — "
+"with center-aware multi-tenant support built in."
+msgstr ""
+"المواعيد والعملاء والفوترة والمالية والتقارير لصالونات التجميل والسبا — مع "
+"دعم مدمج لتشغيل عدة مراكز باستقلالية تامة."
+
+#: templates/core/products.html:118
+msgid "Appointment calendar"
+msgstr "تقويم المواعيد"
+
+#: templates/core/products.html:120
+msgid "KPI reports & PDF export"
+msgstr "تقارير أداء وتصدير PDF"
+
+#: templates/core/products.html:124
+msgid "Explore Banan BCMS"
+msgstr "استكشف بنان BCMS"
+
+#: templates/core/products.html:137
+msgid "Have a similar system in mind?"
+msgstr "لديك نظام مشابه في ذهنك؟"
+
+#: templates/core/products.html:138
+msgid ""
+"We build platforms like these for other industries too — tell us what you "
+"need."
+msgstr "نبني منصات مشابهة لقطاعات أخرى أيضًا — أخبرنا باحتياجك."
+
+#: templates/core/products.html:141 templates/core/services.html:41
+msgid "Talk to us"
+msgstr "تحدث معنا"
 
 #: templates/core/project_detail.html:26
 msgid "Visit project"
@@ -1062,7 +1487,3 @@ msgstr "لست متأكدًا من الخدمة الأنسب؟"
 #: templates/core/services.html:38
 msgid "Tell us about your business and we'll recommend the right approach."
 msgstr "أخبرنا عن عملك وسنقترح عليك النهج الأنسب."
-
-#: templates/core/services.html:41
-msgid "Talk to us"
-msgstr "تحدث معنا"

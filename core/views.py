@@ -42,6 +42,14 @@ class BananIMSProductView(TemplateView):
     template_name = 'core/product_banan_ims.html'
 
 
+class BananBCMSProductView(TemplateView):
+    template_name = 'core/product_banan_bcms.html'
+
+
+class ProductsIndexView(TemplateView):
+    template_name = 'core/products.html'
+
+
 class ServiceListView(ListView):
     model = Service
     template_name = 'core/services.html'
