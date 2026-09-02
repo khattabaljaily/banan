@@ -126,7 +126,7 @@ COMPANY_ADDRESS = 'Doha, Qatar'
 
 # Toggle to show/hide the "Work" (portfolio) nav link once case studies are ready.
 # The /portfolio/ page and URLs stay live either way — this only hides the nav entry.
-SHOW_WORK_NAV = False
+SHOW_WORK_NAV = True
 
 # Toggle to show/hide the "Products" nav link (Banan IMS and future in-house products).
 SHOW_PRODUCTS_NAV = True
