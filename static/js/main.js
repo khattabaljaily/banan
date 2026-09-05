@@ -33,7 +33,12 @@
           }
         });
       },
-      { threshold: 0.12 }
+      // threshold: 0 fires as soon as any part of the target is visible.
+      // A percentage threshold (the previous 0.12) can never be satisfied
+      // for a target much taller than the viewport — e.g. the long
+      // website-request form — since no single scroll position ever shows
+      // 12% of its total height, so it would stay invisible forever.
+      { threshold: 0 }
     );
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
