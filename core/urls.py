@@ -15,4 +15,5 @@ urlpatterns = [
     path('portfolio/', views.PortfolioListView.as_view(), name='portfolio'),
     path('portfolio/<slug:slug>/', views.PortfolioDetailView.as_view(), name='project_detail'),
     path('contact/', views.ContactView.as_view(), name='contact'),
+    path('website-design-request/', views.WebsiteRequestView.as_view(), name='website_request'),
 ]

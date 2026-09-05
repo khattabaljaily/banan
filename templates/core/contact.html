@@ -10,6 +10,8 @@
     <div class="breadcrumb"><a href="{% url 'core:home' %}">{% trans "Home" %}</a> / {% trans "Contact" %}</div>
     <h1>{% trans "Let's talk" %}</h1>
     <p style="max-width:640px;">{% trans "Tell us about your project or question — our team will get back to you shortly." %}</p>
+    {% url 'core:website_request' as website_request_url %}
+    <p style="max-width:640px;">{% blocktrans with url=website_request_url %}Looking for a new website? Use our <a href="{{ url }}" style="color:var(--gold);text-decoration:underline;">project brief form</a> instead so we can prepare a tailored proposal.{% endblocktrans %}</p>
   </div>
 </section>
 

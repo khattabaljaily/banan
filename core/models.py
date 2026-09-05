@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import get_language
+from django.utils.translation import get_language, gettext_lazy as _
 from django.utils.text import slugify
 
 
@@ -111,3 +111,66 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f'{self.name} <{self.email}> - {self.created_at:%Y-%m-%d}'
+
+
+class WebsiteRequest(models.Model):
+    """A visitor's project brief for a new website — the dedicated intake
+    form for the Website Development service, richer than the general
+    contact form."""
+
+    WEBSITE_TYPE_CHOICES = [
+        ('business', _('Business / corporate website')),
+        ('ecommerce', _('Online store (e-commerce)')),
+        ('portfolio', _('Portfolio / personal website')),
+        ('landing', _('Landing page for a campaign or product')),
+        ('webapp', _('Web application / custom system')),
+        ('other', _('Something else')),
+    ]
+
+    BUDGET_CHOICES = [
+        ('', _('Prefer not to say')),
+        ('under_5k', _('Under 5,000 QAR')),
+        ('5k_15k', _('5,000 – 15,000 QAR')),
+        ('15k_30k', _('15,000 – 30,000 QAR')),
+        ('30k_plus', _('30,000+ QAR')),
+    ]
+
+    TIMELINE_CHOICES = [
+        ('asap', _('As soon as possible')),
+        ('1_month', _('Within a month')),
+        ('1_3_months', _('1–3 months')),
+        ('flexible', _('Flexible / just exploring')),
+    ]
+
+    FEATURE_CHOICES = [
+        ('multilingual', _('Multi-language (Arabic & English)')),
+        ('ecommerce', _('Online payments / store')),
+        ('booking', _('Booking or appointments')),
+        ('blog', _('Blog or news section')),
+        ('cms', _('Admin panel to edit content myself')),
+        ('seo', _('SEO optimization')),
+        ('app', _('Mobile app integration')),
+    ]
+
+    name = models.CharField(max_length=120)
+    email = models.EmailField()
+    phone = models.CharField(max_length=40)
+    company = models.CharField(max_length=160, blank=True)
+    website_type = models.CharField(max_length=20, choices=WEBSITE_TYPE_CHOICES)
+    budget_range = models.CharField(max_length=20, choices=BUDGET_CHOICES, blank=True)
+    timeline = models.CharField(max_length=20, choices=TIMELINE_CHOICES)
+    features = models.CharField(max_length=255, blank=True)
+    reference_sites = models.CharField(max_length=500, blank=True)
+    details = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_read = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f'{self.name} <{self.email}> - {self.created_at:%Y-%m-%d}'
+
+    def features_display(self):
+        labels = dict(self.FEATURE_CHOICES)
+        return [labels.get(key, key) for key in self.features.split(',') if key]

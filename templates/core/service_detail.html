@@ -24,7 +24,11 @@
         <div class="eyebrow">{% trans "Overview" %}</div>
         <h2>{% trans "How we help" %}</h2>
         <p style="white-space:pre-line;">{{ service.description }}</p>
+        {% if service.slug == 'website-development' %}
+        <a href="{% url 'core:website_request' %}" class="btn btn-primary">{% trans "Request a website" %} {% icon 'arrow' size=18 %}</a>
+        {% else %}
         <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Start a conversation" %} {% icon 'arrow' size=18 %}</a>
+        {% endif %}
       </div>
       <div class="split-art reveal">
         <div class="card-icon" style="width:100px;height:100px;border-radius:24px;">{% icon service.icon size=44 %}</div>
@@ -63,7 +67,11 @@
         <p>{% trans "Share a few details about your project and we'll follow up quickly." %}</p>
       </div>
       <div class="actions">
+        {% if service.slug == 'website-development' %}
+        <a href="{% url 'core:website_request' %}" class="btn btn-primary">{% trans "Request a website" %}</a>
+        {% else %}
         <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Contact us" %}</a>
+        {% endif %}
         <a href="{% url 'core:services' %}" class="btn btn-outline">{% trans "All services" %}</a>
       </div>
     </div>

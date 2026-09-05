@@ -1,0 +1,17 @@
+New website design request received from the Banan website.
+
+Name: {{ req.name }}
+Email: {{ req.email }}
+Phone: {{ req.phone }}
+Company: {{ req.company|default:"-" }}
+
+Website type: {{ req.get_website_type_display }}
+Budget: {{ req.get_budget_range_display|default:"-" }}
+Timeline: {{ req.get_timeline_display }}
+Features requested: {{ req.features_display|join:", "|default:"-" }}
+Reference websites: {{ req.reference_sites|default:"-" }}
+
+Project details:
+{{ req.details|default:"-" }}
+
+Received: {{ req.created_at }}

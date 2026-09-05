@@ -7,7 +7,7 @@ from django.urls import translate_url
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import DetailView, ListView, TemplateView
 
-from .forms import ContactForm
+from .forms import ContactForm, WebsiteRequestForm
 from .models import Project, Service
 
 
@@ -87,6 +87,40 @@ class PortfolioDetailView(DetailView):
     model = Project
     template_name = 'core/project_detail.html'
     context_object_name = 'project'
+
+
+class WebsiteRequestView(TemplateView):
+    template_name = 'core/website_request.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        ctx.setdefault('form', WebsiteRequestForm())
+        return ctx
+
+    def post(self, request, *args, **kwargs):
+        form = WebsiteRequestForm(request.POST)
+        if form.is_valid():
+            website_request = form.save()
+            self._notify(website_request)
+            messages.success(
+                request,
+                _('Thank you! Your project brief has been received — our team will get back to you shortly.'),
+            )
+            return redirect('core:website_request')
+        return self.render_to_response(self.get_context_data(form=form))
+
+    def _notify(self, website_request):
+        try:
+            body = render_to_string('core/email/website_request_notification.txt', {'req': website_request})
+            send_mail(
+                subject=f'New website design request: {website_request.name}',
+                message=body,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.CONTACT_EMAIL_RECIPIENT],
+                fail_silently=True,
+            )
+        except Exception:
+            pass
 
 
 class ContactView(TemplateView):

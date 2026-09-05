@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import ContactMessage, Project, Service
+from .models import ContactMessage, Project, Service, WebsiteRequest
 
 
 @admin.register(Service)
@@ -26,3 +26,14 @@ class ContactMessageAdmin(admin.ModelAdmin):
     list_filter = ('is_read', 'created_at')
     search_fields = ('name', 'email', 'message')
     readonly_fields = ('name', 'email', 'phone', 'subject', 'message', 'created_at')
+
+
+@admin.register(WebsiteRequest)
+class WebsiteRequestAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'website_type', 'budget_range', 'timeline', 'created_at', 'is_read')
+    list_filter = ('is_read', 'website_type', 'budget_range', 'timeline', 'created_at')
+    search_fields = ('name', 'email', 'phone', 'company', 'details')
+    readonly_fields = (
+        'name', 'email', 'phone', 'company', 'website_type', 'budget_range',
+        'timeline', 'features', 'reference_sites', 'details', 'created_at',
+    )
