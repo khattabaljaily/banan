@@ -258,6 +258,9 @@ class WebsiteRequestForm(forms.ModelForm):
             }),
         }
         labels = {
+            'name': _('Name'),
+            'email': _('Email'),
+            'phone': _('Phone'),
             'company': _('Company (optional)'),
             'company_description': _('Briefly describe your company'),
             'branches_count': _('How many branches or locations do you have? (optional)'),

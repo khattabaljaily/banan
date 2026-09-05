@@ -439,6 +439,15 @@ p { margin: 0 0 1em; color: var(--text-muted); }
   outline: none; border-color: var(--gold); background: #fff;
 }
 .field textarea { resize: vertical; min-height: 130px; }
+.field input[type="date"] { color-scheme: light; }
+.field input[type="date"]::-webkit-calendar-picker-indicator {
+  margin-inline-start: 8px;
+  padding: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: .6;
+}
+.field input[type="date"]::-webkit-calendar-picker-indicator:hover { opacity: 1; }
 .field .errorlist { list-style: none; margin: 6px 0 0; padding: 0; color: #c0392b; font-size: 13px; }
 .field-label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 10px; }
 
