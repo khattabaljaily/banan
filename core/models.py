@@ -115,8 +115,15 @@ class ContactMessage(models.Model):
 
 class WebsiteRequest(models.Model):
     """A visitor's project brief for a new website — the dedicated intake
-    form for the Website Development service, richer than the general
-    contact form."""
+    form for the Website Development service. Modeled on a full client
+    discovery questionnaire (company, goals, content, integrations, legal,
+    hosting, post-launch needs, timeline, then budget last), so most fields
+    are optional — visitors answer what's relevant to their project."""
+
+    YES_NO_CHOICES = [
+        ('yes', _('Yes')),
+        ('no', _('No')),
+    ]
 
     WEBSITE_TYPE_CHOICES = [
         ('business', _('Business / corporate website')),
@@ -127,11 +134,75 @@ class WebsiteRequest(models.Model):
         ('other', _('Something else')),
     ]
 
+    WEBSITE_GOAL_CHOICES = [
+        ('introduce', _('Introduce the company and its services')),
+        ('attract', _('Attract new customers')),
+        ('inquiries', _('Receive customer inquiries')),
+        ('sell_online', _('Sell products or services online')),
+        ('requests_online', _('Let customers submit requests online')),
+        ('branches', _('Showcase branches and locations')),
+    ]
+
+    LANGUAGE_CHOICES = [
+        ('ar', _('Arabic only')),
+        ('en', _('English only')),
+        ('both', _('Arabic + English')),
+    ]
+
+    CONTACT_CHANNEL_CHOICES = [
+        ('whatsapp', _('WhatsApp')),
+        ('form', _('Contact form')),
+        ('call', _('Direct phone call')),
+        ('email', _('Email')),
+        ('social', _('Social media links')),
+    ]
+
+    FEATURE_CHOICES = [
+        ('accounts', _('Customer account creation & login')),
+        ('documents', _('Document upload')),
+        ('requests', _('Submit requests or orders online')),
+        ('tracking', _('Track request/order status')),
+        ('payments', _('Online payment')),
+        ('booking', _('Booking or appointments')),
+        ('blog', _('Blog or news section')),
+        ('cms', _('Admin panel to edit content myself')),
+        ('seo', _('SEO optimization')),
+        ('app', _('Mobile app integration')),
+    ]
+
+    LEGAL_REQUIREMENT_CHOICES = [
+        ('privacy', _('Privacy policy')),
+        ('terms', _('Terms and conditions')),
+        ('disclaimer', _('Disclaimer')),
+        ('license', _('License / regulatory information')),
+    ]
+
+    CONTENT_READINESS_CHOICES = [
+        ('ready', _('Content is fully ready on our side')),
+        ('need_help', _('We need full help preparing the content')),
+        ('mixed', _('A mix of both')),
+    ]
+
+    POST_LAUNCH_CHOICES = [
+        ('content', _('Edit page content')),
+        ('products', _('Add or update products/services')),
+        ('branches', _('Add or remove branches')),
+        ('requests', _('Manage customer requests')),
+        ('news', _('Manage news and promotions')),
+    ]
+
     BUDGET_CHOICES = [
         ('under_5k', _('Under 5,000 QAR')),
         ('5k_15k', _('5,000 – 15,000 QAR')),
         ('15k_30k', _('15,000 – 30,000 QAR')),
         ('30k_plus', _('30,000+ QAR')),
+    ]
+
+    ANALYTICS_CHOICES = [
+        ('ga', _('Google Analytics')),
+        ('fb', _('Facebook Pixel')),
+        ('gtm', _('Google Tag Manager')),
+        ('unsure', _("Not sure — recommend what's best")),
     ]
 
     TIMELINE_CHOICES = [
@@ -141,26 +212,77 @@ class WebsiteRequest(models.Model):
         ('flexible', _('Flexible / just exploring')),
     ]
 
-    FEATURE_CHOICES = [
-        ('multilingual', _('Multi-language (Arabic & English)')),
-        ('ecommerce', _('Online payments / store')),
-        ('booking', _('Booking or appointments')),
-        ('blog', _('Blog or news section')),
-        ('cms', _('Admin panel to edit content myself')),
-        ('seo', _('SEO optimization')),
-        ('app', _('Mobile app integration')),
-    ]
-
+    # 1. Your details
     name = models.CharField(max_length=120)
     email = models.EmailField()
     phone = models.CharField(max_length=40)
     company = models.CharField(max_length=160, blank=True)
+
+    # 2. About your company
+    company_description = models.TextField(blank=True)
+    branches_count = models.CharField(max_length=20, blank=True)
+    has_brand_identity = models.CharField(max_length=3, choices=YES_NO_CHOICES, blank=True)
+
+    # 3. About your website
     website_type = models.CharField(max_length=20, choices=WEBSITE_TYPE_CHOICES)
-    budget_range = models.CharField(max_length=20, choices=BUDGET_CHOICES)
-    timeline = models.CharField(max_length=20, choices=TIMELINE_CHOICES)
+    website_goals = models.CharField(max_length=255, blank=True)
+    other_goal = models.CharField(max_length=200, blank=True)
+
+    # 4. Products & services
+    services_offered = models.TextField(blank=True)
+
+    # 5. Branches & locations
+    has_branches = models.CharField(max_length=3, choices=YES_NO_CHOICES, blank=True)
+    branches_details = models.TextField(blank=True)
+
+    # 6. Language
+    language_preference = models.CharField(max_length=10, choices=LANGUAGE_CHOICES)
+
+    # 7. Customer communication
+    contact_channels = models.CharField(max_length=255, blank=True)
+    contact_channels_details = models.TextField(blank=True)
+
+    # 8. Online / electronic services
     features = models.CharField(max_length=255, blank=True)
+    online_services_details = models.TextField(blank=True)
+
+    # 9. System integration
+    has_existing_system = models.CharField(max_length=3, choices=YES_NO_CHOICES, blank=True)
+    needs_integration = models.CharField(max_length=3, choices=YES_NO_CHOICES, blank=True)
+    integration_details = models.TextField(blank=True)
+
+    # 10. Legal & compliance
+    legal_requirements = models.CharField(max_length=255, blank=True)
+    other_legal = models.CharField(max_length=200, blank=True)
+
+    # 11. Content readiness
+    content_readiness = models.CharField(max_length=20, choices=CONTENT_READINESS_CHOICES)
+
+    # 12. Hosting & domain
+    has_domain_hosting = models.CharField(max_length=3, choices=YES_NO_CHOICES, blank=True)
+    needs_domain_hosting_help = models.CharField(max_length=3, choices=YES_NO_CHOICES, blank=True)
+
+    # 13. Design references
     reference_sites = models.CharField(max_length=500, blank=True)
+
+    # 14. Post-launch management
+    post_launch_control = models.CharField(max_length=255, blank=True)
+
+    # 15. Timeline
+    timeline = models.CharField(max_length=20, choices=TIMELINE_CHOICES)
+    has_specific_date = models.CharField(max_length=3, choices=YES_NO_CHOICES, blank=True)
+    target_date = models.DateField(null=True, blank=True)
+
+    # 16. Planning & budget
+    target_audience = models.TextField(blank=True)
+    analytics_tools = models.CharField(max_length=255, blank=True)
+    success_criteria = models.TextField(blank=True)
+    preferred_domain = models.CharField(max_length=200, blank=True)
+    budget_range = models.CharField(max_length=20, choices=BUDGET_CHOICES)
+
+    # 17. Anything else
     details = models.TextField(blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
     is_read = models.BooleanField(default=False)
 
@@ -170,6 +292,25 @@ class WebsiteRequest(models.Model):
     def __str__(self):
         return f'{self.name} <{self.email}> - {self.created_at:%Y-%m-%d}'
 
+    def _choice_list_display(self, field_name, choices):
+        labels = dict(choices)
+        raw = getattr(self, field_name) or ''
+        return [labels.get(key, key) for key in raw.split(',') if key]
+
+    def website_goals_display(self):
+        return self._choice_list_display('website_goals', self.WEBSITE_GOAL_CHOICES)
+
+    def contact_channels_display(self):
+        return self._choice_list_display('contact_channels', self.CONTACT_CHANNEL_CHOICES)
+
     def features_display(self):
-        labels = dict(self.FEATURE_CHOICES)
-        return [labels.get(key, key) for key in self.features.split(',') if key]
+        return self._choice_list_display('features', self.FEATURE_CHOICES)
+
+    def legal_requirements_display(self):
+        return self._choice_list_display('legal_requirements', self.LEGAL_REQUIREMENT_CHOICES)
+
+    def post_launch_control_display(self):
+        return self._choice_list_display('post_launch_control', self.POST_LAUNCH_CHOICES)
+
+    def analytics_tools_display(self):
+        return self._choice_list_display('analytics_tools', self.ANALYTICS_CHOICES)

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: banan-website\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-05 23:47+0300\n"
+"POT-Creation-Date: 2026-09-06 00:09+0300\n"
 "PO-Revision-Date: 2026-08-29 09:18+0300\n"
 "Last-Translator: Banan Information Technology\n"
 "Language-Team: Arabic\n"
@@ -11,18 +11,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: core/forms.py:15 core/forms.py:77
+#: core/forms.py:15 core/forms.py:214
 msgid "Your name"
 msgstr "اسمك"
 
-#: core/forms.py:18 core/forms.py:80
+#: core/forms.py:18 core/forms.py:217
 msgid "you@example.com"
 msgstr "you@example.com"
 
-#: core/forms.py:21 core/forms.py:83
+#: core/forms.py:21 core/forms.py:220
 msgid "+974 ..."
 msgstr "+974 ..."
 
@@ -34,11 +33,11 @@ msgstr "كيف يمكننا المساعدة؟"
 msgid "Tell us about your project..."
 msgstr "أخبرنا عن مشروعك..."
 
-#: core/forms.py:31 core/forms.py:97
+#: core/forms.py:31
 msgid "Name"
 msgstr "الاسم"
 
-#: core/forms.py:32 core/forms.py:98 templates/core/contact.html:34
+#: core/forms.py:32 core/models.py:156 templates/core/contact.html:34
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
@@ -54,133 +53,418 @@ msgstr "الموضوع"
 msgid "Message"
 msgstr "الرسالة"
 
-#: core/forms.py:49
+#: core/forms.py:62
 msgid "What type of website do you need?"
 msgstr "ما نوع الموقع الذي تحتاجه؟"
 
-#: core/forms.py:54
-msgid "Estimated budget"
-msgstr "الميزانية التقديرية"
+#: core/forms.py:67
+msgid "What is the main goal of the website? (select all that apply)"
+msgstr "ما الهدف الرئيسي من الموقع؟ (يمكن اختيار أكثر من إجابة)"
 
-#: core/forms.py:59
-msgid "When do you need it?"
-msgstr "متى تحتاج الموقع؟"
+#: core/forms.py:75
+msgid "Do you have multiple branches or locations?"
+msgstr "هل لديكم أكثر من فرع أو موقع؟"
 
-#: core/forms.py:65
+#: core/forms.py:83
+msgid "Do you already have a logo and brand identity?"
+msgstr "هل لديكم شعار وهوية بصرية جاهزة؟"
+
+#: core/forms.py:90
+msgid "Which languages should the website support?"
+msgstr "ما اللغات التي يجب أن يدعمها الموقع؟"
+
+#: core/forms.py:98
+msgid "How should customers reach you through the site?"
+msgstr "كيف يمكن للعملاء التواصل معكم عبر الموقع؟"
+
+#: core/forms.py:106
 msgid "Which features do you need?"
 msgstr "ما هي الميزات التي تحتاجها؟"
 
-#: core/forms.py:86
+#: core/forms.py:114
+msgid "Do you have an existing internal system (ERP / POS / CRM)?"
+msgstr "هل لديكم نظام داخلي حالي (ERP / نقطة بيع / CRM)؟"
+
+#: core/forms.py:120
+msgid "Should the website connect to that system, or any other API?"
+msgstr "هل يلزم ربط الموقع بهذا النظام أو بأي واجهة برمجية (API) أخرى؟"
+
+#: core/forms.py:128
+msgid "Do you need any of the following on the site?"
+msgstr "هل تحتاجون أيًا مما يلي على الموقع؟"
+
+#: core/forms.py:135
+msgid ""
+"Is your content — text, photos — ready, or do you need help preparing it?"
+msgstr "هل المحتوى — النصوص والصور — جاهز، أم تحتاجون مساعدة في إعداده؟"
+
+#: core/forms.py:143
+msgid "Do you already have a domain name and hosting?"
+msgstr "هل لديكم اسم نطاق (دومين) واستضافة حاليًا؟"
+
+#: core/forms.py:149
+msgid "Would you like us to handle the domain & hosting for you?"
+msgstr "هل ترغبون أن نتولى شراء وتجهيز الدومين والاستضافة نيابة عنكم؟"
+
+#: core/forms.py:157
+msgid "After launch, what would you like to manage yourselves?"
+msgstr "بعد الإطلاق، ما الذي ترغبون في إدارته بأنفسكم؟"
+
+#: core/forms.py:164
+msgid "When do you need it?"
+msgstr "متى تحتاج الموقع؟"
+
+#: core/forms.py:170
+msgid "Do you have a specific launch date in mind?"
+msgstr "هل لديكم موعد محدد لإطلاق الموقع؟"
+
+#: core/forms.py:175
+msgid "Target date (optional)"
+msgstr "التاريخ المستهدف (اختياري)"
+
+#: core/forms.py:183
+msgid "Which analytics or tracking tools do you need? (optional)"
+msgstr "ما أدوات التحليل والتتبع التي تحتاجونها؟ (اختياري)"
+
+#: core/forms.py:188
+msgid "Estimated budget"
+msgstr "الميزانية التقديرية"
+
+#: core/forms.py:223
 msgid "Company name"
 msgstr "اسم الشركة"
 
-#: core/forms.py:89
+#: core/forms.py:226
+msgid "Briefly describe your company and what you do..."
+msgstr "نبذة مختصرة عن شركتكم وما تقدمونه..."
+
+#: core/forms.py:228
+msgid "e.g. 3"
+msgstr "مثال: 3"
+
+#: core/forms.py:229
+msgid "Describe another goal, if any"
+msgstr "صف هدفًا آخر، إن وجد"
+
+#: core/forms.py:231
+msgid "List the products or services you'd like to showcase..."
+msgstr "اذكر المنتجات أو الخدمات التي ترغبون في عرضها..."
+
+#: core/forms.py:234
+msgid "List each branch's address, phone number and working hours..."
+msgstr "اذكر عنوان كل فرع ورقم هاتفه وساعات عمله..."
+
+#: core/forms.py:237
+msgid "Numbers, links or email addresses for the channels above..."
+msgstr "الأرقام أو الروابط أو عناوين البريد الإلكتروني للقنوات أعلاه..."
+
+#: core/forms.py:240
+msgid "Describe what customers should be able to do, in detail..."
+msgstr "صف بالتفصيل ما الذي يجب أن يتمكن العملاء من القيام به..."
+
+#: core/forms.py:243
+msgid "System name, and the type of integration needed..."
+msgstr "اسم النظام، ونوع الربط المطلوب..."
+
+#: core/forms.py:245
+msgid "Other legal text or requirements"
+msgstr "نصوص أو متطلبات قانونية أخرى"
+
+#: core/forms.py:247
 msgid "e.g. example.com, another-example.com"
 msgstr "مثال: example.com, another-example.com"
 
-#: core/forms.py:92
-msgid "Tell us more about your project, goals and any specific requirements..."
-msgstr "أخبرنا المزيد عن مشروعك وأهدافك وأي متطلبات خاصة..."
+#: core/forms.py:250
+msgid "e.g. individuals, businesses, a specific community..."
+msgstr "مثال: أفراد، شركات، فئة معينة من الجمهور..."
 
-#: core/forms.py:99 templates/core/contact.html:30
-msgid "Phone"
-msgstr "الهاتف"
+#: core/forms.py:253
+msgid "e.g. number of visits, orders placed, calls received..."
+msgstr "مثال: عدد الزيارات، الطلبات، المكالمات الواردة..."
 
-#: core/forms.py:100
+#: core/forms.py:257
+msgid "Anything else we should know about your project..."
+msgstr "أخبرنا بأي شيء آخر يخص مشروعكم..."
+
+#: core/forms.py:261
 msgid "Company (optional)"
 msgstr "الشركة (اختياري)"
 
-#: core/forms.py:101
+#: core/forms.py:262
+msgid "Briefly describe your company"
+msgstr "نبذة مختصرة عن شركتكم"
+
+#: core/forms.py:263
+msgid "How many branches or locations do you have? (optional)"
+msgstr "كم عدد الفروع أو المواقع لديكم؟ (اختياري)"
+
+#: core/forms.py:264
+msgid "Another goal (optional)"
+msgstr "هدف آخر (اختياري)"
+
+#: core/forms.py:265
+msgid "What products or services should the website showcase? (optional)"
+msgstr "ما المنتجات أو الخدمات التي يجب أن يعرضها الموقع؟ (اختياري)"
+
+#: core/forms.py:266
+msgid "Branch details (optional)"
+msgstr "تفاصيل الفروع (اختياري)"
+
+#: core/forms.py:267
+msgid "Channel details (optional)"
+msgstr "تفاصيل القنوات (اختياري)"
+
+#: core/forms.py:268
+msgid "Describe the online services you need (optional)"
+msgstr "صف الخدمات الإلكترونية التي تحتاجونها (اختياري)"
+
+#: core/forms.py:269
+msgid "Integration details (optional)"
+msgstr "تفاصيل الربط (اختياري)"
+
+#: core/forms.py:270
+msgid "Other legal requirements (optional)"
+msgstr "متطلبات قانونية أخرى (اختياري)"
+
+#: core/forms.py:271
 msgid "Websites you like (optional)"
 msgstr "مواقع تعجبك (اختياري)"
 
-#: core/forms.py:102
-msgid "Project details"
-msgstr "تفاصيل المشروع"
+#: core/forms.py:272
+msgid "Who is your target audience? (optional)"
+msgstr "من هو جمهوركم المستهدف؟ (اختياري)"
 
-#: core/models.py:122
+#: core/forms.py:273
+msgid "How will you measure the website's success? (optional)"
+msgstr "كيف ستقيسون نجاح الموقع؟ (اختياري)"
+
+#: core/forms.py:274
+msgid "Preferred domain name (optional)"
+msgstr "اسم النطاق المفضل (اختياري)"
+
+#: core/forms.py:275
+msgid "Anything else we should know? (optional)"
+msgstr "هل هناك أي شيء آخر ينبغي أن نعرفه؟ (اختياري)"
+
+#: core/models.py:124
+msgid "Yes"
+msgstr "نعم"
+
+#: core/models.py:125
+msgid "No"
+msgstr "لا"
+
+#: core/models.py:129
 msgid "Business / corporate website"
 msgstr "موقع تعريفي لشركة أو عمل تجاري"
 
-#: core/models.py:123
+#: core/models.py:130
 msgid "Online store (e-commerce)"
 msgstr "متجر إلكتروني"
 
-#: core/models.py:124
+#: core/models.py:131
 msgid "Portfolio / personal website"
 msgstr "معرض أعمال / موقع شخصي"
 
-#: core/models.py:125
+#: core/models.py:132
 msgid "Landing page for a campaign or product"
 msgstr "صفحة هبوط لحملة أو منتج"
 
-#: core/models.py:126
+#: core/models.py:133
 msgid "Web application / custom system"
 msgstr "تطبيق ويب / نظام مخصص"
 
-#: core/models.py:127
+#: core/models.py:134
 msgid "Something else"
 msgstr "شيء آخر"
 
-#: core/models.py:131
-msgid "Under 5,000 QAR"
-msgstr "أقل من 5,000 ريال قطري"
-
-#: core/models.py:132
-msgid "5,000 – 15,000 QAR"
-msgstr "5,000 – 15,000 ريال قطري"
-
-#: core/models.py:133
-msgid "15,000 – 30,000 QAR"
-msgstr "15,000 – 30,000 ريال قطري"
-
-#: core/models.py:134
-msgid "30,000+ QAR"
-msgstr "أكثر من 30,000 ريال قطري"
-
 #: core/models.py:138
-msgid "As soon as possible"
-msgstr "في أقرب وقت ممكن"
+msgid "Introduce the company and its services"
+msgstr "التعريف بالشركة وخدماتها"
 
 #: core/models.py:139
-msgid "Within a month"
-msgstr "خلال شهر واحد"
+msgid "Attract new customers"
+msgstr "استقطاب عملاء جدد"
 
 #: core/models.py:140
-msgid "1–3 months"
-msgstr "من 1 إلى 3 أشهر"
+msgid "Receive customer inquiries"
+msgstr "استقبال استفسارات العملاء"
 
 #: core/models.py:141
-msgid "Flexible / just exploring"
-msgstr "مرن / أستكشف الخيارات فقط"
+msgid "Sell products or services online"
+msgstr "بيع المنتجات أو الخدمات إلكترونيًا"
 
-#: core/models.py:145
-msgid "Multi-language (Arabic & English)"
-msgstr "متعدد اللغات (عربي وإنجليزي)"
+#: core/models.py:142
+msgid "Let customers submit requests online"
+msgstr "تمكين العملاء من تقديم الطلبات إلكترونيًا"
 
-#: core/models.py:146
-msgid "Online payments / store"
-msgstr "مدفوعات إلكترونية / متجر"
+#: core/models.py:143
+msgid "Showcase branches and locations"
+msgstr "عرض الفروع ومواقعها"
 
 #: core/models.py:147
+msgid "Arabic only"
+msgstr "عربي فقط"
+
+#: core/models.py:148
+msgid "English only"
+msgstr "إنجليزي فقط"
+
+#: core/models.py:149
+msgid "Arabic + English"
+msgstr "عربي + إنجليزي"
+
+#: core/models.py:153
+msgid "WhatsApp"
+msgstr "واتساب"
+
+#: core/models.py:154
+msgid "Contact form"
+msgstr "نموذج تواصل"
+
+#: core/models.py:155
+msgid "Direct phone call"
+msgstr "اتصال هاتفي مباشر"
+
+#: core/models.py:157
+msgid "Social media links"
+msgstr "روابط وسائل التواصل الاجتماعي"
+
+#: core/models.py:161
+msgid "Customer account creation & login"
+msgstr "إنشاء حساب وتسجيل الدخول للعملاء"
+
+#: core/models.py:162
+msgid "Document upload"
+msgstr "رفع المستندات"
+
+#: core/models.py:163
+msgid "Submit requests or orders online"
+msgstr "تقديم الطلبات إلكترونيًا"
+
+#: core/models.py:164
+msgid "Track request/order status"
+msgstr "متابعة حالة الطلب"
+
+#: core/models.py:165
+msgid "Online payment"
+msgstr "الدفع الإلكتروني"
+
+#: core/models.py:166
 msgid "Booking or appointments"
 msgstr "الحجوزات أو المواعيد"
 
-#: core/models.py:148
+#: core/models.py:167
 msgid "Blog or news section"
 msgstr "قسم مدونة أو أخبار"
 
-#: core/models.py:149
+#: core/models.py:168
 msgid "Admin panel to edit content myself"
 msgstr "لوحة تحكم لتعديل المحتوى بنفسي"
 
-#: core/models.py:150
+#: core/models.py:169
 msgid "SEO optimization"
 msgstr "تحسين محركات البحث (SEO)"
 
-#: core/models.py:151
+#: core/models.py:170
 msgid "Mobile app integration"
 msgstr "ربط مع تطبيق جوال"
+
+#: core/models.py:174
+msgid "Privacy policy"
+msgstr "سياسة الخصوصية"
+
+#: core/models.py:175
+msgid "Terms and conditions"
+msgstr "الشروط والأحكام"
+
+#: core/models.py:176
+msgid "Disclaimer"
+msgstr "إخلاء المسؤولية"
+
+#: core/models.py:177
+msgid "License / regulatory information"
+msgstr "معلومات الترخيص والجهة الرقابية"
+
+#: core/models.py:181
+msgid "Content is fully ready on our side"
+msgstr "المحتوى جاهز بالكامل من طرفنا"
+
+#: core/models.py:182
+msgid "We need full help preparing the content"
+msgstr "نحتاج مساعدة كاملة في إعداد المحتوى"
+
+#: core/models.py:183
+msgid "A mix of both"
+msgstr "مزيج من الاثنين"
+
+#: core/models.py:187
+msgid "Edit page content"
+msgstr "تعديل محتوى الصفحات"
+
+#: core/models.py:188
+msgid "Add or update products/services"
+msgstr "إضافة أو تحديث المنتجات/الخدمات"
+
+#: core/models.py:189
+msgid "Add or remove branches"
+msgstr "إضافة أو حذف الفروع"
+
+#: core/models.py:190
+msgid "Manage customer requests"
+msgstr "إدارة طلبات العملاء"
+
+#: core/models.py:191
+msgid "Manage news and promotions"
+msgstr "إدارة الأخبار والعروض"
+
+#: core/models.py:195
+msgid "Under 5,000 QAR"
+msgstr "أقل من 5,000 ريال قطري"
+
+#: core/models.py:196
+msgid "5,000 – 15,000 QAR"
+msgstr "5,000 – 15,000 ريال قطري"
+
+#: core/models.py:197
+msgid "15,000 – 30,000 QAR"
+msgstr "15,000 – 30,000 ريال قطري"
+
+#: core/models.py:198
+msgid "30,000+ QAR"
+msgstr "أكثر من 30,000 ريال قطري"
+
+#: core/models.py:202
+msgid "Google Analytics"
+msgstr "جوجل أناليتكس"
+
+#: core/models.py:203
+msgid "Facebook Pixel"
+msgstr "فيسبوك بيكسل"
+
+#: core/models.py:204
+msgid "Google Tag Manager"
+msgstr "مدير علامات جوجل"
+
+#: core/models.py:205
+msgid "Not sure — recommend what's best"
+msgstr "لست متأكدًا — اقترحوا الأنسب"
+
+#: core/models.py:209
+msgid "As soon as possible"
+msgstr "في أقرب وقت ممكن"
+
+#: core/models.py:210
+msgid "Within a month"
+msgstr "خلال شهر واحد"
+
+#: core/models.py:211
+msgid "1–3 months"
+msgstr "من 1 إلى 3 أشهر"
+
+#: core/models.py:212
+msgid "Flexible / just exploring"
+msgstr "مرن / أستكشف الخيارات فقط"
 
 #: core/views.py:107
 msgid ""
@@ -315,8 +599,8 @@ msgstr "انطلقنا من الدوحة، لخدمة الشركات الطمو�
 msgid ""
 "Banan for Information Technology W.L.L. (بنان لتقنية المعلومات) is "
 "registered with the Ministry of Commerce and Industry, State of Qatar, and "
-"is a member of the Qatar Chamber of Commerce and Industry. Our name — banan, "
-"Arabic for \"fingertips\" — reflects the craftsmanship we bring to every "
+"is a member of the Qatar Chamber of Commerce and Industry. Our name — banan,"
+" Arabic for \"fingertips\" — reflects the craftsmanship we bring to every "
 "line of code and every client relationship: precise, deliberate, and built "
 "by hand."
 msgstr ""
@@ -326,14 +610,14 @@ msgstr ""
 
 #: templates/core/about.html:23
 msgid ""
-"We started Banan to close a gap we kept seeing: small and growing businesses "
-"need modern software and dependable IT support, but often can't access it "
+"We started Banan to close a gap we kept seeing: small and growing businesses"
+" need modern software and dependable IT support, but often can't access it "
 "without going through large, slow-moving agencies. Banan is our answer — a "
 "lean, senior team that works directly with clients, in Arabic and English, "
 "from first conversation to long-term support."
 msgstr ""
-"أسسنا بنان لسد فجوة كنا نلاحظها باستمرار: الشركات الصغيرة والناشئة بحاجة إلى "
-"برمجيات حديثة ودعم تقني موثوق، لكنها غالبًا لا تستطيع الوصول إليه إلا عبر "
+"أسسنا بنان لسد فجوة كنا نلاحظها باستمرار: الشركات الصغيرة والناشئة بحاجة إلى"
+" برمجيات حديثة ودعم تقني موثوق، لكنها غالبًا لا تستطيع الوصول إليه إلا عبر "
 "وكالات كبيرة وبطيئة. بنان هي إجابتنا على ذلك — فريق مختصر من الخبراء يعمل "
 "مباشرة مع العملاء، بالعربية والإنجليزية، من أول حديث وحتى الدعم طويل الأمد."
 
@@ -354,8 +638,8 @@ msgid ""
 "To help ambitious businesses grow through thoughtfully engineered software, "
 "reliable IT services, and honest partnership."
 msgstr ""
-"مساعدة الشركات الطموحة على النمو من خلال برمجيات مدروسة بعناية، وخدمات تقنية "
-"موثوقة، وشراكة صادقة."
+"مساعدة الشركات الطموحة على النمو من خلال برمجيات مدروسة بعناية، وخدمات تقنية"
+" موثوقة، وشراكة صادقة."
 
 #: templates/core/about.html:46
 msgid "Our vision"
@@ -366,7 +650,8 @@ msgid ""
 "To be the most trusted technology partner for ambitious small and medium-"
 "sized businesses across the Gulf."
 msgstr ""
-"أن نكون الشريك التقني الأكثر ثقة للشركات الصغيرة والمتوسطة الطموحة في الخليج."
+"أن نكون الشريك التقني الأكثر ثقة للشركات الصغيرة والمتوسطة الطموحة في "
+"الخليج."
 
 #: templates/core/about.html:51
 msgid "Our values"
@@ -416,11 +701,11 @@ msgstr "الأنشطة الرئيسية"
 
 #: templates/core/about.html:79
 msgid ""
-"Custom software design & programming, IT and computer services, e-commerce & "
-"online retail solutions"
+"Custom software design & programming, IT and computer services, e-commerce &"
+" online retail solutions"
 msgstr ""
-"تصميم وبرمجة البرمجيات المخصصة، خدمات تقنية المعلومات والحاسوب، حلول التجارة "
-"الإلكترونية والبيع بالتجزئة عبر الإنترنت"
+"تصميم وبرمجة البرمجيات المخصصة، خدمات تقنية المعلومات والحاسوب، حلول التجارة"
+" الإلكترونية والبيع بالتجزئة عبر الإنترنت"
 
 #: templates/core/about.html:89
 msgid "Let's build something together"
@@ -449,13 +734,13 @@ msgstr "أخبرنا عن مشروعك أو استفسارك، وسيتواصل 
 #: templates/core/contact.html:14
 #, python-format
 msgid ""
-"Looking for a new website? Use our <a href=\"%(url)s\" style=\"color:var(--"
-"gold);text-decoration:underline;\">project brief form</a> instead so we can "
-"prepare a tailored proposal."
+"Looking for a new website? Use our <a href=\"%(url)s\" "
+"style=\"color:var(--gold);text-decoration:underline;\">project brief "
+"form</a> instead so we can prepare a tailored proposal."
 msgstr ""
-"هل تبحث عن موقع إلكتروني جديد؟ استخدم <a href=\"%(url)s\" style=\"color:"
-"var(--gold);text-decoration:underline;\">نموذج موجز المشروع</a> بدلاً من ذلك "
-"حتى نتمكن من إعداد عرض مخصص لك."
+"هل تبحث عن موقع إلكتروني جديد؟ استخدم <a href=\"%(url)s\" "
+"style=\"color:var(--gold);text-decoration:underline;\">نموذج موجز "
+"المشروع</a> بدلاً من ذلك حتى نتمكن من إعداد عرض مخصص لك."
 
 #: templates/core/contact.html:23
 msgid "Contact details"
@@ -464,6 +749,10 @@ msgstr "بيانات التواصل"
 #: templates/core/contact.html:26
 msgid "Address"
 msgstr "العنوان"
+
+#: templates/core/contact.html:30
+msgid "Phone"
+msgstr "الهاتف"
 
 #: templates/core/contact.html:38
 msgid "C.R. Number"
@@ -488,8 +777,8 @@ msgstr "نبني <em>منتجات رقمية</em> ترتقي بعملك"
 #: templates/core/home.html:13
 msgid ""
 "Banan Information Technology partners with ambitious businesses to design, "
-"build and support modern software, e-commerce and IT infrastructure — end to "
-"end."
+"build and support modern software, e-commerce and IT infrastructure — end to"
+" end."
 msgstr ""
 "تشارك بنان لتقنية المعلومات الشركات الطموحة في تصميم البرمجيات الحديثة "
 "والمتاجر الإلكترونية والبنية التقنية وبنائها ودعمها، من الفكرة حتى التشغيل."
@@ -642,13 +931,13 @@ msgstr "ما زلنا في البداية"
 
 #: templates/core/portfolio.html:34
 msgid ""
-"Banan is a newly founded company and our first client projects are underway. "
-"This page will showcase our case studies as they launch — check back soon, "
+"Banan is a newly founded company and our first client projects are underway."
+" This page will showcase our case studies as they launch — check back soon, "
 "or get in touch to be among our first partners."
 msgstr ""
-"بنان شركة حديثة التأسيس، ومشاريع عملائنا الأولى قيد التنفيذ حاليًا. ستعرض هذه "
-"الصفحة دراسات حالة مشاريعنا فور إطلاقها — تابعونا قريبًا، أو تواصلوا معنا "
-"لتكونوا من أوائل شركائنا."
+"بنان شركة حديثة التأسيس، ومشاريع عملائنا الأولى قيد التنفيذ حاليًا. ستعرض "
+"هذه الصفحة دراسات حالة مشاريعنا فور إطلاقها — تابعونا قريبًا، أو تواصلوا "
+"معنا لتكونوا من أوائل شركائنا."
 
 #: templates/core/portfolio.html:36
 msgid "Work with us"
@@ -664,13 +953,14 @@ msgstr "نظام إدارة مراكز التجميل"
 
 #: templates/core/product_banan_bcms.html:5
 msgid ""
-"Banan BCMS is our in-house, center-aware SaaS platform for salons and spas — "
-"appointments, clients, point of sale, finance and KPI reporting with browser-"
-"based PDF export."
+"Banan BCMS is our in-house, center-aware SaaS platform for salons and spas —"
+" appointments, clients, point of sale, finance and KPI reporting with "
+"browser-based PDF export."
 msgstr ""
 "بنان BCMS هو منتجنا الخاص القائم على SaaS لإدارة صالونات التجميل والسبا، "
-"مصمَّم ليخدم عدة مراكز مع إبقاء بيانات كل مركز مستقلة — يشمل المواعيد والعملاء "
-"ونقطة البيع والمالية وتقارير مؤشرات الأداء مع تصدير PDF مباشرة من المتصفح."
+"مصمَّم ليخدم عدة مراكز مع إبقاء بيانات كل مركز مستقلة — يشمل المواعيد "
+"والعملاء ونقطة البيع والمالية وتقارير مؤشرات الأداء مع تصدير PDF مباشرة من "
+"المتصفح."
 
 #: templates/core/product_banan_bcms.html:197
 #: templates/core/product_banan_ims.html:13 templates/core/products.html:61
@@ -693,8 +983,8 @@ msgid ""
 "place."
 msgstr ""
 "منصة تخدم عدة مراكز وتُبقي بيانات كل مركز مستقلة، مصمَّمة لصالونات التجميل "
-"والسبا — المواعيد والعملاء ونقطة البيع والمالية وتقارير الأداء، كلها في مكان "
-"واحد."
+"والسبا — المواعيد والعملاء ونقطة البيع والمالية وتقارير الأداء، كلها في مكان"
+" واحد."
 
 #: templates/core/product_banan_bcms.html:203
 #: templates/core/product_banan_bcms.html:412
@@ -793,8 +1083,8 @@ msgstr "المواعيد"
 
 #: templates/core/product_banan_bcms.html:266
 msgid ""
-"A color-coded calendar and daily list, so no chair or stylist is ever double-"
-"booked."
+"A color-coded calendar and daily list, so no chair or stylist is ever "
+"double-booked."
 msgstr "تقويم ملوّن وقائمة يومية، بحيث لا يُحجز أي كرسي أو خبيرة مرتين."
 
 #: templates/core/product_banan_bcms.html:269
@@ -824,8 +1114,8 @@ msgstr "المالية"
 
 #: templates/core/product_banan_bcms.html:278
 msgid ""
-"Treasury, client account statements and a running balance for every riyal in "
-"and out."
+"Treasury, client account statements and a running balance for every riyal in"
+" and out."
 msgstr "الخزينة وكشوف حسابات العملاء ورصيد جارٍ لكل ريال يدخل ويخرج."
 
 #: templates/core/product_banan_bcms.html:281
@@ -955,8 +1245,8 @@ msgstr "لوحات مؤشرات الأداء وتصدير PDF"
 
 #: templates/core/product_banan_bcms.html:353
 msgid ""
-"The reports page turns raw activity into KPI cards and charts, exportable to "
-"PDF straight from the browser."
+"The reports page turns raw activity into KPI cards and charts, exportable to"
+" PDF straight from the browser."
 msgstr ""
 "تحوّل صفحة التقارير النشاط الخام إلى بطاقات مؤشرات ورسوم بيانية، قابلة "
 "للتصدير كـ PDF مباشرة من المتصفح."
@@ -967,8 +1257,8 @@ msgstr "تصدير مناسب للطباعة"
 
 #: templates/core/product_banan_bcms.html:358
 msgid ""
-"A dedicated export view strips away navigation, keeps your center's styling, "
-"and is ready to print or hand to a client."
+"A dedicated export view strips away navigation, keeps your center's styling,"
+" and is ready to print or hand to a client."
 msgstr ""
 "عرض تصدير مخصص يزيل عناصر التنقل، ويحافظ على تصميم مركزك، وجاهز للطباعة أو "
 "التسليم للعميل."
@@ -1051,11 +1341,12 @@ msgstr "نظام إدارة المخزون والمبيعات"
 
 #: templates/core/product_banan_ims.html:5
 msgid ""
-"Banan IMS is our in-house SaaS platform for inventory, sales, purchasing and "
-"finance — with a built-in online store, 36+ live reports and an AI assistant."
+"Banan IMS is our in-house SaaS platform for inventory, sales, purchasing and"
+" finance — with a built-in online store, 36+ live reports and an AI "
+"assistant."
 msgstr ""
-"بنان IMS هو منتجنا الخاص القائم على SaaS لإدارة المخزون والمبيعات والمشتريات "
-"والمالية — مع متجر إلكتروني مدمج وأكثر من 36 تقريراً لحظياً ومساعد ذكاء "
+"بنان IMS هو منتجنا الخاص القائم على SaaS لإدارة المخزون والمبيعات والمشتريات"
+" والمالية — مع متجر إلكتروني مدمج وأكثر من 36 تقريراً لحظياً ومساعد ذكاء "
 "اصطناعي."
 
 #: templates/core/product_banan_ims.html:16
@@ -1188,8 +1479,8 @@ msgid ""
 "A 12-month view of sales, purchases and profit, plus your top customers and "
 "cash position."
 msgstr ""
-"نظرة على 12 شهراً من المبيعات والمشتريات والأرباح، إضافة إلى أفضل عملائك ووضع "
-"السيولة لديك."
+"نظرة على 12 شهراً من المبيعات والمشتريات والأرباح، إضافة إلى أفضل عملائك "
+"ووضع السيولة لديك."
 
 #: templates/core/product_banan_ims.html:103
 msgid "Products catalogue"
@@ -1200,7 +1491,8 @@ msgid ""
 "Every SKU, category, cost and price in one searchable table — in stock or "
 "out."
 msgstr ""
-"كل SKU وتصنيف وتكلفة وسعر في جدول واحد قابل للبحث — سواء كان متوفراً أو نافداً."
+"كل SKU وتصنيف وتكلفة وسعر في جدول واحد قابل للبحث — سواء كان متوفراً أو "
+"نافداً."
 
 #: templates/core/product_banan_ims.html:110
 msgid "Treasury ledger"
@@ -1257,7 +1549,8 @@ msgid ""
 "From the first purchase order to the final report, Banan IMS follows the "
 "full flow of a growing business."
 msgstr ""
-"من أول أمر شراء إلى آخر تقرير، يواكب بنان IMS دورة العمل الكاملة لعمل متنامٍ."
+"من أول أمر شراء إلى آخر تقرير، يواكب بنان IMS دورة العمل الكاملة لعمل "
+"متنامٍ."
 
 #: templates/core/product_banan_ims.html:157
 msgid "Inventory"
@@ -1475,8 +1768,8 @@ msgstr "جرّب النسخة الحية، أو تواصل معنا لبدء ا�
 
 #: templates/core/products.html:5
 msgid ""
-"Our in-house SaaS products — Banan IMS for inventory & sales, and Banan BCMS "
-"for beauty and spa center management."
+"Our in-house SaaS products — Banan IMS for inventory & sales, and Banan BCMS"
+" for beauty and spa center management."
 msgstr ""
 "منتجاتنا الخاصة القائمة على SaaS — بنان IMS لإدارة المخزون والمبيعات، وبنان "
 "BCMS لإدارة مراكز التجميل والسبا."
@@ -1486,8 +1779,8 @@ msgid ""
 "Two live SaaS platforms we design, build and run ourselves — pick a product "
 "to explore its screens, modules and a live demo."
 msgstr ""
-"منصتان حيّتان قمنا بتصميمهما وبنائهما وتشغيلهما بأنفسنا — اختر منتجاً لاستكشاف "
-"شاشاته ووحداته وتجربة نسخته الحية."
+"منصتان حيّتان قمنا بتصميمهما وبنائهما وتشغيلهما بأنفسنا — اختر منتجاً "
+"لاستكشاف شاشاته ووحداته وتجربة نسخته الحية."
 
 #: templates/core/products.html:64
 msgid "Built and run by our own team"
@@ -1507,8 +1800,8 @@ msgstr "إدارة المخزون والمبيعات"
 
 #: templates/core/products.html:87
 msgid ""
-"Inventory, point of sale, purchasing, treasury and reporting — one bilingual "
-"platform for retail, wholesale and service businesses."
+"Inventory, point of sale, purchasing, treasury and reporting — one bilingual"
+" platform for retail, wholesale and service businesses."
 msgstr ""
 "المخزون ونقطة البيع والمشتريات والخزينة والتقارير — في منصة واحدة ثنائية "
 "اللغة، مصمَّمة لقطاعات التجزئة والجملة والخدمات."
@@ -1629,7 +1922,8 @@ msgstr "لست متأكدًا من الخدمة الأنسب؟"
 msgid "Tell us about your business and we'll recommend the right approach."
 msgstr "أخبرنا عن عملك وسنقترح عليك النهج الأنسب."
 
-#: templates/core/website_request.html:4 templates/core/website_request.html:11
+#: templates/core/website_request.html:4
+#: templates/core/website_request.html:11
 msgid "Request a Website"
 msgstr "اطلب تصميم موقع"
 
@@ -1646,11 +1940,12 @@ msgstr "لنبنِ موقعك الإلكتروني"
 
 #: templates/core/website_request.html:13
 msgid ""
-"Share a few details about your project and our team will get back to you "
-"with a tailored proposal — usually within one business day."
+"Share as much detail as you can — the clearer your answers, the more "
+"accurate and faster our proposal will be. Feel free to skip anything that "
+"doesn't apply to your business."
 msgstr ""
-"شاركنا بعض التفاصيل عن مشروعك وسيتواصل معك فريقنا بعرض مخصص — عادةً خلال يوم "
-"عمل واحد."
+"شاركنا بأكبر قدر ممكن من التفاصيل — كلما كانت إجاباتكم أوضح، كان عرضنا أدق "
+"وأسرع. لا حاجة للإجابة عن أي سؤال لا ينطبق على عملكم."
 
 #: templates/core/website_request.html:22
 msgid "How it works"
@@ -1689,13 +1984,69 @@ msgid "Your details"
 msgstr "بياناتك"
 
 #: templates/core/website_request.html:74
+msgid "About your company"
+msgstr "عن شركتكم"
+
+#: templates/core/website_request.html:97
 msgid "About your website"
 msgstr "عن موقعك الإلكتروني"
 
-#: templates/core/website_request.html:106
-msgid "Tell us more"
-msgstr "أخبرنا أكثر"
+#: templates/core/website_request.html:120
+msgid "Products & services"
+msgstr "المنتجات والخدمات"
 
-#: templates/core/website_request.html:119
+#: templates/core/website_request.html:129
+msgid "Branches & locations"
+msgstr "الفروع والمواقع"
+
+#: templates/core/website_request.html:145
+msgid "Language"
+msgstr "اللغة"
+
+#: templates/core/website_request.html:156
+msgid "Customer communication"
+msgstr "تواصل العملاء"
+
+#: templates/core/website_request.html:172
+msgid "Online / electronic services"
+msgstr "الخدمات الإلكترونية"
+
+#: templates/core/website_request.html:188
+msgid "System integration"
+msgstr "التكامل مع الأنظمة"
+
+#: templates/core/website_request.html:211
+msgid "Legal & compliance"
+msgstr "المتطلبات القانونية"
+
+#: templates/core/website_request.html:227
+msgid "Content"
+msgstr "المحتوى"
+
+#: templates/core/website_request.html:238
+msgid "Hosting & domain"
+msgstr "الاستضافة والدومين"
+
+#: templates/core/website_request.html:256
+msgid "Design references"
+msgstr "مراجع التصميم"
+
+#: templates/core/website_request.html:265
+msgid "Post-launch management"
+msgstr "الإدارة بعد الإطلاق"
+
+#: templates/core/website_request.html:276
+msgid "Timeline"
+msgstr "الجدول الزمني"
+
+#: templates/core/website_request.html:301
+msgid "Planning & budget"
+msgstr "التخطيط والميزانية"
+
+#: templates/core/website_request.html:334
+msgid "Anything else"
+msgstr "أي شيء آخر"
+
+#: templates/core/website_request.html:342
 msgid "Send my project brief"
 msgstr "إرسال موجز مشروعي"

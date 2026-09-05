@@ -10,7 +10,7 @@
   <div class="container">
     <div class="breadcrumb"><a href="{% url 'core:home' %}">{% trans "Home" %}</a> / {% trans "Request a Website" %}</div>
     <h1>{% trans "Let's build your website" %}</h1>
-    <p style="max-width:640px;">{% trans "Share a few details about your project and our team will get back to you with a tailored proposal — usually within one business day." %}</p>
+    <p style="max-width:640px;">{% trans "Share as much detail as you can — the clearer your answers, the more accurate and faster our proposal will be. Feel free to skip anything that doesn't apply to your business." %}</p>
   </div>
 </section>
 
@@ -71,6 +71,29 @@
           </div>
 
           <div class="form-section">
+            <div class="form-section-title">{% trans "About your company" %}</div>
+            <div class="field">
+              {{ form.company_description.label_tag }}
+              {{ form.company_description }}
+              {{ form.company_description.errors }}
+            </div>
+            <div class="form-row">
+              <div class="field">
+                {{ form.branches_count.label_tag }}
+                {{ form.branches_count }}
+                {{ form.branches_count.errors }}
+              </div>
+              <div class="field">
+                <span class="field-label">{{ form.has_brand_identity.label }}</span>
+                <div class="choice-grid">
+                  {% for radio in form.has_brand_identity %}{{ radio }}{% endfor %}
+                </div>
+                {{ form.has_brand_identity.errors }}
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
             <div class="form-section-title">{% trans "About your website" %}</div>
             <div class="field">
               <span class="field-label">{{ form.website_type.label }}</span>
@@ -80,19 +103,73 @@
               {{ form.website_type.errors }}
             </div>
             <div class="field">
-              <span class="field-label">{{ form.budget_range.label }}</span>
+              <span class="field-label">{{ form.website_goals.label }}</span>
               <div class="choice-grid">
-                {% for radio in form.budget_range %}{{ radio }}{% endfor %}
+                {% for checkbox in form.website_goals %}{{ checkbox }}{% endfor %}
               </div>
-              {{ form.budget_range.errors }}
+              {{ form.website_goals.errors }}
             </div>
             <div class="field">
-              <span class="field-label">{{ form.timeline.label }}</span>
-              <div class="choice-grid">
-                {% for radio in form.timeline %}{{ radio }}{% endfor %}
-              </div>
-              {{ form.timeline.errors }}
+              {{ form.other_goal.label_tag }}
+              {{ form.other_goal }}
+              {{ form.other_goal.errors }}
             </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Products & services" %}</div>
+            <div class="field">
+              {{ form.services_offered.label_tag }}
+              {{ form.services_offered }}
+              {{ form.services_offered.errors }}
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Branches & locations" %}</div>
+            <div class="field">
+              <span class="field-label">{{ form.has_branches.label }}</span>
+              <div class="choice-grid">
+                {% for radio in form.has_branches %}{{ radio }}{% endfor %}
+              </div>
+              {{ form.has_branches.errors }}
+            </div>
+            <div class="field">
+              {{ form.branches_details.label_tag }}
+              {{ form.branches_details }}
+              {{ form.branches_details.errors }}
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Language" %}</div>
+            <div class="field">
+              <span class="field-label">{{ form.language_preference.label }}</span>
+              <div class="choice-grid">
+                {% for radio in form.language_preference %}{{ radio }}{% endfor %}
+              </div>
+              {{ form.language_preference.errors }}
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Customer communication" %}</div>
+            <div class="field">
+              <span class="field-label">{{ form.contact_channels.label }}</span>
+              <div class="choice-grid">
+                {% for checkbox in form.contact_channels %}{{ checkbox }}{% endfor %}
+              </div>
+              {{ form.contact_channels.errors }}
+            </div>
+            <div class="field">
+              {{ form.contact_channels_details.label_tag }}
+              {{ form.contact_channels_details }}
+              {{ form.contact_channels_details.errors }}
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Online / electronic services" %}</div>
             <div class="field">
               <span class="field-label">{{ form.features.label }}</span>
               <div class="choice-grid">
@@ -100,15 +177,161 @@
               </div>
               {{ form.features.errors }}
             </div>
+            <div class="field">
+              {{ form.online_services_details.label_tag }}
+              {{ form.online_services_details }}
+              {{ form.online_services_details.errors }}
+            </div>
           </div>
 
           <div class="form-section">
-            <div class="form-section-title">{% trans "Tell us more" %}</div>
+            <div class="form-section-title">{% trans "System integration" %}</div>
+            <div class="field">
+              <span class="field-label">{{ form.has_existing_system.label }}</span>
+              <div class="choice-grid">
+                {% for radio in form.has_existing_system %}{{ radio }}{% endfor %}
+              </div>
+              {{ form.has_existing_system.errors }}
+            </div>
+            <div class="field">
+              <span class="field-label">{{ form.needs_integration.label }}</span>
+              <div class="choice-grid">
+                {% for radio in form.needs_integration %}{{ radio }}{% endfor %}
+              </div>
+              {{ form.needs_integration.errors }}
+            </div>
+            <div class="field">
+              {{ form.integration_details.label_tag }}
+              {{ form.integration_details }}
+              {{ form.integration_details.errors }}
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Legal & compliance" %}</div>
+            <div class="field">
+              <span class="field-label">{{ form.legal_requirements.label }}</span>
+              <div class="choice-grid">
+                {% for checkbox in form.legal_requirements %}{{ checkbox }}{% endfor %}
+              </div>
+              {{ form.legal_requirements.errors }}
+            </div>
+            <div class="field">
+              {{ form.other_legal.label_tag }}
+              {{ form.other_legal }}
+              {{ form.other_legal.errors }}
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Content" %}</div>
+            <div class="field">
+              <span class="field-label">{{ form.content_readiness.label }}</span>
+              <div class="choice-grid">
+                {% for radio in form.content_readiness %}{{ radio }}{% endfor %}
+              </div>
+              {{ form.content_readiness.errors }}
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Hosting & domain" %}</div>
+            <div class="field">
+              <span class="field-label">{{ form.has_domain_hosting.label }}</span>
+              <div class="choice-grid">
+                {% for radio in form.has_domain_hosting %}{{ radio }}{% endfor %}
+              </div>
+              {{ form.has_domain_hosting.errors }}
+            </div>
+            <div class="field">
+              <span class="field-label">{{ form.needs_domain_hosting_help.label }}</span>
+              <div class="choice-grid">
+                {% for radio in form.needs_domain_hosting_help %}{{ radio }}{% endfor %}
+              </div>
+              {{ form.needs_domain_hosting_help.errors }}
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Design references" %}</div>
             <div class="field">
               {{ form.reference_sites.label_tag }}
               {{ form.reference_sites }}
               {{ form.reference_sites.errors }}
             </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Post-launch management" %}</div>
+            <div class="field">
+              <span class="field-label">{{ form.post_launch_control.label }}</span>
+              <div class="choice-grid">
+                {% for checkbox in form.post_launch_control %}{{ checkbox }}{% endfor %}
+              </div>
+              {{ form.post_launch_control.errors }}
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Timeline" %}</div>
+            <div class="field">
+              <span class="field-label">{{ form.timeline.label }}</span>
+              <div class="choice-grid">
+                {% for radio in form.timeline %}{{ radio }}{% endfor %}
+              </div>
+              {{ form.timeline.errors }}
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <span class="field-label">{{ form.has_specific_date.label }}</span>
+                <div class="choice-grid">
+                  {% for radio in form.has_specific_date %}{{ radio }}{% endfor %}
+                </div>
+                {{ form.has_specific_date.errors }}
+              </div>
+              <div class="field">
+                {{ form.target_date.label_tag }}
+                {{ form.target_date }}
+                {{ form.target_date.errors }}
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Planning & budget" %}</div>
+            <div class="field">
+              {{ form.target_audience.label_tag }}
+              {{ form.target_audience }}
+              {{ form.target_audience.errors }}
+            </div>
+            <div class="field">
+              <span class="field-label">{{ form.analytics_tools.label }}</span>
+              <div class="choice-grid">
+                {% for checkbox in form.analytics_tools %}{{ checkbox }}{% endfor %}
+              </div>
+              {{ form.analytics_tools.errors }}
+            </div>
+            <div class="field">
+              {{ form.success_criteria.label_tag }}
+              {{ form.success_criteria }}
+              {{ form.success_criteria.errors }}
+            </div>
+            <div class="field">
+              {{ form.preferred_domain.label_tag }}
+              {{ form.preferred_domain }}
+              {{ form.preferred_domain.errors }}
+            </div>
+            <div class="field">
+              <span class="field-label">{{ form.budget_range.label }}</span>
+              <div class="choice-grid">
+                {% for radio in form.budget_range %}{{ radio }}{% endfor %}
+              </div>
+              {{ form.budget_range.errors }}
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Anything else" %}</div>
             <div class="field">
               {{ form.details.label_tag }}
               {{ form.details }}

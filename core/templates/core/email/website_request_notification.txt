@@ -1,17 +1,74 @@
 New website design request received from the Banan website.
 
+=== Contact ===
 Name: {{ req.name }}
 Email: {{ req.email }}
 Phone: {{ req.phone }}
 Company: {{ req.company|default:"-" }}
 
-Website type: {{ req.get_website_type_display }}
-Budget: {{ req.get_budget_range_display|default:"-" }}
-Timeline: {{ req.get_timeline_display }}
-Features requested: {{ req.features_display|join:", "|default:"-" }}
-Reference websites: {{ req.reference_sites|default:"-" }}
+=== Company ===
+Description: {{ req.company_description|default:"-" }}
+Branches: {{ req.branches_count|default:"-" }}
+Has brand identity: {{ req.get_has_brand_identity_display|default:"-" }}
 
-Project details:
+=== Website ===
+Type: {{ req.get_website_type_display }}
+Goals: {{ req.website_goals_display|join:", "|default:"-" }}
+Other goal: {{ req.other_goal|default:"-" }}
+Language(s): {{ req.get_language_preference_display }}
+
+=== Products & services ===
+{{ req.services_offered|default:"-" }}
+
+=== Branches & locations ===
+Has multiple branches: {{ req.get_has_branches_display|default:"-" }}
+Branch details: {{ req.branches_details|default:"-" }}
+
+=== Customer communication ===
+Channels: {{ req.contact_channels_display|join:", "|default:"-" }}
+Channel details: {{ req.contact_channels_details|default:"-" }}
+
+=== Online / electronic services ===
+Features: {{ req.features_display|join:", "|default:"-" }}
+Details: {{ req.online_services_details|default:"-" }}
+
+=== System integration ===
+Has existing system: {{ req.get_has_existing_system_display|default:"-" }}
+Needs integration: {{ req.get_needs_integration_display|default:"-" }}
+Details: {{ req.integration_details|default:"-" }}
+
+=== Legal & compliance ===
+Requirements: {{ req.legal_requirements_display|join:", "|default:"-" }}
+Other: {{ req.other_legal|default:"-" }}
+
+=== Content ===
+Readiness: {{ req.get_content_readiness_display }}
+
+=== Hosting & domain ===
+Has domain/hosting: {{ req.get_has_domain_hosting_display|default:"-" }}
+Needs our help: {{ req.get_needs_domain_hosting_help_display|default:"-" }}
+Preferred domain: {{ req.preferred_domain|default:"-" }}
+
+=== Design references ===
+{{ req.reference_sites|default:"-" }}
+
+=== Post-launch management ===
+{{ req.post_launch_control_display|join:", "|default:"-" }}
+
+=== Timeline ===
+General timeline: {{ req.get_timeline_display }}
+Specific date planned: {{ req.get_has_specific_date_display|default:"-" }}
+Target date: {{ req.target_date|default:"-" }}
+
+=== Planning ===
+Target audience: {{ req.target_audience|default:"-" }}
+Analytics tools: {{ req.analytics_tools_display|join:", "|default:"-" }}
+Success criteria: {{ req.success_criteria|default:"-" }}
+
+=== Budget ===
+{{ req.get_budget_range_display }}
+
+=== Anything else ===
 {{ req.details|default:"-" }}
 
 Received: {{ req.created_at }}

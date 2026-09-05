@@ -30,10 +30,16 @@ class ContactMessageAdmin(admin.ModelAdmin):
 
 @admin.register(WebsiteRequest)
 class WebsiteRequestAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'website_type', 'budget_range', 'timeline', 'created_at', 'is_read')
-    list_filter = ('is_read', 'website_type', 'budget_range', 'timeline', 'created_at')
-    search_fields = ('name', 'email', 'phone', 'company', 'details')
-    readonly_fields = (
-        'name', 'email', 'phone', 'company', 'website_type', 'budget_range',
-        'timeline', 'features', 'reference_sites', 'details', 'created_at',
+    list_display = (
+        'name', 'email', 'website_type', 'language_preference',
+        'budget_range', 'timeline', 'created_at', 'is_read',
     )
+    list_filter = (
+        'is_read', 'website_type', 'language_preference',
+        'budget_range', 'timeline', 'created_at',
+    )
+    search_fields = ('name', 'email', 'phone', 'company', 'details')
+
+    def get_readonly_fields(self, request, obj=None):
+        # Visitor-submitted data — staff can only toggle is_read, not edit it.
+        return [f.name for f in self.model._meta.fields if f.name != 'is_read']
