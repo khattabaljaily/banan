@@ -565,8 +565,12 @@ p { margin: 0 0 1em; color: var(--text-muted); }
 .breadcrumb a:hover { color: var(--gold); }
 
 /* ---------- Reveal animation ---------- */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-.reveal.in-view { opacity: 1; transform: translateY(0); }
+/* Only hide .reveal content once main.js has actually started running (see
+   the reveal-ready class it sets first thing). If the script is blocked,
+   fails, or never arrives — flaky mobile network, an ad/privacy blocker —
+   content must stay visible instead of disappearing forever. */
+.reveal-ready .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal-ready .reveal.in-view { opacity: 1; transform: translateY(0); }
 
 /* ---------- Messages ---------- */
 .django-messages { position: fixed; top: calc(var(--nav-h) + 16px); inset-inline: 0; z-index: 200; display: flex; flex-direction: column; align-items: center; gap: 10px; pointer-events: none; }

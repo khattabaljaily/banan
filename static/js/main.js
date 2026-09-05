@@ -1,4 +1,9 @@
 (function () {
+  // Must be the first thing this script does: CSS only hides .reveal content
+  // once this class is present, so content stays visible by default if this
+  // script never runs at all (blocked, dropped connection, etc.).
+  document.documentElement.classList.add('reveal-ready');
+
   var nav = document.querySelector('.navbar');
   var toggle = document.querySelector('.nav-toggle');
 
