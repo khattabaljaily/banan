@@ -108,6 +108,20 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+# Content-hashed static filenames (e.g. style.3b82f1a9.css) so an edited file
+# gets a brand-new URL instead of relying on a "?v=" query string for cache
+# busting — some mobile carrier proxies cache by path only and strip query
+# strings, which can serve a stale (and in this project's case, once-broken)
+# CSS/JS file indefinitely regardless of what the origin serves.
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage',
+    },
+}
+
 # Media files (user uploads: portfolio project images, etc.)
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'

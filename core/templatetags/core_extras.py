@@ -1,25 +1,7 @@
-import os
-
 from django import template
-from django.conf import settings
-from django.templatetags.static import static as static_url
 from django.utils.safestring import mark_safe
 
 register = template.Library()
-
-
-@register.simple_tag
-def static_v(path):
-    """Like {% static %} but appends ?v=<mtime> so browsers pick up
-    edited CSS/JS immediately instead of serving a stale cached copy."""
-    url = static_url(path)
-    file_path = settings.BASE_DIR / 'static' / path
-    try:
-        version = int(os.path.getmtime(file_path))
-    except OSError:
-        version = 0
-    separator = '&' if '?' in url else '?'
-    return f'{url}{separator}v={version}'
 
 _ICONS = {
     'code': '<path d="M8 4 2 12l6 8"/><path d="M16 4l6 8-6 8"/>',
