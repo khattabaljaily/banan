@@ -48,6 +48,11 @@ class WebsiteRequestForm(forms.ModelForm):
         widget=forms.RadioSelect,
         label=_('What type of website do you need?'),
     )
+    budget_range = forms.ChoiceField(
+        choices=WebsiteRequest.BUDGET_CHOICES,
+        widget=forms.RadioSelect,
+        label=_('Estimated budget'),
+    )
     timeline = forms.ChoiceField(
         choices=WebsiteRequest.TIMELINE_CHOICES,
         widget=forms.RadioSelect,
@@ -80,7 +85,6 @@ class WebsiteRequestForm(forms.ModelForm):
             'company': forms.TextInput(attrs={
                 'placeholder': _('Company name'), 'autocomplete': 'organization',
             }),
-            'budget_range': forms.RadioSelect,
             'reference_sites': forms.TextInput(attrs={
                 'placeholder': _('e.g. example.com, another-example.com'),
             }),
@@ -94,7 +98,6 @@ class WebsiteRequestForm(forms.ModelForm):
             'email': _('Email'),
             'phone': _('Phone'),
             'company': _('Company (optional)'),
-            'budget_range': _('Estimated budget'),
             'reference_sites': _('Websites you like (optional)'),
             'details': _('Project details'),
         }

@@ -128,7 +128,6 @@ class WebsiteRequest(models.Model):
     ]
 
     BUDGET_CHOICES = [
-        ('', _('Prefer not to say')),
         ('under_5k', _('Under 5,000 QAR')),
         ('5k_15k', _('5,000 – 15,000 QAR')),
         ('15k_30k', _('15,000 – 30,000 QAR')),
@@ -157,7 +156,7 @@ class WebsiteRequest(models.Model):
     phone = models.CharField(max_length=40)
     company = models.CharField(max_length=160, blank=True)
     website_type = models.CharField(max_length=20, choices=WEBSITE_TYPE_CHOICES)
-    budget_range = models.CharField(max_length=20, choices=BUDGET_CHOICES, blank=True)
+    budget_range = models.CharField(max_length=20, choices=BUDGET_CHOICES)
     timeline = models.CharField(max_length=20, choices=TIMELINE_CHOICES)
     features = models.CharField(max_length=255, blank=True)
     reference_sites = models.CharField(max_length=500, blank=True)

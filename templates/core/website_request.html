@@ -42,41 +42,43 @@
         <form method="post" novalidate>
           {% csrf_token %}
 
-          <div class="form-row">
-            <div class="field">
-              {{ form.name.label_tag }}
-              {{ form.name }}
-              {{ form.name.errors }}
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Your details" %}</div>
+            <div class="form-row">
+              <div class="field">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+                {{ form.name.errors }}
+              </div>
+              <div class="field">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+                {{ form.email.errors }}
+              </div>
             </div>
-            <div class="field">
-              {{ form.email.label_tag }}
-              {{ form.email }}
-              {{ form.email.errors }}
+            <div class="form-row">
+              <div class="field">
+                {{ form.phone.label_tag }}
+                {{ form.phone }}
+                {{ form.phone.errors }}
+              </div>
+              <div class="field">
+                {{ form.company.label_tag }}
+                {{ form.company }}
+                {{ form.company.errors }}
+              </div>
             </div>
           </div>
 
-          <div class="form-row">
+          <div class="form-section">
+            <div class="form-section-title">{% trans "About your website" %}</div>
             <div class="field">
-              {{ form.phone.label_tag }}
-              {{ form.phone }}
-              {{ form.phone.errors }}
+              <span class="field-label">{{ form.website_type.label }}</span>
+              <div class="choice-grid">
+                {% for radio in form.website_type %}{{ radio }}{% endfor %}
+              </div>
+              {{ form.website_type.errors }}
             </div>
-            <div class="field">
-              {{ form.company.label_tag }}
-              {{ form.company }}
-              {{ form.company.errors }}
-            </div>
-          </div>
-
-          <div class="field">
-            <span class="field-label">{{ form.website_type.label }}</span>
-            <div class="choice-grid">
-              {% for radio in form.website_type %}{{ radio }}{% endfor %}
-            </div>
-            {{ form.website_type.errors }}
-          </div>
-
-          <div class="form-row">
             <div class="field">
               <span class="field-label">{{ form.budget_range.label }}</span>
               <div class="choice-grid">
@@ -91,26 +93,27 @@
               </div>
               {{ form.timeline.errors }}
             </div>
-          </div>
-
-          <div class="field">
-            <span class="field-label">{{ form.features.label }}</span>
-            <div class="choice-grid">
-              {% for checkbox in form.features %}{{ checkbox }}{% endfor %}
+            <div class="field">
+              <span class="field-label">{{ form.features.label }}</span>
+              <div class="choice-grid">
+                {% for checkbox in form.features %}{{ checkbox }}{% endfor %}
+              </div>
+              {{ form.features.errors }}
             </div>
-            {{ form.features.errors }}
           </div>
 
-          <div class="field">
-            {{ form.reference_sites.label_tag }}
-            {{ form.reference_sites }}
-            {{ form.reference_sites.errors }}
-          </div>
-
-          <div class="field">
-            {{ form.details.label_tag }}
-            {{ form.details }}
-            {{ form.details.errors }}
+          <div class="form-section">
+            <div class="form-section-title">{% trans "Tell us more" %}</div>
+            <div class="field">
+              {{ form.reference_sites.label_tag }}
+              {{ form.reference_sites }}
+              {{ form.reference_sites.errors }}
+            </div>
+            <div class="field">
+              {{ form.details.label_tag }}
+              {{ form.details }}
+              {{ form.details.errors }}
+            </div>
           </div>
 
           <button type="submit" class="btn btn-primary btn-block">{% trans "Send my project brief" %} {% icon 'arrow' size=18 %}</button>
