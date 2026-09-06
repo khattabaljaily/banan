@@ -15,13 +15,21 @@
 
 <section class="section">
   <div class="container">
-    <div class="card-grid">
+    <div class="bento">
       {% for service in services %}
-      <div class="card reveal">
-        <div class="card-icon">{% icon service.icon size=26 %}</div>
-        <h3>{{ service.name }}</h3>
-        <p>{{ service.summary }}</p>
-        <a class="card-link" href="{% url 'core:service_detail' service.slug %}">{% trans "Learn more" %} {% icon 'arrow' size=16 %}</a>
+      <div class="flip-outer reveal{% if forloop.first %} span-2{% endif %}">
+        <div class="flip-card">
+          <div class="flip-face flip-front">
+            <div class="svc-icon">{% icon service.icon size=20 %}</div>
+            <h3 class="svc-name">{{ service.name }}</h3>
+            <p class="svc-summary">{{ service.summary }}</p>
+            <span class="flip-hint">{% trans "Tap for details" %} &rarr;</span>
+          </div>
+          <div class="flip-face flip-back">
+            <p>{{ service.description }}</p>
+            <a class="card-link" href="{% url 'core:service_detail' service.slug %}" style="margin-top:auto;">{% trans "Learn more" %} {% icon 'arrow' size=16 %}</a>
+          </div>
+        </div>
       </div>
       {% empty %}
       <p>{% trans "Services will appear here shortly." %}</p>
@@ -38,7 +46,7 @@
         <p>{% trans "Tell us about your business and we'll recommend the right approach." %}</p>
       </div>
       <div class="actions">
-        <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Talk to us" %}</a>
+        <a href="{% url 'core:contact' %}" class="btn btn-primary magnetic">{% trans "Talk to us" %}</a>
       </div>
     </div>
   </div>

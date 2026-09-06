@@ -6,52 +6,111 @@
 {% block content %}
 
 <section class="hero">
+  <div class="aurora-parallax"><div class="aurora aurora-a"></div></div>
+  <div class="aurora-parallax"><div class="aurora aurora-b"></div></div>
   <div class="container hero-grid">
     <div>
-      <div class="eyebrow">{% trans "Information Technology · Software & Digital Solutions" %}</div>
-      <h1>{% blocktrans %}We build <em>digital products</em> that move your business forward{% endblocktrans %}</h1>
-      <p class="hero-lead">{% blocktrans %}Banan Information Technology partners with ambitious businesses to design, build and support modern software, e-commerce and IT infrastructure — end to end.{% endblocktrans %}</p>
-      <div class="hero-actions">
-        <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Start a project" %} {% icon 'arrow' size=18 %}</a>
-        <a href="{% url 'core:services' %}" class="btn btn-outline">{% trans "Explore services" %}</a>
+      <div class="eyebrow hero-anim" style="animation-delay:.02s">{% trans "Information Technology · Software & Digital Solutions" %}</div>
+      <h1 class="hero-anim" style="animation-delay:.1s">{% blocktrans %}We build <em>digital products</em> that move your business forward{% endblocktrans %}</h1>
+      <p class="hero-lead hero-anim" style="animation-delay:.2s">{% blocktrans %}Banan Information Technology partners with ambitious businesses to design, build and support modern software, e-commerce and IT infrastructure — end to end.{% endblocktrans %}</p>
+      {% if services %}
+      <div class="hero-rotator hero-anim" style="animation-delay:.26s">
+        <span>{% trans "Specialized in" %}</span>
+        <span class="rotator">
+          {% for service in services %}
+          <span class="rotator-word{% if forloop.first %} is-active{% endif %}">{{ service.name }}</span>
+          {% endfor %}
+        </span>
       </div>
-      <div class="hero-meta">
+      {% endif %}
+      <div class="hero-actions hero-anim" style="animation-delay:.34s">
+        <a href="{% url 'core:contact' %}" class="btn btn-primary magnetic">{% trans "Start a project" %} {% icon 'arrow' size=18 %}</a>
+        <a href="{% url 'core:services' %}" class="btn btn-outline magnetic">{% trans "Explore services" %}</a>
+      </div>
+      <div class="hero-meta hero-anim" style="animation-delay:.42s">
+        <div class="chip-live"><span class="live-dot"></span> {% trans "Available for new projects" %}</div>
         <div>{% icon 'pin' size=18 %} {% trans "Doha, Qatar" %}</div>
         <div>{% icon 'shield' size=18 %} {% trans "C.R." %} {{ COMPANY_CR_NUMBER }}</div>
         <div>{% icon 'chart' size=18 %} {% trans "Bilingual Arabic / English delivery" %}</div>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="glow-ring"></div>
-      <img src="{% static 'images/logo-icon-white.png' %}" alt="{{ COMPANY_NAME }}">
+
+    <div class="hero-preview hero-anim" style="animation-delay:.3s">
+      <div class="preview-card">
+        <div class="preview-topbar">
+          <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+          <span class="preview-title">Banan IMS — {% trans "Live Preview" %}</span>
+          <span class="preview-live"><span class="live-dot"></span> {% trans "Live" %}</span>
+        </div>
+        <div class="preview-body">
+          <div class="preview-kpis">
+            <div class="preview-kpi">
+              <span class="preview-kpi-num" data-count="340">0</span>
+              <span class="preview-kpi-label">{% trans "Orders today" %}</span>
+            </div>
+            <div class="preview-kpi">
+              <span class="preview-kpi-num" data-count="99.9" data-decimals="1" data-suffix="%">0.0%</span>
+              <span class="preview-kpi-label">{% trans "Platform uptime" %}</span>
+            </div>
+          </div>
+          <div class="preview-chart">
+            <div class="bar" style="--h:38%"></div>
+            <div class="bar" style="--h:62%"></div>
+            <div class="bar" style="--h:48%"></div>
+            <div class="bar" style="--h:80%"></div>
+            <div class="bar" style="--h:66%"></div>
+            <div class="bar" style="--h:92%"></div>
+            <div class="bar" style="--h:74%"></div>
+          </div>
+          <svg class="preview-spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+            <path class="spark-path" d="M0,32 L20,26 L40,29 L60,16 L80,21 L100,9 L120,15 L140,6 L160,12 L180,3 L200,8" />
+          </svg>
+        </div>
+      </div>
+      <div class="floating-chip" style="top:6%; inset-inline-start:-6%; animation-delay:0s;">{% icon 'globe' size=16 %} {% trans "Bilingual AR / EN" %}</div>
+      <div class="floating-chip" style="bottom:14%; inset-inline-end:-8%; animation-delay:.4s;">{% icon 'shield' size=16 %} {% trans "HTTPS Secured" %}</div>
+      <div class="floating-chip" style="bottom:-2%; inset-inline-start:8%; animation-delay:.8s;">{% icon 'cloud' size=16 %} {% trans "Cloud Hosted" %}</div>
     </div>
   </div>
+  <a href="#services-section" class="scroll-cue" aria-label="{% trans 'Scroll down' %}"><span></span></a>
 </section>
 
-<section class="stat-strip">
-  <div class="container">
-    <div class="stat"><strong>2026</strong><span>{% trans "Founded" %}</span></div>
-    <div class="stat"><strong>EN / AR</strong><span>{% trans "Bilingual delivery" %}</span></div>
-    <div class="stat"><strong>W.L.L.</strong><span>{% trans "Licensed entity" %}</span></div>
-    <div class="stat"><strong>100%</strong><span>{% trans "Client-focused" %}</span></div>
+<div class="trust-ribbon">
+  <div class="trust-track">
+    {% for i in "xx" %}
+    <span class="trust-badge">{% icon 'calendar' size=18 %} <strong>2026</strong><span>{% trans "Founded" %}</span></span>
+    <span class="trust-badge">{% icon 'box' size=18 %} <strong data-count="{{ services|length }}" data-suffix="+">0</strong><span>{% trans "Core services" %}</span></span>
+    <span class="trust-badge">{% icon 'shield' size=18 %} <strong>W.L.L.</strong><span>{% trans "Licensed entity" %}</span></span>
+    <span class="trust-badge">{% icon 'chart' size=18 %} <strong data-count="100" data-suffix="%">0</strong><span>{% trans "Client-focused" %}</span></span>
+    <span class="trust-badge">{% icon 'globe' size=18 %} <strong>{% trans "Bilingual" %}</strong><span>AR / EN</span></span>
+    <span class="trust-badge">{% icon 'pin' size=18 %} <strong>{% trans "Doha, Qatar" %}</strong></span>
+    {% endfor %}
   </div>
-</section>
+</div>
 
-<section class="section">
+<section class="section" id="services-section">
   <div class="container">
-    <div class="section-head section-head--center">
+    <div class="section-head section-head--center reveal">
       <div class="eyebrow" style="justify-content:center;">{% trans "What we do" %}</div>
       <h2>{% trans "Services built around your goals" %}</h2>
       <p>{% trans "From custom software to day-to-day IT support, we cover the full technology stack your business needs to grow." %}</p>
     </div>
 
-    <div class="card-grid">
+    <div class="bento">
       {% for service in services %}
-      <div class="card reveal">
-        <div class="card-icon">{% icon service.icon size=26 %}</div>
-        <h3>{{ service.name }}</h3>
-        <p>{{ service.summary }}</p>
-        <a class="card-link" href="{% url 'core:service_detail' service.slug %}">{% trans "Learn more" %} {% icon 'arrow' size=16 %}</a>
+      <div class="flip-outer reveal{% if forloop.first %} span-2{% endif %}">
+        <div class="flip-card">
+          <div class="flip-face flip-front">
+            <div class="svc-icon">{% icon service.icon size=20 %}</div>
+            <h3 class="svc-name">{{ service.name }}</h3>
+            <p class="svc-summary">{{ service.summary }}</p>
+            <span class="flip-hint">{% trans "Tap for details" %} &rarr;</span>
+          </div>
+          <div class="flip-face flip-back">
+            <p>{{ service.description }}</p>
+            <span class="flip-hint">&larr; {% trans "Back" %}</span>
+          </div>
+        </div>
       </div>
       {% empty %}
       <p>{% trans "Services will appear here shortly." %}</p>
@@ -60,34 +119,117 @@
   </div>
 </section>
 
+<div class="marquee-strip">
+  <div class="marquee-track">
+    {% for service in services %}<span>{{ service.name|upper }}</span><span class="dot">&bull;</span>{% endfor %}
+    {% for service in services %}<span>{{ service.name|upper }}</span><span class="dot">&bull;</span>{% endfor %}
+  </div>
+</div>
+
+{% if SHOW_PRODUCTS_NAV %}
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <div class="eyebrow" style="justify-content:center;">{% trans "Built in-house" %}</div>
+      <h2>{% trans "Our own products, built and run by us" %}</h2>
+      <p>{% trans "Two live SaaS platforms we design, build and operate ourselves — proof of what we build for clients too." %}</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card reveal">
+        <div class="product-card-media browser-mock">
+          <div class="browser-chrome">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <div class="browser-url">ims.banantechnology.com/dashboard</div>
+          </div>
+          <div class="product-card-media-crop">
+            <img src="{% static 'images/products/banan-ims/dashboard.png' %}" alt="{% trans 'Banan IMS dashboard' %}">
+          </div>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-badge">{% icon 'box' size=14 %} {% trans "Inventory & sales management" %}</span>
+          <h3>{% trans "Banan IMS" %}</h3>
+          <p>{% trans "Inventory, point of sale, purchasing, treasury and reporting — one bilingual platform for retail, wholesale and service businesses." %}</p>
+          <div class="product-card-actions">
+            <a href="{% url 'core:product_banan_ims' %}" class="btn btn-primary magnetic">{% trans "Explore Banan IMS" %} {% icon 'arrow' size=18 %}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card product-card--bcms reveal">
+        <div class="product-card-media browser-mock">
+          <div class="browser-chrome">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <div class="browser-url">bcms.banantechnology.com</div>
+          </div>
+          <div class="product-card-media-crop">
+            <img src="{% static 'images/products/banan-bcms/dashboard.png' %}" alt="{% trans 'Banan BCMS dashboard' %}">
+          </div>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-badge">{% icon 'calendar' size=14 %} {% trans "Beauty center management" %}</span>
+          <h3>{% trans "Banan BCMS" %}</h3>
+          <p>{% trans "Appointments, clients, billing, finance and reporting for salons and spas — with center-aware multi-tenant support built in." %}</p>
+          <div class="product-card-actions">
+            <a href="{% url 'core:product_banan_bcms' %}" class="btn btn-primary magnetic">{% trans "Explore Banan BCMS" %} {% icon 'arrow' size=18 %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <section class="section section--soft">
   <div class="container">
     <div class="split">
-      <div class="split-art reveal">
-        <img src="{% static 'images/logo-icon-white.png' %}" alt="{{ COMPANY_NAME }}">
-      </div>
       <div class="reveal">
         <div class="eyebrow">{% trans "Why Banan" %}</div>
         <h2>{% trans "A dedicated technology partner, not just a vendor" %}</h2>
         <p>{% blocktrans %}We're a lean, senior engineering team giving ambitious businesses direct access to top talent — without the overhead of a large agency. Every engagement is bilingual, transparent, and shaped around measurable outcomes.{% endblocktrans %}</p>
-        <div class="value-grid">
-          <div class="value-item">
-            <div class="card-icon">{% icon 'code' size=20 %}</div>
-            <div><h4>{% trans "Modern engineering" %}</h4><p>{% trans "Clean, maintainable builds on proven technology." %}</p></div>
-          </div>
-          <div class="value-item">
-            <div class="card-icon">{% icon 'shield' size=20 %}</div>
-            <div><h4>{% trans "Reliable & secure" %}</h4><p>{% trans "Security and data protection considered from day one." %}</p></div>
-          </div>
-          <div class="value-item">
-            <div class="card-icon">{% icon 'chart' size=20 %}</div>
-            <div><h4>{% trans "Outcome driven" %}</h4><p>{% trans "We measure success by the impact on your business." %}</p></div>
-          </div>
-          <div class="value-item">
-            <div class="card-icon">{% icon 'devices' size=20 %}</div>
-            <div><h4>{% trans "Responsive & close" %}</h4><p>{% trans "Working in your timezone, in Arabic and English." %}</p></div>
-          </div>
+      </div>
+      <div class="reveal">
+        <div class="value-carousel-card">
+          <h4>{% trans "Modern engineering" %}</h4>
+          <p>{% trans "Clean, maintainable builds on proven technology." %}</p>
         </div>
+        <div class="value-dots">
+          <button type="button" class="value-dot is-active" data-title="{% trans 'Modern engineering' %}" data-body="{% trans 'Clean, maintainable builds on proven technology.' %}" aria-label="1"></button>
+          <button type="button" class="value-dot" data-title="{% trans 'Reliable & secure' %}" data-body="{% trans 'Security and data protection considered from day one.' %}" aria-label="2"></button>
+          <button type="button" class="value-dot" data-title="{% trans 'Outcome driven' %}" data-body="{% trans 'We measure success by the impact on your business.' %}" aria-label="3"></button>
+          <button type="button" class="value-dot" data-title="{% trans 'Responsive & close' %}" data-body="{% trans 'Working in your timezone, in Arabic and English.' %}" aria-label="4"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <div class="eyebrow" style="justify-content:center;">{% trans "How we work" %}</div>
+      <h2>{% trans "A clear process, from first call to launch" %}</h2>
+    </div>
+    <div class="process-track">
+      <div class="process-line"><div class="process-line-fill"></div></div>
+      <div class="process-step reveal">
+        <div class="process-num">01</div>
+        <h3>{% trans "Discover" %}</h3>
+        <p>{% trans "We start by understanding your business, workflow and goals." %}</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">02</div>
+        <h3>{% trans "Design & Plan" %}</h3>
+        <p>{% trans "We map the solution and agree scope before writing a line of code." %}</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">03</div>
+        <h3>{% trans "Build & Test" %}</h3>
+        <p>{% trans "Iterative development with regular check-ins, tested at every step." %}</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">04</div>
+        <h3>{% trans "Launch & Support" %}</h3>
+        <p>{% trans "We deploy, then stay on to support, extend and improve." %}</p>
       </div>
     </div>
   </div>
@@ -96,21 +238,37 @@
 {% if featured_projects %}
 <section class="section">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div class="eyebrow">{% trans "Selected work" %}</div>
       <h2>{% trans "Recent projects" %}</h2>
     </div>
-    <div class="work-grid">
-      {% for project in featured_projects %}
-      <a class="work-card reveal" href="{% url 'core:project_detail' project.slug %}">
-        {% if project.image %}<img src="{{ project.image.url }}" alt="{{ project.title }}">{% endif %}
-        <div class="work-overlay">
-          {% if project.service %}<div class="tag">{{ project.service.name }}</div>{% endif %}
-          <h3>{{ project.title }}</h3>
+    {% with first_project=featured_projects.0 %}
+    <div class="reveal">
+      <div class="spotlight" style="background:linear-gradient(135deg,#1a1a1d,#3a2e12 130%);">
+        <div>
+          <div class="spotlight-tag">{{ first_project.service.name }}</div>
+          <h3>{{ first_project.title }}</h3>
+          <p>{{ first_project.summary }}</p>
+          <div class="spotlight-nav">
+            <div class="proj-controls">
+              <span class="proj-btn proj-prev"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></span>
+              <span class="proj-btn proj-next"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
+            </div>
+            <div class="proj-dots">
+              {% for project in featured_projects %}
+              <button type="button" class="proj-dot{% if forloop.first %} is-active{% endif %}"
+                data-tag="{{ project.service.name }}"
+                data-title="{{ project.title }}"
+                data-body="{{ project.summary }}"
+                data-grad="linear-gradient(135deg,#1a1a1d,{% cycle '#3a2e12 130%' '#12302a 130%' '#2a1a34 130%' %})"
+                aria-label="{{ forloop.counter }}"></button>
+              {% endfor %}
+            </div>
+          </div>
         </div>
-      </a>
-      {% endfor %}
+      </div>
     </div>
+    {% endwith %}
   </div>
 </section>
 {% endif %}
@@ -123,8 +281,8 @@
         <p>{% trans "Tell us about it — we usually reply within one business day." %}</p>
       </div>
       <div class="actions">
-        <a href="{% url 'core:contact' %}" class="btn btn-primary">{% trans "Contact our team" %}</a>
-        <a href="{% url 'core:services' %}" class="btn btn-outline">{% trans "View services" %}</a>
+        <a href="{% url 'core:contact' %}" class="btn btn-primary magnetic">{% trans "Contact our team" %}</a>
+        <a href="{% url 'core:services' %}" class="btn btn-outline magnetic">{% trans "View services" %}</a>
       </div>
     </div>
   </div>
