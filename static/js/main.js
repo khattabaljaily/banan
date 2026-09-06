@@ -324,15 +324,15 @@
     }
 
     var heroPreview = document.querySelector('.hero-preview');
-    var previewCard = document.querySelector('.preview-card');
-    if (heroPreview && previewCard) {
+    var codeWindow = document.querySelector('.code-window');
+    if (heroPreview && codeWindow) {
       heroPreview.addEventListener('mousemove', function (e) {
         var r = heroPreview.getBoundingClientRect();
         var px = (e.clientX - r.left) / r.width - 0.5;
         var py = (e.clientY - r.top) / r.height - 0.5;
-        previewCard.style.transform = 'perspective(900px) rotateY(' + (px * 12) + 'deg) rotateX(' + (py * -12) + 'deg)';
+        codeWindow.style.transform = 'perspective(900px) rotateY(' + (px * 10) + 'deg) rotateX(' + (py * -10) + 'deg)';
       });
-      heroPreview.addEventListener('mouseleave', function () { previewCard.style.transform = ''; });
+      heroPreview.addEventListener('mouseleave', function () { codeWindow.style.transform = ''; });
     }
 
     var auroraLayers = document.querySelectorAll('.aurora-parallax');
@@ -388,31 +388,5 @@
       d.addEventListener('click', function () { showValue(di); restartValueTimer(); });
     });
     restartValueTimer();
-  }
-
-  /* ---------- Project spotlight carousel ---------- */
-  var spotlightEl = document.querySelector('.spotlight');
-  var spotlightDots = document.querySelectorAll('.proj-dots .proj-dot');
-  if (spotlightEl && spotlightDots.length) {
-    var spotlightTagEl = spotlightEl.querySelector('.spotlight-tag');
-    var spotlightTitleEl = spotlightEl.querySelector('h3');
-    var spotlightBodyEl = spotlightEl.querySelector('p');
-    var spotlightIndex = 0;
-    function showProject(i) {
-      spotlightIndex = (i + spotlightDots.length) % spotlightDots.length;
-      var dot = spotlightDots[spotlightIndex];
-      spotlightEl.style.background = dot.getAttribute('data-grad') || '';
-      if (spotlightTagEl) spotlightTagEl.textContent = dot.getAttribute('data-tag') || '';
-      if (spotlightTitleEl) spotlightTitleEl.textContent = dot.getAttribute('data-title') || '';
-      if (spotlightBodyEl) spotlightBodyEl.textContent = dot.getAttribute('data-body') || '';
-      spotlightDots.forEach(function (d, di) { d.classList.toggle('is-active', di === spotlightIndex); });
-    }
-    spotlightDots.forEach(function (d, di) {
-      d.addEventListener('click', function () { showProject(di); });
-    });
-    var projPrev = document.querySelector('.proj-prev');
-    var projNext = document.querySelector('.proj-next');
-    if (projPrev) projPrev.addEventListener('click', function () { showProject(spotlightIndex - 1); });
-    if (projNext) projNext.addEventListener('click', function () { showProject(spotlightIndex + 1); });
   }
 })();

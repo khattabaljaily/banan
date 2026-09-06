@@ -9,7 +9,7 @@
   <div class="aurora-parallax"><div class="aurora aurora-a"></div></div>
   <div class="aurora-parallax"><div class="aurora aurora-b"></div></div>
   <div class="container hero-grid">
-    <div>
+    <div class="hero-copy">
       <div class="eyebrow hero-anim" style="animation-delay:.02s">{% trans "Information Technology · Software & Digital Solutions" %}</div>
       <h1 class="hero-anim" style="animation-delay:.1s">{% blocktrans %}We build <em>digital products</em> that move your business forward{% endblocktrans %}</h1>
       <p class="hero-lead hero-anim" style="animation-delay:.2s">{% blocktrans %}Banan Information Technology partners with ambitious businesses to design, build and support modern software, e-commerce and IT infrastructure — end to end.{% endblocktrans %}</p>
@@ -36,35 +36,20 @@
     </div>
 
     <div class="hero-preview hero-anim" style="animation-delay:.3s">
-      <div class="preview-card">
-        <div class="preview-topbar">
-          <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
-          <span class="preview-title">Banan IMS — {% trans "Live Preview" %}</span>
-          <span class="preview-live"><span class="live-dot"></span> {% trans "Live" %}</span>
+      <div class="code-window" dir="ltr">
+        <div class="code-topbar">
+          <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+          <span class="code-filename">banan.js</span>
+          <span class="code-live"><span class="live-dot"></span> {% trans "Live" %}</span>
         </div>
-        <div class="preview-body">
-          <div class="preview-kpis">
-            <div class="preview-kpi">
-              <span class="preview-kpi-num" data-count="340">0</span>
-              <span class="preview-kpi-label">{% trans "Orders today" %}</span>
-            </div>
-            <div class="preview-kpi">
-              <span class="preview-kpi-num" data-count="99.9" data-decimals="1" data-suffix="%">0.0%</span>
-              <span class="preview-kpi-label">{% trans "Platform uptime" %}</span>
-            </div>
-          </div>
-          <div class="preview-chart">
-            <div class="bar" style="--h:38%"></div>
-            <div class="bar" style="--h:62%"></div>
-            <div class="bar" style="--h:48%"></div>
-            <div class="bar" style="--h:80%"></div>
-            <div class="bar" style="--h:66%"></div>
-            <div class="bar" style="--h:92%"></div>
-            <div class="bar" style="--h:74%"></div>
-          </div>
-          <svg class="preview-spark" viewBox="0 0 200 40" preserveAspectRatio="none">
-            <path class="spark-path" d="M0,32 L20,26 L40,29 L60,16 L80,21 L100,9 L120,15 L140,6 L160,12 L180,3 L200,8" />
-          </svg>
+        <div class="code-body">
+          <div class="code-line"><span class="code-line-num">1</span><span class="code-line-text"><span class="code-kw">import</span> { Banan } <span class="code-kw">from</span> <span class="code-str">'@banan/sdk'</span>;</span></div>
+          <div class="code-line"><span class="code-line-num">2</span><span class="code-line-text"></span></div>
+          <div class="code-line"><span class="code-line-num">3</span><span class="code-line-text"><span class="code-kw">export async function</span> <span class="code-fn">launch</span>(idea) {</span></div>
+          <div class="code-line"><span class="code-line-num">4</span><span class="code-line-text">&nbsp;&nbsp;<span class="code-kw">const</span> app = <span class="code-kw">await</span> Banan.<span class="code-fn">build</span>(idea);</span></div>
+          <div class="code-line"><span class="code-line-num">5</span><span class="code-line-text">&nbsp;&nbsp;app.<span class="code-fn">deploy</span>({ region: <span class="code-str">'qatar'</span> });</span></div>
+          <div class="code-line"><span class="code-line-num">6</span><span class="code-line-text">&nbsp;&nbsp;<span class="code-kw">return</span> app.ready;</span></div>
+          <div class="code-line"><span class="code-line-num">7</span><span class="code-line-text">}<span class="code-cursor"></span></span></div>
         </div>
       </div>
       <div class="floating-chip" style="top:6%; inset-inline-start:-6%; animation-delay:0s;">{% icon 'globe' size=16 %} {% trans "Bilingual AR / EN" %}</div>
@@ -101,6 +86,7 @@
       <div class="flip-outer reveal{% if forloop.first %} span-2{% endif %}">
         <div class="flip-card">
           <div class="flip-face flip-front">
+            <span class="svc-index">{{ forloop.counter|stringformat:"02d" }}</span>
             <div class="svc-icon">{% icon service.icon size=20 %}</div>
             <h3 class="svc-name">{{ service.name }}</h3>
             <p class="svc-summary">{{ service.summary }}</p>
@@ -108,7 +94,7 @@
           </div>
           <div class="flip-face flip-back">
             <p>{{ service.description }}</p>
-            <span class="flip-hint">&larr; {% trans "Back" %}</span>
+            <a class="card-link" href="{% url 'core:service_detail' service.slug %}" style="margin-top:auto;">{% trans "Learn more" %} {% icon 'arrow' size=16 %}</a>
           </div>
         </div>
       </div>
@@ -116,6 +102,12 @@
       <p>{% trans "Services will appear here shortly." %}</p>
       {% endfor %}
     </div>
+
+    {% if services %}
+    <div class="section-foot reveal">
+      <a href="{% url 'core:services' %}" class="btn btn-outline magnetic">{% trans "View all services" %} {% icon 'arrow' size=18 %}</a>
+    </div>
+    {% endif %}
   </div>
 </section>
 
@@ -238,37 +230,30 @@
 {% if featured_projects %}
 <section class="section">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">{% trans "Selected work" %}</div>
-      <h2>{% trans "Recent projects" %}</h2>
-    </div>
-    {% with first_project=featured_projects.0 %}
-    <div class="reveal">
-      <div class="spotlight" style="background:linear-gradient(135deg,#1a1a1d,#3a2e12 130%);">
-        <div>
-          <div class="spotlight-tag">{{ first_project.service.name }}</div>
-          <h3>{{ first_project.title }}</h3>
-          <p>{{ first_project.summary }}</p>
-          <div class="spotlight-nav">
-            <div class="proj-controls">
-              <span class="proj-btn proj-prev"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></span>
-              <span class="proj-btn proj-next"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
-            </div>
-            <div class="proj-dots">
-              {% for project in featured_projects %}
-              <button type="button" class="proj-dot{% if forloop.first %} is-active{% endif %}"
-                data-tag="{{ project.service.name }}"
-                data-title="{{ project.title }}"
-                data-body="{{ project.summary }}"
-                data-grad="linear-gradient(135deg,#1a1a1d,{% cycle '#3a2e12 130%' '#12302a 130%' '#2a1a34 130%' %})"
-                aria-label="{{ forloop.counter }}"></button>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
+    <div class="section-head section-head--split reveal">
+      <div>
+        <div class="eyebrow">{% trans "Selected work" %}</div>
+        <h2>{% trans "Recent projects" %}</h2>
       </div>
+      <a href="{% url 'core:portfolio' %}" class="card-link">{% trans "View all work" %} {% icon 'arrow' size=16 %}</a>
     </div>
-    {% endwith %}
+    <div class="projects-grid">
+      {% for project in featured_projects %}
+      <a href="{% url 'core:project_detail' project.slug %}" class="project-card reveal">
+        <div class="project-card-media">
+          {% if project.image %}
+          <img src="{{ project.image.url }}" alt="{{ project.title }}" loading="lazy">
+          {% endif %}
+        </div>
+        <div class="project-card-overlay">
+          {% if project.service %}<span class="project-card-tag">{{ project.service.name }}</span>{% endif %}
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.summary }}</p>
+          <span class="project-card-link">{% trans "View project" %} {% icon 'arrow' size=16 %}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </section>
 {% endif %}
