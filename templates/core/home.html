@@ -9,31 +9,8 @@
   <div class="aurora-parallax"><div class="aurora aurora-a"></div></div>
   <div class="aurora-parallax"><div class="aurora aurora-b"></div></div>
   <div class="container hero-grid">
-    <div class="hero-copy">
-      <div class="eyebrow hero-anim" style="animation-delay:.02s">{% trans "Information Technology · Software & Digital Solutions" %}</div>
-      <h1 class="hero-anim" style="animation-delay:.1s">{% blocktrans %}We build <em>digital products</em> that move your business forward{% endblocktrans %}</h1>
-      <p class="hero-lead hero-anim" style="animation-delay:.2s">{% blocktrans %}Banan Information Technology partners with ambitious businesses to design, build and support modern software, e-commerce and IT infrastructure — end to end.{% endblocktrans %}</p>
-      {% if services %}
-      <div class="hero-rotator hero-anim" style="animation-delay:.26s">
-        <span>{% trans "Specialized in" %}</span>
-        <span class="rotator">
-          {% for service in services %}
-          <span class="rotator-word{% if forloop.first %} is-active{% endif %}">{{ service.name }}</span>
-          {% endfor %}
-        </span>
-      </div>
-      {% endif %}
-      <div class="hero-actions hero-anim" style="animation-delay:.34s">
-        <a href="{% url 'core:contact' %}" class="btn btn-primary magnetic">{% trans "Start a project" %} {% icon 'arrow' size=18 %}</a>
-        <a href="{% url 'core:services' %}" class="btn btn-outline magnetic">{% trans "Explore services" %}</a>
-      </div>
-      <div class="hero-meta hero-anim" style="animation-delay:.42s">
-        <div class="chip-live"><span class="live-dot"></span> {% trans "Available for new projects" %}</div>
-        <div>{% icon 'pin' size=18 %} {% trans "Doha, Qatar" %}</div>
-        <div>{% icon 'shield' size=18 %} {% trans "C.R." %} {{ COMPANY_CR_NUMBER }}</div>
-        <div>{% icon 'chart' size=18 %} {% trans "Bilingual Arabic / English delivery" %}</div>
-      </div>
-    </div>
+    <div class="eyebrow hero-anim" style="animation-delay:.02s">{% trans "Information Technology · Software & Digital Solutions" %}</div>
+    <h1 class="hero-anim" style="animation-delay:.1s">{% blocktrans %}We build <em>digital products</em> that move your business forward{% endblocktrans %}</h1>
 
     <div class="hero-preview hero-anim" style="animation-delay:.3s">
       <div class="code-window" dir="ltr">
@@ -55,6 +32,28 @@
       <div class="floating-chip" style="top:6%; inset-inline-start:-6%; animation-delay:0s;">{% icon 'globe' size=16 %} {% trans "Bilingual AR / EN" %}</div>
       <div class="floating-chip" style="bottom:14%; inset-inline-end:-8%; animation-delay:.4s;">{% icon 'shield' size=16 %} {% trans "HTTPS Secured" %}</div>
       <div class="floating-chip" style="bottom:-2%; inset-inline-start:8%; animation-delay:.8s;">{% icon 'cloud' size=16 %} {% trans "Cloud Hosted" %}</div>
+    </div>
+
+    <p class="hero-lead hero-anim" style="animation-delay:.2s">{% blocktrans %}Banan Information Technology partners with ambitious businesses to design, build and support modern software, e-commerce and IT infrastructure — end to end.{% endblocktrans %}</p>
+    {% if services %}
+    <div class="hero-rotator hero-anim" style="animation-delay:.26s">
+      <span>{% trans "Specialized in" %}</span>
+      <span class="rotator">
+        {% for service in services %}
+        <span class="rotator-word{% if forloop.first %} is-active{% endif %}">{{ service.name }}</span>
+        {% endfor %}
+      </span>
+    </div>
+    {% endif %}
+    <div class="hero-actions hero-anim" style="animation-delay:.34s">
+      <a href="{% url 'core:contact' %}" class="btn btn-primary magnetic">{% trans "Start a project" %} {% icon 'arrow' size=18 %}</a>
+      <a href="{% url 'core:services' %}" class="btn btn-outline magnetic">{% trans "Explore services" %}</a>
+    </div>
+    <div class="hero-meta hero-anim" style="animation-delay:.42s">
+      <div class="chip-live"><span class="live-dot"></span> {% trans "Available for new projects" %}</div>
+      <div>{% icon 'pin' size=18 %} {% trans "Doha, Qatar" %}</div>
+      <div>{% icon 'shield' size=18 %} {% trans "C.R." %} {{ COMPANY_CR_NUMBER }}</div>
+      <div>{% icon 'chart' size=18 %} {% trans "Bilingual Arabic / English delivery" %}</div>
     </div>
   </div>
   <a href="#services-section" class="scroll-cue" aria-label="{% trans 'Scroll down' %}"><span></span></a>
