@@ -109,7 +109,9 @@
   .bcms-hero-visual .floating-chip--top { top: 2%; inset-inline-end: -2%; animation-delay: .4s; }
   .bcms-hero-visual .floating-chip--bottom { bottom: 4%; inset-inline-start: -4%; animation-delay: 1.1s; }
   @media (max-width: 980px) {
-    .bcms-hero-grid { grid-template-columns: 1fr; }
+    .bcms-hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .bcms-badge-row, .bcms-hero-actions { justify-content: center; }
+    .bcms-hero-lead, .bcms-ticker { margin-inline: auto; }
     .bcms-hero-visual { order: -1; margin-bottom: 12px; min-height: 380px; }
   }
   @media (max-width: 560px) {
@@ -150,6 +152,12 @@
   .flow-icon svg { width: 16px; height: 16px; }
   .bcms-flow .timeline-item strong { font-size: 16.5px; }
   .bcms-flow .timeline-item p { margin: 0; font-size: 14.5px; max-width: 480px; }
+  @media (max-width: 760px) {
+    .bcms-flow { border-inline-start: none; padding-inline-start: 0; margin-inline: auto; text-align: center; }
+    .bcms-flow .timeline-item::before { display: none; }
+    .flow-head { justify-content: center; }
+    .bcms-flow .timeline-item p { margin-inline: auto; }
+  }
 
   /* ---------- Bento showcase ---------- */
   .bcms-bento {
